@@ -1,60 +1,38 @@
-name: Generate Sitemap
+- name: Generate sitemap.xml
+  run: |
+    #!/bin/bash
+    SITE_URL="https://yourdomain.com "
+    OUTPUT_FILE="sitemap.xml"
+    DEFAULT_CHANGEFREQ="weekly"
+    DEFAULT_PRIORITY="0.8"
+    DEFAULT_LASTMOD=$(date +%Y-%m-%d)
 
-on:
-  push:
-    branches:
-      - main  # 替换为你实际使用的分支名
+    rm -f "$OUTPUT_FILE"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$OUTPUT_FILE"
+    echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> "$OUTPUT_FILE"
 
-      - name: Generate sitemap.xml
-        run: |
-          #!/bin/bash
-          SITE_URL="https://yourdomain.com "
-          OUTPUT_FILE="sitemap.xml"
-          DEFAULT_CHANGEFREQ="weekly"
-          DEFAULT_PRIORITY="0.8"
-          DEFAULT_LASTMOD=$(date +%Y-%m-%d)
+    find . -type f $ -name "*.html" -o -name "*.htm" $ | while read file; do
+        relpath="${file:2}"
+        url="$SITE_URL/$relpath"
 
-          rm -f "$OUTPUT_FILE"
+        if [[ "$relpath" == *"index.html" ]]; then
+            dir=$(dirname "$relpath")
+            url="$SITE_URL/${dir}"
+        fi
 
-          echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$OUTPUT_FILE"
-          echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> "$OUTPUT_FILE"
+        lastmod=$(date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$DEFAULT_LASTMOD")
 
-          find . -type f $ -name "*.html" -o -name "*.htm" $ | while read file; do
-              relpath="${file:2}"
-              url="$SITE_URL/$relpath"
-
-              if [[ "$relpath" == *"index.html" ]]; then
-                  dir=$(dirname "$relpath")
-                  url="$SITE_URL/${dir}"
-              fi
-
-              lastmod=$(date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$DEFAULT_LASTMOD")
-
-              cat <<EOF >> "$OUTPUT_FILE"
-    <url>
-      <loc>\$url</loc>
-      <lastmod>\$lastmod</lastmod>
-      <changefreq>\$DEFAULT_CHANGEFREQ</changefreq>
-      <priority>\$DEFAULT_PRIORITY</priority>
-    </url>
+        cat <<EOF >> "$OUTPUT_FILE"
+  <url>
+    <loc>$url</loc>
+    <lastmod>$lastmod</lastmod>
+    <changefreq>$DEFAULT_CHANGEFREQ</changefreq>
+    <priority>$DEFAULT_PRIORITY</priority>
+  </url>
 EOF
-          done
+    done
 
-          echo "</urlset>" >> "$OUTPUT_FILE"
+    echo "</urlset>" >> "$OUTPUT_FILE"
 
-          echo "✅ Sitemap 已生成：\$OUTPUT_FILE"
-
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add sitemap.xml
-          git commit -m "Auto-generated sitemap.xml"
-          git push https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/MORAN-hub-code/MORAN-hub-code.github.io.git main
+    echo "✅ Sitemap 已生成：$OUTPUT_FILE"
