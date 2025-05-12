@@ -288,7 +288,7 @@
                         <p>作者: ${map.author}</p>
                         <p>地图大小: ${map.size}</p>
                         <p>适用版本: ${map.gameVersion}</p>
-                        <p>文件大小: ${map.fileSize}</p>
+                        ${map.fileSize !== '未知大小' ? `<p>文件大小: ${map.fileSize}</p>` : ''}
                         <p>${map.description}</p>
                     </div>
                     <button onclick="downloadMap('${map.name}', '${map.downloadUrl}')" class="download-btn">下载</button>
@@ -406,11 +406,11 @@
         }
 
         // 下载地图
-        async function downloadMap(name, url) {
+        async function downloadMap(name, path) {
             try {
-                console.log('开始下载:', url);
+                console.log('开始下载:', path);
                 // 发起下载请求
-                const response = await fetch(url);
+                const response = await fetchFromCDN(path);
                 if (!response.ok) {
                     throw new Error(`下载失败: ${response.statusText}`);
                 }

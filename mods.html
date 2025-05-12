@@ -333,7 +333,7 @@
                         <p>作者: ${mod.author}</p>
                         <p>类型: ${mod.type}</p>
                         <p>适用版本: ${mod.gameVersion}</p>
-                        <p>文件大小: ${mod.fileSize}</p>
+                        ${map.fileSize !== '未知大小' ? `<p>文件大小: ${map.fileSize}</p>` : ''}
                         <p>${mod.description}</p>
                     </div>
                     <button onclick="downloadMod('${mod.name}', '${mod.downloadUrl}')" class="download-btn">下载</button>
