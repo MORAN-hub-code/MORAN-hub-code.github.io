@@ -154,7 +154,7 @@
                 <div class="team-member-info">
                     <h3>管理员:曹魏</h3>
                     <p>负责网站整体运营和资源管理</p>
-                </div>
+                </div
             </div>
         </div>
 
@@ -169,5 +169,57 @@
     <footer>
         <p>&copy; 2025 星空社. 保留所有权利</p>
     </footer>
+
+    <script>
+        // CDN 配置
+        const CDN_DOMAIN = 'https://www.325477.xyz';  // 主 CDN 域名
+        const BACKUP_CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 备用 CDN 域名（jsDelivr 国内镜像）
+        
+        // 从多个 CDN 加载资源
+        async function fetchFromCDN(path) {
+            const urls = [
+                `${CDN_DOMAIN}/${path}`,
+                `${BACKUP_CDN_DOMAIN}/${path}`
+            ];
+            
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url);
+                    if (response.ok) {
+                        console.log(`成功从 ${url} 加载资源`);
+                        return response;
+                    }
+                } catch (error) {
+                    console.warn(`从 ${url} 加载失败:`, error);
+                }
+            }
+            throw new Error('所有 CDN 加载失败');
+        }
+
+        // 加载图片
+        function loadImage(imgElement, path) {
+            const urls = [
+                `${CDN_DOMAIN}/${path}`,
+                `${BACKUP_CDN_DOMAIN}/${path}`
+            ];
+            
+            // 尝试加载主 CDN 图片
+            imgElement.src = urls[0];
+            
+            // 如果主 CDN 加载失败，尝试加载备用 CDN
+            imgElement.onerror = () => {
+                console.log('主 CDN 加载失败，尝试备用 CDN');
+                imgElement.src = urls[1];
+            };
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 加载所有图片
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                loadImage(img, img.getAttribute('data-src'));
+            });
+        });
+    </script>
 </body>
 </html> 
