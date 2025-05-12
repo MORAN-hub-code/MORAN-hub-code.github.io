@@ -302,22 +302,20 @@
             const mapsGrid = document.getElementById('mapsGrid');
             
             for (const map of maps) {
-                if (map.type === 'dir') {
-                    console.log('处理地图目录:', map.name);
-                    const xmlUrl = `DATA/maps/${map.name}/info.xml`;
-                    const mapData = await parseMapXML(xmlUrl);
-                    if (mapData) {
-                        console.log('解析到的地图数据:', mapData);
-                        const downloadUrl = `DATA/maps/${map.name}/resource.${mapData.resourceFile.split('.').pop()}`;
-                        const fileSize = await getFileSize(downloadUrl);
-                        const card = createMapCard({
-                            ...mapData,
-                            imgUrl: `DATA/maps/${map.name}/preview.${mapData.imageFile.split('.').pop()}`,
-                            downloadUrl: downloadUrl,
-                            fileSize: fileSize
-                        });
-                        mapsGrid.appendChild(card);
-                    }
+                console.log('处理地图目录:', map.name);
+                const xmlUrl = `${map.path}/info.xml`;
+                const mapData = await parseMapXML(xmlUrl);
+                if (mapData) {
+                    console.log('解析到的地图数据:', mapData);
+                    const downloadUrl = `${map.path}/resource.${mapData.resourceFile.split('.').pop()}`;
+                    const fileSize = await getFileSize(downloadUrl);
+                    const card = createMapCard({
+                        ...mapData,
+                        imgUrl: `${map.path}/preview.${mapData.imageFile.split('.').pop()}`,
+                        downloadUrl: downloadUrl,
+                        fileSize: fileSize
+                    });
+                    mapsGrid.appendChild(card);
                 }
             }
         }

@@ -327,22 +327,20 @@
             const modsGrid = document.getElementById('modsGrid');
             
             for (const mod of mods) {
-                if (mod.type === 'dir') {
-                    console.log('处理模组目录:', mod.name);
-                    const xmlUrl = `DATA/mods/${mod.name}/info.xml`;
-                    const modData = await parseModXML(xmlUrl);
-                    if (modData) {
-                        console.log('解析到的模组数据:', modData);
-                        const downloadUrl = `DATA/mods/${mod.name}/resource.${modData.resourceFile.split('.').pop()}`;
-                        const fileSize = await getFileSize(downloadUrl);
-                        const card = createModCard({
-                            ...modData,
-                            imgUrl: `DATA/mods/${mod.name}/preview.${modData.imageFile.split('.').pop()}`,
-                            downloadUrl: downloadUrl,
-                            fileSize: fileSize
-                        });
-                        modsGrid.appendChild(card);
-                    }
+                console.log('处理模组目录:', mod.name);
+                const xmlUrl = `${mod.path}/info.xml`;
+                const modData = await parseModXML(xmlUrl);
+                if (modData) {
+                    console.log('解析到的模组数据:', modData);
+                    const downloadUrl = `${mod.path}/resource.${modData.resourceFile.split('.').pop()}`;
+                    const fileSize = await getFileSize(downloadUrl);
+                    const card = createModCard({
+                        ...modData,
+                        imgUrl: `${mod.path}/preview.${modData.imageFile.split('.').pop()}`,
+                        downloadUrl: downloadUrl,
+                        fileSize: fileSize
+                    });
+                    modsGrid.appendChild(card);
                 }
             }
         }
