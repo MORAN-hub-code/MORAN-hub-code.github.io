@@ -17,46 +17,37 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Generate mods index
+      - name: Generate index files
         run: |
           node -e "
           const fs = require('fs');
           const path = require('path');
           
-          const modsDir = 'DATA/mods';
-          const mapsDir = 'DATA/maps';
-          
-          // 生成模组索引
-          if (fs.existsSync(modsDir)) {
-            const mods = fs.readdirSync(modsDir)
-              .filter(file => fs.statSync(path.join(modsDir, file)).isDirectory())
-              .map(dir => ({
-                name: dir,
-                path: `DATA/mods/${dir}`
-              }));
+          function generateIndex(dirPath) {
+            if (!fs.existsSync(dirPath)) {
+              console.log(\`Directory \${dirPath} does not exist\`);
+              return;
+            }
+            
+            try {
+              const items = fs.readdirSync(dirPath)
+                .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory())
+                .map(dir => ({
+                  name: dir,
+                  path: path.join(dirPath, dir).replace(/\\\\/g, '/')
+                }));
               
-            fs.writeFileSync(
-              path.join(modsDir, 'index.json'),
-              JSON.stringify(mods, null, 2)
-            );
-            console.log('Generated mods index.json');
+              const indexPath = path.join(dirPath, 'index.json');
+              fs.writeFileSync(indexPath, JSON.stringify(items, null, 2));
+              console.log(\`Generated \${indexPath}\`);
+            } catch (error) {
+              console.error(\`Error processing \${dirPath}:\`, error);
+            }
           }
           
-          // 生成地图索引
-          if (fs.existsSync(mapsDir)) {
-            const maps = fs.readdirSync(mapsDir)
-              .filter(file => fs.statSync(path.join(mapsDir, file)).isDirectory())
-              .map(dir => ({
-                name: dir,
-                path: `DATA/maps/${dir}`
-              }));
-              
-            fs.writeFileSync(
-              path.join(mapsDir, 'index.json'),
-              JSON.stringify(maps, null, 2)
-            );
-            console.log('Generated maps index.json');
-          }
+          // 生成索引文件
+          generateIndex('DATA/mods');
+          generateIndex('DATA/maps');
           "
           
       - name: Commit and push if changed
