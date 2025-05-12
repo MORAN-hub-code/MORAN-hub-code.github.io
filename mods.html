@@ -211,6 +211,7 @@
         // 解析XML文件
         async function parseModXML(url) {
             try {
+                console.log('开始获取XML文件:', url);
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error(`获取XML文件失败: ${response.statusText}`);
@@ -220,16 +221,35 @@
                 
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(content, "text/xml");
-                return {
-                    name: xmlDoc.getElementsByTagName("name")[0].textContent,
-                    author: xmlDoc.getElementsByTagName("author")[0].textContent,
-                    description: xmlDoc.getElementsByTagName("description")[0].textContent,
-                    type: xmlDoc.getElementsByTagName("type")[0].textContent,
-                    gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
-                    isModify: xmlDoc.getElementsByTagName("isModify")[0].textContent,
-                    imageFile: xmlDoc.getElementsByTagName("imageFile")[0].textContent,
-                    resourceFile: xmlDoc.getElementsByTagName("resourceFile")[0].textContent
+                
+                // 检查XML解析是否有错误
+                const parserError = xmlDoc.querySelector('parsererror');
+                if (parserError) {
+                    throw new Error('XML解析错误: ' + parserError.textContent);
+                }
+                
+                const result = {
+                    name: xmlDoc.getElementsByTagName("name")[0]?.textContent,
+                    author: xmlDoc.getElementsByTagName("author")[0]?.textContent,
+                    description: xmlDoc.getElementsByTagName("description")[0]?.textContent,
+                    type: xmlDoc.getElementsByTagName("type")[0]?.textContent,
+                    gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0]?.textContent,
+                    isModify: xmlDoc.getElementsByTagName("isModify")[0]?.textContent,
+                    imageFile: xmlDoc.getElementsByTagName("imageFile")[0]?.textContent,
+                    resourceFile: xmlDoc.getElementsByTagName("resourceFile")[0]?.textContent
                 };
+                
+                // 检查是否所有必需的字段都存在
+                const missingFields = Object.entries(result)
+                    .filter(([key, value]) => !value)
+                    .map(([key]) => key);
+                    
+                if (missingFields.length > 0) {
+                    throw new Error('缺少必需的XML字段: ' + missingFields.join(', '));
+                }
+                
+                console.log('解析后的模组数据:', result);
+                return result;
             } catch (error) {
                 console.error('解析XML失败:', error);
                 return null;
@@ -283,18 +303,54 @@
             return card;
         }
 
+        // 初始化页面
+        async function initializePage() {
+            try {
+                const mods = await fetchMods();
+                console.log('获取到的模组列表:', mods);
+                const modsGrid = document.getElementById('modsGrid');
+                
+                for (const mod of mods) {
+                    console.log('处理模组目录:', mod.name);
+                    const xmlUrl = `${mod.path}/info.xml`;
+                    console.log('尝试获取XML:', xmlUrl);
+                    const modData = await parseModXML(xmlUrl);
+                    if (modData) {
+                        console.log('成功解析模组数据:', modData);
+                        
+                        // 构建完整的文件路径
+                        const downloadUrl = `${mod.path}/resource.zip`;
+                        const imgUrl = `${mod.path}/preview.jpg`;
+                        
+                        console.log('下载URL:', downloadUrl);
+                        console.log('图片URL:', imgUrl);
+                        
+                        const fileSize = await getFileSize(downloadUrl);
+                        console.log('文件大小:', fileSize);
+                        
+                        const card = createModCard({
+                            ...modData,
+                            imgUrl: imgUrl,
+                            downloadUrl: downloadUrl,
+                            fileSize: fileSize
+                        });
+                        modsGrid.appendChild(card);
+                        console.log('已添加模组卡片');
+                    } else {
+                        console.error('模组数据解析失败:', mod.name);
+                    }
+                }
+            } catch (error) {
+                console.error('初始化页面失败:', error);
+            }
+        }
+
         // 下载模组
         async function downloadMod(name, url) {
             try {
-                // 将GitHub URL转换为jsDelivr URL
-                const jsDelivrUrl = url.replace('raw.githubusercontent.com', 'cdn.jsdelivr.net/gh');
-                console.log('下载链接:', jsDelivrUrl);
-                
-                // 获取文件扩展名
-                const extension = url.split('.').pop();
-                
+                console.log('开始下载:', url);
                 // 发起下载请求
-                const response = await fetch(jsDelivrUrl);
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error(`下载失败: ${response.statusText}`);
                 }
@@ -306,7 +362,7 @@
                 const downloadUrl = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = downloadUrl;
-                link.download = `${name}.${extension}`;
+                link.download = name;
                 
                 // 触发下载
                 document.body.appendChild(link);
@@ -318,30 +374,6 @@
             } catch (error) {
                 console.error('下载失败:', error);
                 alert('下载失败，请稍后重试');
-            }
-        }
-
-        // 初始化页面
-        async function initializePage() {
-            const mods = await fetchMods();
-            const modsGrid = document.getElementById('modsGrid');
-            
-            for (const mod of mods) {
-                console.log('处理模组目录:', mod.name);
-                const xmlUrl = `${mod.path}/info.xml`;
-                const modData = await parseModXML(xmlUrl);
-                if (modData) {
-                    console.log('解析到的模组数据:', modData);
-                    const downloadUrl = `${mod.path}/resource.${modData.resourceFile.split('.').pop()}`;
-                    const fileSize = await getFileSize(downloadUrl);
-                    const card = createModCard({
-                        ...modData,
-                        imgUrl: `${mod.path}/preview.${modData.imageFile.split('.').pop()}`,
-                        downloadUrl: downloadUrl,
-                        fileSize: fileSize
-                    });
-                    modsGrid.appendChild(card);
-                }
             }
         }
 
