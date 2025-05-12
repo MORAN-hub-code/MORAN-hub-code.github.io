@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>111111</name>
+    <author>2222</author>
+    <description>333333</description>
+    <gameVersion>0.50.4</gameVersion>
+    <type>实用工具</type>
+    <isModify>true</isModify>
+    <imageFile>caowei.jpg</imageFile>
+    <imageSize>60333</imageSize>
+    <resourceFile>caowei.zip</resourceFile>
+    <resourceSize>60035</resourceSize>
+</resource>
