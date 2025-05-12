@@ -3,7 +3,7 @@ name: Generate Sitemap
 on:
   push:
     branches:
-      - main  # 或 master，根据你的分支名修改
+      - main  # 替换为你实际使用的分支名，如 master
 
 jobs:
   build:
@@ -14,13 +14,35 @@ jobs:
 
       - name: Generate sitemap.xml
         run: |
-          chmod +x generate-sitemap.sh
-          ./generate-sitemap.sh
+          #!/bin/bash
+          SITE_URL="https://yourdomain.com "
+          OUTPUT_FILE="sitemap.xml"
+          DEFAULT_CHANGEFREQ="weekly"
+          DEFAULT_PRIORITY="0.8"
+          DEFAULT_LASTMOD=$(date +%Y-%m-%d)
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add sitemap.xml
-          git commit -m "Auto-generated sitemap.xml"
-          git push
+          rm -f "$OUTPUT_FILE"
+
+          echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$OUTPUT_FILE"
+          echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> "$OUTPUT_FILE"
+
+          find . -type f $ -name "*.html" -o -name "*.htm" $ | while read file; do
+              relpath="${file:2}"
+              url="$SITE_URL/$relpath"
+
+              if [[ "$relpath" == *"index.html" ]]; then
+                  dir=$(dirname "$relpath")
+                  url="$SITE_URL/${dir}"
+              fi
+
+              lastmod=$(date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$DEFAULT_LASTMOD")
+
+              cat <<EOF >> "$OUTPUT_FILE"
+    <url>
+      <loc>$url</loc>
+      <lastmod>$lastmod</lastmod>
+      <changefreq>$DEFAULT_CHANGEFREQ</changefreq>
+      <priority>$DEFAULT_PRIORITY</priority>
+    </url>
+EOF
+          done
