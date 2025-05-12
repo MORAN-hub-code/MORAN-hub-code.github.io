@@ -212,8 +212,8 @@
 
     <script>
         // CDN 配置
-        const CDN_DOMAIN = 'https://www.325477.xyz';  // 主 CDN 域名
-        const BACKUP_CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 备用 CDN 域名（jsDelivr 国内镜像）
+        const CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 主 CDN 域名
+        const BACKUP_CDN_DOMAIN = 'https://www.325477.xyz';  // 备用 CDN 域名
         
         // 从多个 CDN 加载资源
         async function fetchFromCDN(path) {
@@ -295,9 +295,9 @@
         }
 
         // 获取文件大小
-        async function getFileSize(url) {
+        async function getFileSize(path) {
             try {
-                const response = await fetch(url);
+                const response = await fetchFromCDN(path);
                 if (!response.ok) {
                     throw new Error(`获取文件大小失败: ${response.statusText}`);
                 }
@@ -423,19 +423,16 @@
                     if (modData) {
                         console.log('成功解析模组数据:', modData);
                         
-                        const downloadUrl = `${CDN_DOMAIN}/${mod.path}/resource.zip`;
-                        const imgUrl = `${CDN_DOMAIN}/${mod.path}/preview.jpg`;
+                        const resourcePath = `${mod.path}/resource.zip`;
+                        const imgPath = `${mod.path}/preview.jpg`;
                         
-                        // 添加备用 CDN 的图片 URL
-                        const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${mod.path}/preview.jpg`;
-                        
-                        const fileSize = await getFileSize(downloadUrl);
+                        const fileSize = await getFileSize(resourcePath);
                         
                         const card = createModCard({
                             ...modData,
-                            imgUrl: imgUrl,
-                            backupImgUrl: backupImgUrl,
-                            downloadUrl: downloadUrl,
+                            imgUrl: `${CDN_DOMAIN}/${imgPath}`,
+                            backupImgUrl: `${BACKUP_CDN_DOMAIN}/${imgPath}`,
+                            downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
                             fileSize: fileSize
                         });
                         cards.push(card);
