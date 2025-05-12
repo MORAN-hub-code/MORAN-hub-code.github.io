@@ -192,6 +192,9 @@
     </div>
 
     <script>
+        // CDN 配置
+        const CDN_DOMAIN = 'https://cdn.325477.xyz';  // 替换为你的 CDN 域名
+        
         // 从索引文件获取模组数据
         async function fetchMods() {
             try {
@@ -320,7 +323,7 @@
                         
                         // 构建完整的文件路径
                         const downloadUrl = `${mod.path}/resource.zip`;
-                        const imgUrl = `${mod.path}/preview.jpg`;
+                        const imgUrl = `${CDN_DOMAIN}/${mod.path}/preview.jpg`;  // 使用 CDN 域名
                         
                         console.log('下载URL:', downloadUrl);
                         console.log('图片URL:', imgUrl);

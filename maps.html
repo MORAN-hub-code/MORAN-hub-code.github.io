@@ -169,6 +169,9 @@
     </div>
 
     <script>
+        // CDN 配置
+        const CDN_DOMAIN = 'https://cdn.325477.xyz';  // 替换为你的 CDN 域名
+        
         // 从索引文件获取地图数据
         async function fetchMaps() {
             try {
@@ -258,18 +261,54 @@
             return card;
         }
 
+        // 初始化页面
+        async function initializePage() {
+            try {
+                const maps = await fetchMaps();
+                console.log('获取到的地图列表:', maps);
+                const mapsGrid = document.getElementById('mapsGrid');
+                
+                for (const map of maps) {
+                    console.log('处理地图目录:', map.name);
+                    const xmlUrl = `${map.path}/info.xml`;
+                    console.log('尝试获取XML:', xmlUrl);
+                    const mapData = await parseMapXML(xmlUrl);
+                    if (mapData) {
+                        console.log('成功解析地图数据:', mapData);
+                        
+                        // 构建完整的文件路径
+                        const downloadUrl = `${map.path}/resource.zip`;
+                        const imgUrl = `${CDN_DOMAIN}/${map.path}/preview.jpg`;  // 使用 CDN 域名
+                        
+                        console.log('下载URL:', downloadUrl);
+                        console.log('图片URL:', imgUrl);
+                        
+                        const fileSize = await getFileSize(downloadUrl);
+                        console.log('文件大小:', fileSize);
+                        
+                        const card = createMapCard({
+                            ...mapData,
+                            imgUrl: imgUrl,
+                            downloadUrl: downloadUrl,
+                            fileSize: fileSize
+                        });
+                        mapsGrid.appendChild(card);
+                        console.log('已添加地图卡片');
+                    } else {
+                        console.error('地图数据解析失败:', map.name);
+                    }
+                }
+            } catch (error) {
+                console.error('初始化页面失败:', error);
+            }
+        }
+
         // 下载地图
         async function downloadMap(name, url) {
             try {
-                // 将GitHub URL转换为jsDelivr URL
-                const jsDelivrUrl = url.replace('raw.githubusercontent.com', 'cdn.jsdelivr.net/gh');
-                console.log('下载链接:', jsDelivrUrl);
-                
-                // 获取文件扩展名
-                const extension = url.split('.').pop();
-                
+                console.log('开始下载:', url);
                 // 发起下载请求
-                const response = await fetch(jsDelivrUrl);
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error(`下载失败: ${response.statusText}`);
                 }
@@ -281,7 +320,7 @@
                 const downloadUrl = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = downloadUrl;
-                link.download = `${name}.${extension}`;
+                link.download = name;
                 
                 // 触发下载
                 document.body.appendChild(link);
@@ -293,30 +332,6 @@
             } catch (error) {
                 console.error('下载失败:', error);
                 alert('下载失败，请稍后重试');
-            }
-        }
-
-        // 初始化页面
-        async function initializePage() {
-            const maps = await fetchMaps();
-            const mapsGrid = document.getElementById('mapsGrid');
-            
-            for (const map of maps) {
-                console.log('处理地图目录:', map.name);
-                const xmlUrl = `${map.path}/info.xml`;
-                const mapData = await parseMapXML(xmlUrl);
-                if (mapData) {
-                    console.log('解析到的地图数据:', mapData);
-                    const downloadUrl = `${map.path}/resource.${mapData.resourceFile.split('.').pop()}`;
-                    const fileSize = await getFileSize(downloadUrl);
-                    const card = createMapCard({
-                        ...mapData,
-                        imgUrl: `${map.path}/preview.${mapData.imageFile.split('.').pop()}`,
-                        downloadUrl: downloadUrl,
-                        fileSize: fileSize
-                    });
-                    mapsGrid.appendChild(card);
-                }
             }
         }
 
