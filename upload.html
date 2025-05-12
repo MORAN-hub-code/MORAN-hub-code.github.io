@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>资源上传工具</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f6f8fa;
+            color: #24292e;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #24292e;
+            margin-bottom: 2rem;
+        }
+
+        .upload-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .upload-section h2 {
+            margin-top: 0;
+            color: #24292e;
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .file-input {
+            border: 2px dashed #ddd;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .file-input:hover {
+            border-color: #0366d6;
+        }
+
+        .file-input input {
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #57606a;
+        }
+
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .submit-btn {
+            background-color: #2ea44f;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #2c974b;
+        }
+
+        .status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>资源上传工具</h1>
+
+        <!-- 模组上传部分 -->
+        <div class="upload-section">
+            <h2>模组上传</h2>
+            <form id="modForm">
+                <div class="form-group">
+                    <label for="modName">模组名称</label>
+                    <input type="text" id="modName" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modAuthor">作者</label>
+                    <input type="text" id="modAuthor" name="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modDescription">模组介绍</label>
+                    <textarea id="modDescription" name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="modType">模组类型</label>
+                    <select id="modType" name="type" required>
+                        <option value="实用工具">实用工具</option>
+                        <option value="扩展玩法">扩展玩法</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="modGameVersion">适用游戏版本</label>
+                    <input type="text" id="modGameVersion" name="gameVersion" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isModify" name="isModify">
+                        是否魔改其他模组
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>预览图</label>
+                    <div class="file-input" id="modImageInput">
+                        <span>点击或拖拽图片到此处</span>
+                        <input type="file" accept="image/*" id="modImage" name="image">
+                        <div class="file-name"></div>
+                        <img class="preview-image" id="modImagePreview">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>模组文件</label>
+                    <div class="file-input" id="modFileInput">
+                        <span>点击或拖拽ZIP文件到此处</span>
+                        <input type="file" accept=".zip" id="modFile" name="file">
+                        <div class="file-name"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">上传模组</button>
+                <div class="status" id="modStatus"></div>
+            </form>
+        </div>
+
+        <!-- 地图上传部分 -->
+        <div class="upload-section">
+            <h2>地图上传</h2>
+            <form id="mapForm">
+                <div class="form-group">
+                    <label for="mapName">地图名称</label>
+                    <input type="text" id="mapName" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapAuthor">作者</label>
+                    <input type="text" id="mapAuthor" name="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapDescription">地图介绍</label>
+                    <textarea id="mapDescription" name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapSize">地图大小</label>
+                    <select id="mapSize" name="size" required>
+                        <option value="小">小</option>
+                        <option value="中">中</option>
+                        <option value="大">大</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapGameVersion">适用游戏版本</label>
+                    <input type="text" id="mapGameVersion" name="gameVersion" required>
+                </div>
+
+                <div class="form-group">
+                    <label>预览图</label>
+                    <div class="file-input" id="mapImageInput">
+                        <span>点击或拖拽图片到此处</span>
+                        <input type="file" accept="image/*" id="mapImage" name="image">
+                        <div class="file-name"></div>
+                        <img class="preview-image" id="mapImagePreview">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>地图文件</label>
+                    <div class="file-input" id="mapFileInput">
+                        <span>点击或拖拽ZIP文件到此处</span>
+                        <input type="file" accept=".zip" id="mapFile" name="file">
+                        <div class="file-name"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">上传地图</button>
+                <div class="status" id="mapStatus"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // GitHub API 配置
+        const GITHUB_TOKEN = process.env.PERSONAL_ACCESS_TOKEN;
+        const GITHUB_USERNAME = 'MORAN-hub-code';
+        const GITHUB_REPO = 'MORAN-hub-code.github.io';
+        const GITHUB_BRANCH = 'main';
+
+        // 处理文件拖放
+        function setupFileInput(inputId, previewId = null) {
+            const input = document.getElementById(inputId);
+            const container = input.parentElement;
+            const fileName = container.querySelector('.file-name');
+            const preview = previewId ? document.getElementById(previewId) : null;
+
+            container.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                container.style.borderColor = '#0366d6';
+            });
+
+            container.addEventListener('dragleave', () => {
+                container.style.borderColor = '#ddd';
+            });
+
+            container.addEventListener('drop', (e) => {
+                e.preventDefault();
+                container.style.borderColor = '#ddd';
+                input.files = e.dataTransfer.files;
+                updateFileName(input, fileName, preview);
+            });
+
+            input.addEventListener('change', () => {
+                updateFileName(input, fileName, preview);
+            });
+
+            container.addEventListener('click', () => {
+                input.click();
+            });
+        }
+
+        // 更新文件名和预览图
+        function updateFileName(input, fileNameElement, previewElement) {
+            if (input.files.length > 0) {
+                const file = input.files[0];
+                fileNameElement.textContent = file.name;
+
+                if (previewElement && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        previewElement.src = e.target.result;
+                        previewElement.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            } else {
+                fileNameElement.textContent = '';
+                if (previewElement) {
+                    previewElement.style.display = 'none';
+                }
+            }
+        }
+
+        // 生成XML内容
+        function generateXML(type, formData) {
+            let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<resource>\n';
+            
+            // 获取所有表单字段
+            const name = document.getElementById(`${type}Name`).value;
+            const author = document.getElementById(`${type}Author`).value;
+            const description = document.getElementById(`${type}Description`).value;
+            const gameVersion = document.getElementById(`${type}GameVersion`).value;
+            
+            // 添加基本信息
+            xml += `    <name>${name}</name>\n`;
+            xml += `    <author>${author}</author>\n`;
+            xml += `    <description>${description}</description>\n`;
+            xml += `    <gameVersion>${gameVersion}</gameVersion>\n`;
+            
+            // 根据类型添加特定信息
+            if (type === 'mod') {
+                const modType = document.getElementById('modType').value;
+                const isModify = document.getElementById('isModify').checked;
+                xml += `    <type>${modType}</type>\n`;
+                xml += `    <isModify>${isModify}</isModify>\n`;
+            } else if (type === 'map') {
+                const mapSize = document.getElementById('mapSize').value;
+                xml += `    <size>${mapSize}</size>\n`;
+            }
+            
+            // 添加文件信息
+            const imageFile = document.getElementById(`${type}Image`).files[0];
+            const resourceFile = document.getElementById(`${type}File`).files[0];
+            
+            if (imageFile) {
+                xml += `    <imageFile>${imageFile.name}</imageFile>\n`;
+                xml += `    <imageSize>${imageFile.size}</imageSize>\n`;
+            }
+            
+            if (resourceFile) {
+                xml += `    <resourceFile>${resourceFile.name}</resourceFile>\n`;
+                xml += `    <resourceSize>${resourceFile.size}</resourceSize>\n`;
+            }
+            
+            xml += '</resource>';
+            return xml;
+        }
+
+        // 将文件转换为Base64
+        async function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    const base64 = reader.result.split(',')[1];
+                    resolve(base64);
+                };
+                reader.onerror = error => reject(error);
+            });
+        }
+
+        // 上传文件到GitHub
+        async function uploadToGitHub(path, content, message) {
+            const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        content: content,
+                        branch: GITHUB_BRANCH
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`上传失败: ${response.statusText}`);
+                }
+
+                return await response.json();
+            } catch (error) {
+                throw new Error(`上传失败: ${error.message}`);
+            }
+        }
+
+        // 检查目录是否存在
+        async function checkDirectoryExists(path) {
+            const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
+            
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`
+                    }
+                });
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        // 删除目录中的所有文件
+        async function deleteDirectory(path) {
+            const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
+            
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const files = await response.json();
+                    for (const file of files) {
+                        await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${file.path}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `token ${GITHUB_TOKEN}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                message: `删除旧文件: ${file.path}`,
+                                sha: file.sha
+                            })
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('删除目录失败:', error);
+            }
+        }
+
+        // 处理表单提交
+        async function handleSubmit(event, type) {
+            event.preventDefault();
+            const form = event.target;
+            const status = document.getElementById(`${type}Status`);
+            status.className = 'status';
+            status.textContent = '正在上传...';
+
+            try {
+                const formData = new FormData(form);
+                
+                // 获取文件
+                const imageFile = document.getElementById(`${type}Image`).files[0];
+                const resourceFile = document.getElementById(`${type}File`).files[0];
+                
+                if (!imageFile || !resourceFile) {
+                    throw new Error('请选择预览图和资源文件');
+                }
+
+                // 获取资源名称
+                const resourceName = document.getElementById(`${type}Name`).value;
+                if (!resourceName) {
+                    throw new Error('请输入资源名称');
+                }
+
+                // 检查目录是否存在，如果存在则删除
+                const directoryPath = `DATA/${type}s/${resourceName}`;
+                const exists = await checkDirectoryExists(directoryPath);
+                if (exists) {
+                    await deleteDirectory(directoryPath);
+                }
+
+                // 生成文件名
+                const imageFileName = `${directoryPath}/preview.${imageFile.name.split('.').pop()}`;
+                const resourceFileName = `${directoryPath}/resource.${resourceFile.name.split('.').pop()}`;
+                const xmlFileName = `${directoryPath}/info.xml`;
+
+                // 转换文件为Base64
+                const imageBase64 = await fileToBase64(imageFile);
+                const resourceBase64 = await fileToBase64(resourceFile);
+                const xmlContent = generateXML(type, formData);
+                const xmlBase64 = btoa(unescape(encodeURIComponent(xmlContent)));
+
+                // 上传文件
+                await uploadToGitHub(imageFileName, imageBase64, `上传${type}预览图`);
+                await uploadToGitHub(resourceFileName, resourceBase64, `上传${type}资源文件`);
+                await uploadToGitHub(xmlFileName, xmlBase64, `上传${type}信息文件`);
+
+                status.className = 'status success';
+                status.textContent = '上传成功！';
+                form.reset();
+                resetFileInput(`${type}Image`);
+                resetFileInput(`${type}File`);
+            } catch (error) {
+                status.className = 'status error';
+                status.textContent = '上传失败：' + error.message;
+            }
+        }
+
+        // 重置文件输入
+        function resetFileInput(inputId) {
+            const input = document.getElementById(inputId);
+            const container = input.parentElement;
+            const fileName = container.querySelector('.file-name');
+            const preview = container.querySelector('.preview-image');
+            
+            input.value = '';
+            fileName.textContent = '';
+            if (preview) {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            setupFileInput('modImage', 'modImagePreview');
+            setupFileInput('modFile');
+            setupFileInput('mapImage', 'mapImagePreview');
+            setupFileInput('mapFile');
+
+            document.getElementById('modForm').addEventListener('submit', (e) => handleSubmit(e, 'mod'));
+            document.getElementById('mapForm').addEventListener('submit', (e) => handleSubmit(e, 'map'));
+        });
+    </script>
+</body>
+</html> 

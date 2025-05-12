@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="墨染的资源分享小网站 - 分享优质开源项目、编程教程、技术资源，包括HTML、CSS、JavaScript等前端开发资源" />
-  <meta name="keywords" content="墨染, 资源分享, 开源项目, 编程教程, 前端开发, HTML, CSS, JavaScript, GitHub项目, 技术博客, 学习资源" />
-  <meta name="author" content="墨染" />
+  <meta name="description" content="WorldBox 资源分享平台 - 由星空社维护的优质游戏资源分享网站" />
+  <meta name="keywords" content="WorldBox, 星空社, 游戏资源, Mod, 地图, 资源分享" />
+  <meta name="author" content="星空社" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.325477.xyz" />
-  <title>墨染的资源分享小网站 - 优质开源项目与技术资源分享平台</title>
+  <title>星空社 - WorldBox 资源分享平台</title>
   <style>
     body {
       margin: 0;
@@ -17,39 +17,76 @@
       color: #24292e;
     }
 
-    header {
+    nav {
       background-color: #24292e;
       padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    header {
+      background-color: #1a1f24;
+      padding: 4rem 2rem;
       color: white;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
-    main {
+    .team-section {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .repo-card {
+      padding: 2rem;
       background-color: white;
-      border: 1px solid #d1d5da;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
       padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 6px;
+      background-color: #f6f8fa;
     }
 
-    .repo-card h2 {
-      margin-top: 0;
-      font-size: 1.25rem;
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
     }
 
-    .repo-card p {
+    .team-member-info h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .team-member-info p {
+      margin: 0;
       color: #57606a;
     }
 
@@ -58,44 +95,81 @@
       padding: 2rem;
       color: #6a737d;
       font-size: 0.9rem;
+      background-color: #24292e;
+      color: white;
     }
 
-    a {
-      color: #0366d6;
-      text-decoration: none;
+    .resource-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .resource-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .resource-card h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="index.html">星空社</a></li>
+      <li><a href="maps.html">地图</a></li>
+      <li><a href="mods.html">Mod</a></li>
+      <li><a href="about.html">关于</a></li>
+    </ul>
+  </nav>
 
   <header>
-    <h1>欢迎来到我的 GitHub 页面</h1>
+    <h1>欢迎来到星空社</h1>
+    <p>WorldBox 游戏资源分享平台</p>
   </header>
 
   <main>
-    <div class="repo-card">
-      <h2><a href="https://github.com/yourusername/repo1 " target="_blank">项目一名称</a></h2>
-      <p>这是项目的简要描述，介绍功能、技术栈等。</p>
-    </div>
+    <section class="team-section">
+      <h2>星空社团队</h2>
+      <div class="team-member">
+        <img src="Image/caowei.jpg" alt="团队成员头像">
+        <div class="team-member-info">
+          <h3>管理员</h3>
+          <p>负责网站整体运营和资源管理</p>
+        </div>
+      </div>
+      <!-- 可以添加更多团队成员 -->
+    </section>
 
-    <div class="repo-card">
-      <h2><a href="https://github.com/yourusername/repo2 " target="_blank">项目二名称</a></h2>
-      <p>这是一个学习用途的小型项目，使用 HTML、CSS 和 JavaScript 构建。</p>
-    </div>
-
-    <div class="repo-card">
-      <h2><a href="https://github.com/yourusername/repo3 " target="_blank">项目三名称</a></h2>
-      <p>开源项目，欢迎大家贡献代码或提出建议。</p>
+    <div class="resource-links">
+      <div class="resource-card">
+        <h3>地图资源</h3>
+        <p>探索玩家创作的精彩地图</p>
+        <a href="maps.html" class="button">浏览地图</a>
+      </div>
+      <div class="resource-card">
+        <h3>Mod资源</h3>
+        <p>发现有趣的游戏模组</p>
+        <a href="mods.html" class="button">浏览Mod</a>
+      </div>
     </div>
   </main>
 
   <footer>
-    &copy; 2025 Your Name. Hosted on <a href="https://pages.github.com/ " target="_blank">GitHub Pages</a>.
+    <p>&copy; 2024 星空社. 保留所有权利</p>
+    <p>本网站由 GitHub Pages 提供支持</p>
   </footer>
-
 </body>
 </html>
