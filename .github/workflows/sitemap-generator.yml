@@ -1,0 +1,60 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main  # 或者 master，取决于您的默认分支名称
+  schedule:
+    - cron: '0 0 * * *'  # 每天运行一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install -g sitemap-generator-cli
+
+      - name: Generate Sitemap
+        run: |
+          # 创建基本的sitemap结构
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          
+          # 添加主页
+          echo '   <url>' >> sitemap.xml
+          echo '      <loc>https://www.325477.xyz/</loc>' >> sitemap.xml
+          echo "      <lastmod>$(date +%Y-%m-%d)</lastmod>" >> sitemap.xml
+          echo '      <changefreq>daily</changefreq>' >> sitemap.xml
+          echo '      <priority>1.0</priority>' >> sitemap.xml
+          echo '   </url>' >> sitemap.xml
+          
+          # 扫描并添加其他HTML文件
+          for file in $(find . -name "*.html" -not -path "./node_modules/*"); do
+            if [ "$file" != "./index.html" ]; then
+              path=$(echo $file | sed 's|^./||' | sed 's|.html$||')
+              echo '   <url>' >> sitemap.xml
+              echo "      <loc>https://www.325477.xyz/$path</loc>" >> sitemap.xml
+              echo "      <lastmod>$(date +%Y-%m-%d)</lastmod>" >> sitemap.xml
+              echo '      <changefreq>weekly</changefreq>' >> sitemap.xml
+              echo '      <priority>0.8</priority>' >> sitemap.xml
+              echo '   </url>' >> sitemap.xml
+            fi
+          done
+          
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sitemap.xml
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update sitemap.xml" && git push) 
