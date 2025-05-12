@@ -1,5 +1,9 @@
 [
   {
+    "name": "111111测试",
+    "path": "DATA/maps/111111测试"
+  },
+  {
     "name": "测试map",
     "path": "DATA/maps/测试map"
   }
