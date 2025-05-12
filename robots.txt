@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://325477.xyz/sitemap.xml 
