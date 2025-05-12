@@ -1,0 +1,67 @@
+name: Generate Index Files
+
+on:
+  push:
+    paths:
+      - 'DATA/**'
+  workflow_dispatch:
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Generate mods index
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          const modsDir = 'DATA/mods';
+          const mapsDir = 'DATA/maps';
+          
+          // 生成模组索引
+          if (fs.existsSync(modsDir)) {
+            const mods = fs.readdirSync(modsDir)
+              .filter(file => fs.statSync(path.join(modsDir, file)).isDirectory())
+              .map(dir => ({
+                name: dir,
+                path: `DATA/mods/${dir}`
+              }));
+              
+            fs.writeFileSync(
+              path.join(modsDir, 'index.json'),
+              JSON.stringify(mods, null, 2)
+            );
+            console.log('Generated mods index.json');
+          }
+          
+          // 生成地图索引
+          if (fs.existsSync(mapsDir)) {
+            const maps = fs.readdirSync(mapsDir)
+              .filter(file => fs.statSync(path.join(mapsDir, file)).isDirectory())
+              .map(dir => ({
+                name: dir,
+                path: `DATA/maps/${dir}`
+              }));
+              
+            fs.writeFileSync(
+              path.join(mapsDir, 'index.json'),
+              JSON.stringify(maps, null, 2)
+            );
+            console.log('Generated maps index.json');
+          }
+          "
+          
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add DATA/mods/index.json DATA/maps/index.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update index files" && git push) 

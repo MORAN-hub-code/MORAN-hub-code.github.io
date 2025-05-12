@@ -169,10 +169,10 @@
     </div>
 
     <script>
-        // 从GitHub获取地图数据
+        // 从索引文件获取地图数据
         async function fetchMaps() {
             try {
-                const response = await fetch('https://api.github.com/repos/MORAN-hub-code/MORAN-hub-code.github.io/contents/DATA/maps');
+                const response = await fetch('DATA/maps/index.json');
                 if (!response.ok) {
                     throw new Error(`获取地图数据失败: ${response.statusText}`);
                 }
