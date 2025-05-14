@@ -123,7 +123,7 @@ jobs:
                       item.type = xmlData.type[0];
                     }
                     if (xmlData.isModify) {
-                      item.isModify = xmlData.isModify[0];
+                      item.isModify = xmlData.isModify[0] === 'true';
                     }
                   } else if (baseDir.includes('/maps/')) {
                     // 添加地图特有字段
