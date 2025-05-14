@@ -89,15 +89,14 @@ jobs:
                   // 打印 XML 数据以便调试
                   console.log(\`XML data for \${dirName}:\`, JSON.stringify(xmlData, null, 2));
                   
+                  // 创建基础 item 对象
                   const item = {
-                    name: dirName,
-                    path: fullDirPath.replace(/\\\\/g, '/')
+                    name: xmlData.name?.[0] || dirName,
+                    path: fullDirPath.replace(/\\\\/g, '/'),
+                    author: xmlData.author?.[0] || '',
+                    description: xmlData.description?.[0] || '',
+                    gameVersion: xmlData.gameVersion?.[0] || ''
                   };
-                  
-                  // 添加基本 XML 信息
-                  item.author = xmlData.author?.[0] || '';
-                  item.description = xmlData.description?.[0] || '';
-                  item.gameVersion = xmlData.gameVersion?.[0] || '';
                   
                   // 添加预览图信息
                   const imageFile = xmlData.imageFile?.[0];
@@ -120,11 +119,17 @@ jobs:
                   // 根据目录类型添加特定字段
                   if (baseDir.includes('/mods/')) {
                     // 添加模组特有字段
-                    item.type = xmlData.type?.[0] || '';
-                    item.isModify = xmlData.isModify?.[0] || 'false';
+                    if (xmlData.type) {
+                      item.type = xmlData.type[0];
+                    }
+                    if (xmlData.isModify) {
+                      item.isModify = xmlData.isModify[0];
+                    }
                   } else if (baseDir.includes('/maps/')) {
                     // 添加地图特有字段
-                    item.size = xmlData.size?.[0] || '';
+                    if (xmlData.size) {
+                      item.size = xmlData.size[0];
+                    }
                   }
                   
                   // 打印生成的 item 以便调试
