@@ -59,63 +59,67 @@ jobs:
             }
             
             try {
+              // 获取所有子目录
+              const subDirs = fs.readdirSync(dirPath)
+                .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory());
+              
+              console.log(\`Found \${subDirs.length} directories in \${dirPath}\`);
+              
               const items = await Promise.all(
-                fs.readdirSync(dirPath)
-                  .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory())
-                  .map(async dir => {
-                    const dirPath = path.join(dirPath, dir);
-                    const xmlPath = path.join(dirPath, 'info.xml');
-                    
-                    // 检查目录是否完整
-                    if (!fs.existsSync(xmlPath)) {
-                      console.log(\`Skipping incomplete directory: \${dirPath}\`);
-                      return null;
+                subDirs.map(async dir => {
+                  const dirPath = path.join(dirPath, dir);
+                  const xmlPath = path.join(dirPath, 'info.xml');
+                  
+                  // 检查目录是否完整
+                  if (!fs.existsSync(xmlPath)) {
+                    console.log(\`Skipping incomplete directory: \${dirPath}\`);
+                    return null;
+                  }
+                  
+                  const xmlData = await parseXML(xmlPath);
+                  if (!xmlData) {
+                    console.log(\`Skipping directory with invalid XML: \${dirPath}\`);
+                    return null;
+                  }
+                  
+                  const item = {
+                    name: dir,
+                    path: path.join(dirPath, dir).replace(/\\\\/g, '/')
+                  };
+                  
+                  // 添加XML中的信息
+                  item.author = xmlData.author?.[0] || '';
+                  item.description = xmlData.description?.[0] || '';
+                  item.gameVersion = xmlData.gameVersion?.[0] || '';
+                  
+                  // 根据目录类型添加特定字段
+                  if (dirPath.includes('/mods/')) {
+                    item.type = xmlData.type?.[0] || '';
+                    item.isModify = xmlData.isModify?.[0] || 'false';
+                  } else if (dirPath.includes('/maps/')) {
+                    item.size = xmlData.size?.[0] || '';
+                  }
+                  
+                  // 添加文件大小信息
+                  const imageFile = xmlData.imageFile?.[0];
+                  const resourceFile = xmlData.resourceFile?.[0];
+                  
+                  if (imageFile) {
+                    const imagePath = path.join(dirPath, imageFile);
+                    if (fs.existsSync(imagePath)) {
+                      item.imageSize = fs.statSync(imagePath).size;
                     }
-                    
-                    const xmlData = await parseXML(xmlPath);
-                    if (!xmlData) {
-                      console.log(\`Skipping directory with invalid XML: \${dirPath}\`);
-                      return null;
+                  }
+                  
+                  if (resourceFile) {
+                    const resourcePath = path.join(dirPath, resourceFile);
+                    if (fs.existsSync(resourcePath)) {
+                      item.resourceSize = fs.statSync(resourcePath).size;
                     }
-                    
-                    const item = {
-                      name: dir,
-                      path: path.join(dirPath, dir).replace(/\\\\/g, '/')
-                    };
-                    
-                    // 添加XML中的信息
-                    item.author = xmlData.author?.[0] || '';
-                    item.description = xmlData.description?.[0] || '';
-                    item.gameVersion = xmlData.gameVersion?.[0] || '';
-                    
-                    // 根据目录类型添加特定字段
-                    if (dirPath.includes('/mods/')) {
-                      item.type = xmlData.type?.[0] || '';
-                      item.isModify = xmlData.isModify?.[0] || 'false';
-                    } else if (dirPath.includes('/maps/')) {
-                      item.size = xmlData.size?.[0] || '';
-                    }
-                    
-                    // 添加文件大小信息
-                    const imageFile = xmlData.imageFile?.[0];
-                    const resourceFile = xmlData.resourceFile?.[0];
-                    
-                    if (imageFile) {
-                      const imagePath = path.join(dirPath, imageFile);
-                      if (fs.existsSync(imagePath)) {
-                        item.imageSize = fs.statSync(imagePath).size;
-                      }
-                    }
-                    
-                    if (resourceFile) {
-                      const resourcePath = path.join(dirPath, resourceFile);
-                      if (fs.existsSync(resourcePath)) {
-                        item.resourceSize = fs.statSync(resourcePath).size;
-                      }
-                    }
-                    
-                    return item;
-                  })
+                  }
+                  
+                  return item;
+                })
               );
               
               // 过滤掉无效的项
@@ -124,6 +128,12 @@ jobs:
               const indexPath = path.join(dirPath, 'index.json');
               fs.writeFileSync(indexPath, JSON.stringify(validItems, null, 2));
               console.log(\`Generated \${indexPath} with \${validItems.length} items\`);
+              
+              // 输出变更日志
+              console.log('Changes in index:');
+              validItems.forEach(item => {
+                console.log(\`- \${item.name} (Path: \${item.path})\`);
+              });
             } catch (error) {
               console.error(\`Error processing \${dirPath}:\`, error);
             }
