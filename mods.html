@@ -285,7 +285,8 @@
                     gameVersion: mod.gameVersion || '未知版本',
                     isModify: mod.isModify || 'false',
                     path: mod.path,
-                    resourceSize: mod.resourceSize || 0
+                    resourceSize: parseInt(mod.resourceSize) || 0,
+                    imageSize: parseInt(mod.imageSize) || 0
                 }));
             } catch (error) {
                 console.error('获取模组数据失败:', error);
@@ -299,11 +300,22 @@
                 // 获取模组列表
                 const response = await fetchFromCDN('DATA/mods/index.json');
                 const mods = await response.json();
-                resourceCache.mods = mods;
+                // 确保数据格式正确
+                resourceCache.mods = mods.map(mod => ({
+                    name: mod.name || '未命名模组',
+                    author: mod.author || '未知作者',
+                    description: mod.description || '暂无描述',
+                    type: mod.type || '未知类型',
+                    gameVersion: mod.gameVersion || '未知版本',
+                    isModify: mod.isModify || 'false',
+                    path: mod.path,
+                    resourceSize: parseInt(mod.resourceSize) || 0,
+                    imageSize: parseInt(mod.imageSize) || 0
+                }));
                 console.log('开始预加载所有模组数据');
                 
                 // 并行预加载所有图片
-                const preloadPromises = mods.map(async (mod) => {
+                const preloadPromises = resourceCache.mods.map(async (mod) => {
                     const imgPath = `${mod.path}/preview.jpg`;
                     const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
                     const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;

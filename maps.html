@@ -261,7 +261,8 @@
                     size: map.size || '未知大小',
                     gameVersion: map.gameVersion || '未知版本',
                     path: map.path,
-                    resourceSize: map.resourceSize || 0
+                    resourceSize: parseInt(map.resourceSize) || 0,
+                    imageSize: parseInt(map.imageSize) || 0
                 }));
             } catch (error) {
                 console.error('获取地图数据失败:', error);
@@ -275,11 +276,21 @@
                 // 获取地图列表
                 const response = await fetchFromCDN('DATA/maps/index.json');
                 const maps = await response.json();
-                resourceCache.maps = maps;
+                // 确保数据格式正确
+                resourceCache.maps = maps.map(map => ({
+                    name: map.name || '未命名地图',
+                    author: map.author || '未知作者',
+                    description: map.description || '暂无描述',
+                    size: map.size || '未知大小',
+                    gameVersion: map.gameVersion || '未知版本',
+                    path: map.path,
+                    resourceSize: parseInt(map.resourceSize) || 0,
+                    imageSize: parseInt(map.imageSize) || 0
+                }));
                 console.log('开始预加载所有地图数据');
                 
                 // 并行预加载所有图片
-                const preloadPromises = maps.map(async (map) => {
+                const preloadPromises = resourceCache.maps.map(async (map) => {
                     const imgPath = `${map.path}/preview.jpg`;
                     const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
                     const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
