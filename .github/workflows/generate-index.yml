@@ -2,10 +2,14 @@ name: Generate Index Files
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'DATA/**'
       - '.github/workflows/generate-index.yml'
   pull_request:
+    branches:
+      - main
     paths:
       - 'DATA/**'
       - '.github/workflows/generate-index.yml'
