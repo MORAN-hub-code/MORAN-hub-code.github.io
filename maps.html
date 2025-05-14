@@ -368,8 +368,12 @@
         async function downloadMap(name, path) {
             try {
                 console.log('开始下载:', path);
+                // 使用备用 CDN 域名
+                const backupPath = path.replace(CDN_DOMAIN, BACKUP_CDN_DOMAIN);
+                console.log('使用备用 CDN:', backupPath);
+                
                 // 发起下载请求
-                const response = await fetchFromCDN(path);
+                const response = await fetch(backupPath);
                 if (!response.ok) {
                     throw new Error(`下载失败: ${response.statusText}`);
                 }
@@ -381,7 +385,7 @@
                 const downloadUrl = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = downloadUrl;
-                link.download = name;
+                link.download = name + '.zip';
                 
                 // 触发下载
                 document.body.appendChild(link);
