@@ -406,6 +406,40 @@
             }
         }
 
+        // 预加载所有模组数据
+        async function preloadAllMods() {
+            try {
+                const mods = await fetchMods();
+                console.log('开始预加载所有模组数据');
+                
+                // 预加载所有模组的XML和图片
+                for (const mod of mods) {
+                    const xmlUrl = `${mod.path}/info.xml`;
+                    const imgPath = `${mod.path}/preview.jpg`;
+                    
+                    // 预加载XML
+                    fetchFromCDN(xmlUrl).catch(error => console.warn(`预加载XML失败: ${xmlUrl}`, error));
+                    
+                    // 预加载图片
+                    const preloadLink = document.createElement('link');
+                    preloadLink.rel = 'preload';
+                    preloadLink.as = 'image';
+                    preloadLink.href = `${CDN_DOMAIN}/${imgPath}`;
+                    document.head.appendChild(preloadLink);
+                    
+                    // 预加载备用CDN图片
+                    const backupPreloadLink = document.createElement('link');
+                    backupPreloadLink.rel = 'preload';
+                    backupPreloadLink.as = 'image';
+                    backupPreloadLink.href = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
+                    document.head.appendChild(backupPreloadLink);
+                }
+                console.log('模组数据预加载完成');
+            } catch (error) {
+                console.error('预加载模组数据失败:', error);
+            }
+        }
+
         // 初始化页面
         async function initializePage() {
             try {
@@ -521,6 +555,8 @@
 
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', () => {
+            // 立即开始预加载
+            preloadAllMods();
             initializePage();
             setupFilters();
         });
