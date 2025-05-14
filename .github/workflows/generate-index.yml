@@ -103,7 +103,7 @@ jobs:
                     const imagePath = path.join(fullDirPath, xmlData.imageFile[0]);
                     if (fs.existsSync(imagePath)) {
                       item.imageSize = fs.statSync(imagePath).size;
-                      console.log(`Added imageSize: ${item.imageSize}`);
+                      console.log('Added imageSize:', item.imageSize);
                     }
                   }
                   
@@ -112,7 +112,7 @@ jobs:
                     const resourcePath = path.join(fullDirPath, xmlData.resourceFile[0]);
                     if (fs.existsSync(resourcePath)) {
                       item.resourceSize = fs.statSync(resourcePath).size;
-                      console.log(`Added resourceSize: ${item.resourceSize}`);
+                      console.log('Added resourceSize:', item.resourceSize);
                     }
                   }
                   
@@ -121,17 +121,17 @@ jobs:
                     // 添加模组特有字段
                     if (xmlData.type?.[0]) {
                       item.type = xmlData.type[0];
-                      console.log(`Added type: ${item.type}`);
+                      console.log('Added type:', item.type);
                     }
                     if (xmlData.isModify?.[0]) {
                       item.isModify = xmlData.isModify[0] === 'true';
-                      console.log(`Added isModify: ${item.isModify}`);
+                      console.log('Added isModify:', item.isModify);
                     }
                   } else if (baseDir.includes('/maps/')) {
                     // 添加地图特有字段
                     if (xmlData.size?.[0]) {
                       item.size = xmlData.size[0];
-                      console.log(`Added size: ${item.size}`);
+                      console.log('Added size:', item.size);
                     }
                   }
                   
