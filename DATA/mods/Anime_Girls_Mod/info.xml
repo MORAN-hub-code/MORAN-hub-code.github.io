@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>Anime_Girls_Mod</name>
+    <author>HaydarKara uPic</author>
+    <description>将所有世界盒子声音系统更改为动漫女孩声音。您可以从这里获取新的声音。此模组在世界盒子的 beta 版本中有效。</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>177894</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2352367</resourceSize>
+</resource>
