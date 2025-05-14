@@ -56,39 +56,39 @@ jobs:
             }
           }
           
-          async function generateIndex(dirPath) {
-            if (!fs.existsSync(dirPath)) {
-              console.log(\`Directory \${dirPath} does not exist\`);
+          async function generateIndex(baseDir) {
+            if (!fs.existsSync(baseDir)) {
+              console.log(\`Directory \${baseDir} does not exist\`);
               return;
             }
             
             try {
               // 获取所有子目录
-              const subDirs = fs.readdirSync(dirPath)
-                .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory());
+              const subDirs = fs.readdirSync(baseDir)
+                .filter(file => fs.statSync(path.join(baseDir, file)).isDirectory());
               
-              console.log(\`Found \${subDirs.length} directories in \${dirPath}\`);
+              console.log(\`Found \${subDirs.length} directories in \${baseDir}\`);
               
               const items = await Promise.all(
-                subDirs.map(async dir => {
-                  const dirPath = path.join(dirPath, dir);
-                  const xmlPath = path.join(dirPath, 'info.xml');
+                subDirs.map(async dirName => {
+                  const fullDirPath = path.join(baseDir, dirName);
+                  const xmlPath = path.join(fullDirPath, 'info.xml');
                   
                   // 检查目录是否完整
                   if (!fs.existsSync(xmlPath)) {
-                    console.log(\`Skipping incomplete directory: \${dirPath}\`);
+                    console.log(\`Skipping incomplete directory: \${fullDirPath}\`);
                     return null;
                   }
                   
                   const xmlData = await parseXML(xmlPath);
                   if (!xmlData) {
-                    console.log(\`Skipping directory with invalid XML: \${dirPath}\`);
+                    console.log(\`Skipping directory with invalid XML: \${fullDirPath}\`);
                     return null;
                   }
                   
                   const item = {
-                    name: dir,
-                    path: path.join(dirPath, dir).replace(/\\\\/g, '/')
+                    name: dirName,
+                    path: fullDirPath.replace(/\\\\/g, '/')
                   };
                   
                   // 添加XML中的信息
@@ -97,10 +97,10 @@ jobs:
                   item.gameVersion = xmlData.gameVersion?.[0] || '';
                   
                   // 根据目录类型添加特定字段
-                  if (dirPath.includes('/mods/')) {
+                  if (baseDir.includes('/mods/')) {
                     item.type = xmlData.type?.[0] || '';
                     item.isModify = xmlData.isModify?.[0] || 'false';
-                  } else if (dirPath.includes('/maps/')) {
+                  } else if (baseDir.includes('/maps/')) {
                     item.size = xmlData.size?.[0] || '';
                   }
                   
@@ -109,14 +109,14 @@ jobs:
                   const resourceFile = xmlData.resourceFile?.[0];
                   
                   if (imageFile) {
-                    const imagePath = path.join(dirPath, imageFile);
+                    const imagePath = path.join(fullDirPath, imageFile);
                     if (fs.existsSync(imagePath)) {
                       item.imageSize = fs.statSync(imagePath).size;
                     }
                   }
                   
                   if (resourceFile) {
-                    const resourcePath = path.join(dirPath, resourceFile);
+                    const resourcePath = path.join(fullDirPath, resourceFile);
                     if (fs.existsSync(resourcePath)) {
                       item.resourceSize = fs.statSync(resourcePath).size;
                     }
@@ -129,7 +129,7 @@ jobs:
               // 过滤掉无效的项
               const validItems = items.filter(item => item !== null);
               
-              const indexPath = path.join(dirPath, 'index.json');
+              const indexPath = path.join(baseDir, 'index.json');
               fs.writeFileSync(indexPath, JSON.stringify(validItems, null, 2));
               console.log(\`Generated \${indexPath} with \${validItems.length} items\`);
               
@@ -139,7 +139,7 @@ jobs:
                 console.log(\`- \${item.name} (Path: \${item.path})\`);
               });
             } catch (error) {
-              console.error(\`Error processing \${dirPath}:\`, error);
+              console.error(\`Error processing \${baseDir}:\`, error);
             }
           }
           
