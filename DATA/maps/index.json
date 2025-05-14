@@ -1,14 +1,1 @@
-[
-  {
-    "name": "测试map",
-    "path": "DATA/maps/测试map",
-    "author": "测试覆盖",
-    "description": "测试覆盖",
-    "gameVersion": "0.22.1",
-    "size": "小",
-    "imageFile": "preview.jpg",
-    "imageSize": 60333,
-    "resourceFile": "resource.zip",
-    "resourceSize": 2960602
-  }
-]
+[]
