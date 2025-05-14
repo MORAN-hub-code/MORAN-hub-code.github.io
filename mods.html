@@ -215,6 +215,13 @@
         const CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 主 CDN 域名
         const BACKUP_CDN_DOMAIN = 'https://xingkongshe.top';  // 备用 CDN 域名
         
+        // 全局缓存
+        const resourceCache = {
+            mods: null,
+            xmlData: new Map(),
+            imageCache: new Map()
+        };
+
         // 从多个 CDN 加载资源
         async function fetchFromCDN(path) {
             const urls = [
@@ -234,6 +241,155 @@
                 }
             }
             throw new Error('所有 CDN 加载失败');
+        }
+
+        // 预加载图片
+        async function preloadImage(url, backupUrl) {
+            if (resourceCache.imageCache.has(url)) {
+                return resourceCache.imageCache.get(url);
+            }
+
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    resourceCache.imageCache.set(url, img);
+                    resolve(img);
+                };
+                img.onerror = () => {
+                    if (backupUrl) {
+                        img.src = backupUrl;
+                    } else {
+                        reject(new Error('图片加载失败'));
+                    }
+                };
+                img.src = url;
+            });
+        }
+
+        // 预加载所有模组数据
+        async function preloadAllMods() {
+            try {
+                // 获取模组列表
+                const response = await fetchFromCDN('DATA/mods/index.json');
+                const mods = await response.json();
+                resourceCache.mods = mods;
+                console.log('开始预加载所有模组数据');
+                
+                // 并行预加载所有模组的XML和图片
+                const preloadPromises = mods.map(async (mod) => {
+                    const xmlUrl = `${mod.path}/info.xml`;
+                    const imgPath = `${mod.path}/preview.jpg`;
+                    
+                    // 预加载XML
+                    const xmlResponse = await fetchFromCDN(xmlUrl);
+                    const xmlContent = await xmlResponse.text();
+                    const xmlDoc = new DOMParser().parseFromString(xmlContent, "text/xml");
+                    resourceCache.xmlData.set(mod.path, xmlDoc);
+                    
+                    // 预加载图片
+                    const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
+                    const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
+                    await preloadImage(imgUrl, backupImgUrl);
+                });
+                
+                await Promise.all(preloadPromises);
+                console.log('模组数据预加载完成');
+            } catch (error) {
+                console.error('预加载模组数据失败:', error);
+            }
+        }
+
+        // 创建模组卡片
+        function createModCard(mod) {
+            const card = document.createElement('div');
+            card.className = 'mod-card';
+            
+            // 使用缓存的图片
+            const imgUrl = `${CDN_DOMAIN}/${mod.path}/preview.jpg`;
+            const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${mod.path}/preview.jpg`;
+            const cachedImg = resourceCache.imageCache.get(imgUrl);
+            
+            card.innerHTML = `
+                <div class="modified-tag ${mod.isModify === 'true' ? 'show' : ''}">魔改</div>
+                ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
+                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${mod.name}" ${cachedImg ? 'class="loaded"' : ''}>
+                <div class="mod-card-content">
+                    <h3>${mod.name}</h3>
+                    <div class="mod-info">
+                        <p>作者: ${mod.author}</p>
+                        <p>类型: ${mod.type}</p>
+                        <p>适用版本: ${mod.gameVersion}</p>
+                        ${mod.fileSize !== '未知大小' ? `<p>文件大小: ${mod.fileSize}</p>` : ''}
+                        <p>${mod.description}</p>
+                    </div>
+                    <button onclick="downloadMod('${mod.name}', '${mod.downloadUrl}')" class="download-btn">下载</button>
+                </div>
+            `;
+            return card;
+        }
+
+        // 图片懒加载
+        function setupLazyLoading() {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src');
+                        const backupSrc = img.getAttribute('data-backup-src');
+                        
+                        if (src) {
+                            // 尝试加载主 CDN 图片
+                            img.src = src;
+                            img.onerror = () => {
+                                // 如果主 CDN 加载失败，尝试加载备用 CDN
+                                if (backupSrc) {
+                                    console.log('主 CDN 加载失败，尝试备用 CDN');
+                                    img.src = backupSrc;
+                                }
+                            };
+                            
+                            img.onload = () => {
+                                img.classList.add('loaded');
+                                const placeholder = img.previousElementSibling;
+                                if (placeholder && placeholder.classList.contains('loading-placeholder')) {
+                                    placeholder.remove();
+                                }
+                            };
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // 预加载下一页的图片
+        function preloadNextPageImages() {
+            const cards = document.querySelectorAll('.mod-card');
+            const lastCard = cards[cards.length - 1];
+            if (lastCard) {
+                const lastCardObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        // 当最后一个卡片进入视图时，预加载下一页的图片
+                        const nextImages = document.querySelectorAll('img[data-src]:not([src])');
+                        nextImages.forEach(img => {
+                            const src = img.getAttribute('data-src');
+                            if (src) {
+                                const preloadLink = document.createElement('link');
+                                preloadLink.rel = 'preload';
+                                preloadLink.as = 'image';
+                                preloadLink.href = src;
+                                document.head.appendChild(preloadLink);
+                            }
+                        });
+                        lastCardObserver.disconnect();
+                    }
+                });
+                lastCardObserver.observe(lastCard);
+            }
         }
 
         // 从索引文件获取模组数据
@@ -319,166 +475,55 @@
             }
         }
 
-        // 创建模组卡片
-        function createModCard(mod) {
-            const card = document.createElement('div');
-            card.className = 'mod-card';
-            card.innerHTML = `
-                <div class="modified-tag ${mod.isModify === 'true' ? 'show' : ''}">魔改</div>
-                <div class="loading-placeholder"></div>
-                <img data-src="${mod.imgUrl}" data-backup-src="${mod.backupImgUrl}" alt="${mod.name}" loading="lazy">
-                <div class="mod-card-content">
-                    <h3>${mod.name}</h3>
-                    <div class="mod-info">
-                        <p>作者: ${mod.author}</p>
-                        <p>类型: ${mod.type}</p>
-                        <p>适用版本: ${mod.gameVersion}</p>
-                        ${mod.fileSize !== '未知大小' ? `<p>文件大小: ${mod.fileSize}</p>` : ''}
-                        <p>${mod.description}</p>
-                    </div>
-                    <button onclick="downloadMod('${mod.name}', '${mod.downloadUrl}')" class="download-btn">下载</button>
-                </div>
-            `;
-            return card;
-        }
-
-        // 图片懒加载
-        function setupLazyLoading() {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-                        const backupSrc = img.getAttribute('data-backup-src');
-                        
-                        if (src) {
-                            // 尝试加载主 CDN 图片
-                            img.src = src;
-                            img.onerror = () => {
-                                // 如果主 CDN 加载失败，尝试加载备用 CDN
-                                if (backupSrc) {
-                                    console.log('主 CDN 加载失败，尝试备用 CDN');
-                                    img.src = backupSrc;
-                                }
-                            };
-                            
-                            img.onload = () => {
-                                img.classList.add('loaded');
-                                const placeholder = img.previousElementSibling;
-                                if (placeholder && placeholder.classList.contains('loading-placeholder')) {
-                                    placeholder.remove();
-                                }
-                            };
-                            observer.unobserve(img);
-                        }
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // 预加载下一页的图片
-        function preloadNextPageImages() {
-            const cards = document.querySelectorAll('.mod-card');
-            const lastCard = cards[cards.length - 1];
-            if (lastCard) {
-                const lastCardObserver = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        // 当最后一个卡片进入视图时，预加载下一页的图片
-                        const nextImages = document.querySelectorAll('img[data-src]:not([src])');
-                        nextImages.forEach(img => {
-                            const src = img.getAttribute('data-src');
-                            if (src) {
-                                const preloadLink = document.createElement('link');
-                                preloadLink.rel = 'preload';
-                                preloadLink.as = 'image';
-                                preloadLink.href = src;
-                                document.head.appendChild(preloadLink);
-                            }
-                        });
-                        lastCardObserver.disconnect();
-                    }
-                });
-                lastCardObserver.observe(lastCard);
-            }
-        }
-
-        // 预加载所有模组数据
-        async function preloadAllMods() {
-            try {
-                const mods = await fetchMods();
-                console.log('开始预加载所有模组数据');
-                
-                // 预加载所有模组的XML和图片
-                for (const mod of mods) {
-                    const xmlUrl = `${mod.path}/info.xml`;
-                    const imgPath = `${mod.path}/preview.jpg`;
-                    
-                    // 预加载XML
-                    fetchFromCDN(xmlUrl).catch(error => console.warn(`预加载XML失败: ${xmlUrl}`, error));
-                    
-                    // 预加载图片
-                    const preloadLink = document.createElement('link');
-                    preloadLink.rel = 'preload';
-                    preloadLink.as = 'image';
-                    preloadLink.href = `${CDN_DOMAIN}/${imgPath}`;
-                    document.head.appendChild(preloadLink);
-                    
-                    // 预加载备用CDN图片
-                    const backupPreloadLink = document.createElement('link');
-                    backupPreloadLink.rel = 'preload';
-                    backupPreloadLink.as = 'image';
-                    backupPreloadLink.href = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
-                    document.head.appendChild(backupPreloadLink);
-                }
-                console.log('模组数据预加载完成');
-            } catch (error) {
-                console.error('预加载模组数据失败:', error);
-            }
-        }
-
         // 初始化页面
         async function initializePage() {
             try {
-                const mods = await fetchMods();
-                console.log('获取到的模组列表:', mods);
                 const modsGrid = document.getElementById('modsGrid');
                 
-                // 创建所有卡片
-                const cards = [];
-                for (const mod of mods) {
-                    console.log('处理模组目录:', mod.name);
-                    const xmlUrl = `${mod.path}/info.xml`;
-                    console.log('尝试获取XML:', xmlUrl);
-                    const modData = await parseModXML(xmlUrl);
-                    if (modData) {
-                        console.log('成功解析模组数据:', modData);
-                        
-                        const resourcePath = `${mod.path}/resource.zip`;
-                        const imgPath = `${mod.path}/preview.jpg`;
-                        
-                        const fileSize = await getFileSize(resourcePath);
-                        
-                        const card = createModCard({
-                            ...modData,
-                            imgUrl: `${CDN_DOMAIN}/${imgPath}`,
-                            backupImgUrl: `${BACKUP_CDN_DOMAIN}/${imgPath}`,
-                            downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
-                            fileSize: fileSize
-                        });
-                        cards.push(card);
+                // 如果数据已预加载完成，直接使用缓存
+                if (resourceCache.mods) {
+                    const cards = resourceCache.mods.map(mod => {
+                        const xmlDoc = resourceCache.xmlData.get(mod.path);
+                        const modData = {
+                            name: xmlDoc.getElementsByTagName("name")[0].textContent,
+                            author: xmlDoc.getElementsByTagName("author")[0].textContent,
+                            description: xmlDoc.getElementsByTagName("description")[0].textContent,
+                            type: xmlDoc.getElementsByTagName("type")[0].textContent,
+                            gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
+                            isModify: xmlDoc.getElementsByTagName("isModify")[0].textContent,
+                            path: mod.path,
+                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`
+                        };
+                        return createModCard(modData);
+                    });
+                    
+                    cards.forEach(card => modsGrid.appendChild(card));
+                } else {
+                    // 如果数据未预加载完成，使用传统方式加载
+                    const mods = await fetchMods();
+                    const cards = [];
+                    
+                    for (const mod of mods) {
+                        const xmlUrl = `${mod.path}/info.xml`;
+                        const modData = await parseModXML(xmlUrl);
+                        if (modData) {
+                            const resourcePath = `${mod.path}/resource.zip`;
+                            const fileSize = await getFileSize(resourcePath);
+                            
+                            const card = createModCard({
+                                ...modData,
+                                path: mod.path,
+                                downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
+                                fileSize: fileSize
+                            });
+                            cards.push(card);
+                        }
                     }
+                    
+                    cards.forEach(card => modsGrid.appendChild(card));
                 }
-
-                // 批量添加卡片到DOM
-                cards.forEach(card => modsGrid.appendChild(card));
-
-                // 设置懒加载
+                
                 setupLazyLoading();
-                preloadNextPageImages();
             } catch (error) {
                 console.error('初始化页面失败:', error);
             }
@@ -553,10 +598,11 @@
             modifyFilter.addEventListener('change', filterMods);
         }
 
+        // 立即开始预加载
+        preloadAllMods();
+
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', () => {
-            // 立即开始预加载
-            preloadAllMods();
             initializePage();
             setupFilters();
         });

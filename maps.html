@@ -192,6 +192,13 @@
         const CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 主 CDN 域名
         const BACKUP_CDN_DOMAIN = 'https://xingkongshe.top';  // 备用 CDN 域名
         
+        // 全局缓存
+        const resourceCache = {
+            maps: null,
+            xmlData: new Map(),
+            imageCache: new Map()
+        };
+
         // 从多个 CDN 加载资源
         async function fetchFromCDN(path) {
             const urls = [
@@ -213,65 +220,59 @@
             throw new Error('所有 CDN 加载失败');
         }
 
-        // 从索引文件获取地图数据
-        async function fetchMaps() {
-            try {
-                const response = await fetchFromCDN('DATA/maps/index.json');
-                const data = await response.json();
-                console.log('获取到的地图数据:', data);
-                return data;
-            } catch (error) {
-                console.error('获取地图数据失败:', error);
-                return [];
+        // 预加载图片
+        async function preloadImage(url, backupUrl) {
+            if (resourceCache.imageCache.has(url)) {
+                return resourceCache.imageCache.get(url);
             }
-        }
 
-        // 解析XML文件
-        async function parseMapXML(url) {
-            try {
-                const response = await fetchFromCDN(url);
-                const content = await response.text();
-                console.log('获取到的XML内容:', content);
-                
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(content, "text/xml");
-                return {
-                    name: xmlDoc.getElementsByTagName("name")[0].textContent,
-                    author: xmlDoc.getElementsByTagName("author")[0].textContent,
-                    description: xmlDoc.getElementsByTagName("description")[0].textContent,
-                    size: xmlDoc.getElementsByTagName("size")[0].textContent,
-                    gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
-                    imageFile: xmlDoc.getElementsByTagName("imageFile")[0].textContent,
-                    resourceFile: xmlDoc.getElementsByTagName("resourceFile")[0].textContent
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    resourceCache.imageCache.set(url, img);
+                    resolve(img);
                 };
-            } catch (error) {
-                console.error('解析XML失败:', error);
-                return null;
-            }
+                img.onerror = () => {
+                    if (backupUrl) {
+                        img.src = backupUrl;
+                    } else {
+                        reject(new Error('图片加载失败'));
+                    }
+                };
+                img.src = url;
+            });
         }
 
-        // 获取文件大小
-        async function getFileSize(path) {
+        // 预加载所有地图数据
+        async function preloadAllMaps() {
             try {
-                const response = await fetchFromCDN(path);
-                if (!response.ok) {
-                    throw new Error(`获取文件大小失败: ${response.statusText}`);
-                }
-                const contentLength = response.headers.get('content-length');
-                if (contentLength) {
-                    const sizeInBytes = parseInt(contentLength);
-                    if (sizeInBytes < 1024) {
-                        return sizeInBytes + ' B';
-                    } else if (sizeInBytes < 1024 * 1024) {
-                        return (sizeInBytes / 1024).toFixed(1) + ' KB';
-                    } else {
-                        return (sizeInBytes / (1024 * 1024)).toFixed(1) + ' MB';
-                    }
-                }
-                return '未知大小';
+                // 获取地图列表
+                const response = await fetchFromCDN('DATA/maps/index.json');
+                const maps = await response.json();
+                resourceCache.maps = maps;
+                console.log('开始预加载所有地图数据');
+                
+                // 并行预加载所有地图的XML和图片
+                const preloadPromises = maps.map(async (map) => {
+                    const xmlUrl = `${map.path}/info.xml`;
+                    const imgPath = `${map.path}/preview.jpg`;
+                    
+                    // 预加载XML
+                    const xmlResponse = await fetchFromCDN(xmlUrl);
+                    const xmlContent = await xmlResponse.text();
+                    const xmlDoc = new DOMParser().parseFromString(xmlContent, "text/xml");
+                    resourceCache.xmlData.set(map.path, xmlDoc);
+                    
+                    // 预加载图片
+                    const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
+                    const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
+                    await preloadImage(imgUrl, backupImgUrl);
+                });
+                
+                await Promise.all(preloadPromises);
+                console.log('地图数据预加载完成');
             } catch (error) {
-                console.error('获取文件大小失败:', error);
-                return '未知大小';
+                console.error('预加载地图数据失败:', error);
             }
         }
 
@@ -279,9 +280,15 @@
         function createMapCard(map) {
             const card = document.createElement('div');
             card.className = 'map-card';
+            
+            // 使用缓存的图片
+            const imgUrl = `${CDN_DOMAIN}/${map.path}/preview.jpg`;
+            const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${map.path}/preview.jpg`;
+            const cachedImg = resourceCache.imageCache.get(imgUrl);
+            
             card.innerHTML = `
-                <div class="loading-placeholder"></div>
-                <img data-src="${map.imgUrl}" data-backup-src="${map.backupImgUrl}" alt="${map.name}" loading="lazy">
+                ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
+                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${map.name}" ${cachedImg ? 'class="loaded"' : ''}>
                 <div class="map-card-content">
                     <h3>${map.name}</h3>
                     <div class="map-info">
@@ -297,143 +304,54 @@
             return card;
         }
 
-        // 图片懒加载
-        function setupLazyLoading() {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-                        const backupSrc = img.getAttribute('data-backup-src');
-                        
-                        if (src) {
-                            // 尝试加载主 CDN 图片
-                            img.src = src;
-                            img.onerror = () => {
-                                // 如果主 CDN 加载失败，尝试加载备用 CDN
-                                if (backupSrc) {
-                                    console.log('主 CDN 加载失败，尝试备用 CDN');
-                                    img.src = backupSrc;
-                                }
-                            };
-                            
-                            img.onload = () => {
-                                img.classList.add('loaded');
-                                const placeholder = img.previousElementSibling;
-                                if (placeholder && placeholder.classList.contains('loading-placeholder')) {
-                                    placeholder.remove();
-                                }
-                            };
-                            observer.unobserve(img);
-                        }
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // 预加载下一页的图片
-        function preloadNextPageImages() {
-            const cards = document.querySelectorAll('.map-card');
-            const lastCard = cards[cards.length - 1];
-            if (lastCard) {
-                const lastCardObserver = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        // 当最后一个卡片进入视图时，预加载下一页的图片
-                        const nextImages = document.querySelectorAll('img[data-src]:not([src])');
-                        nextImages.forEach(img => {
-                            const src = img.getAttribute('data-src');
-                            if (src) {
-                                const preloadLink = document.createElement('link');
-                                preloadLink.rel = 'preload';
-                                preloadLink.as = 'image';
-                                preloadLink.href = src;
-                                document.head.appendChild(preloadLink);
-                            }
-                        });
-                        lastCardObserver.disconnect();
-                    }
-                });
-                lastCardObserver.observe(lastCard);
-            }
-        }
-
-        // 预加载所有地图数据
-        async function preloadAllMaps() {
-            try {
-                const maps = await fetchMaps();
-                console.log('开始预加载所有地图数据');
-                
-                // 预加载所有地图的XML和图片
-                for (const map of maps) {
-                    const xmlUrl = `${map.path}/info.xml`;
-                    const imgPath = `${map.path}/preview.jpg`;
-                    
-                    // 预加载XML
-                    fetchFromCDN(xmlUrl).catch(error => console.warn(`预加载XML失败: ${xmlUrl}`, error));
-                    
-                    // 预加载图片
-                    const preloadLink = document.createElement('link');
-                    preloadLink.rel = 'preload';
-                    preloadLink.as = 'image';
-                    preloadLink.href = `${CDN_DOMAIN}/${imgPath}`;
-                    document.head.appendChild(preloadLink);
-                    
-                    // 预加载备用CDN图片
-                    const backupPreloadLink = document.createElement('link');
-                    backupPreloadLink.rel = 'preload';
-                    backupPreloadLink.as = 'image';
-                    backupPreloadLink.href = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
-                    document.head.appendChild(backupPreloadLink);
-                }
-                console.log('地图数据预加载完成');
-            } catch (error) {
-                console.error('预加载地图数据失败:', error);
-            }
-        }
-
         // 初始化页面
         async function initializePage() {
             try {
-                const maps = await fetchMaps();
-                console.log('获取到的地图列表:', maps);
                 const mapsGrid = document.getElementById('mapsGrid');
                 
-                // 创建所有卡片
-                const cards = [];
-                for (const map of maps) {
-                    console.log('处理地图目录:', map.name);
-                    const xmlUrl = `${map.path}/info.xml`;
-                    console.log('尝试获取XML:', xmlUrl);
-                    const mapData = await parseMapXML(xmlUrl);
-                    if (mapData) {
-                        console.log('成功解析地图数据:', mapData);
-                        
-                        const resourcePath = `${map.path}/resource.zip`;
-                        const imgPath = `${map.path}/preview.jpg`;
-                        
-                        const fileSize = await getFileSize(resourcePath);
-                        
-                        const card = createMapCard({
-                            ...mapData,
-                            imgUrl: `${CDN_DOMAIN}/${imgPath}`,
-                            backupImgUrl: `${BACKUP_CDN_DOMAIN}/${imgPath}`,
-                            downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
-                            fileSize: fileSize
-                        });
-                        cards.push(card);
+                // 如果数据已预加载完成，直接使用缓存
+                if (resourceCache.maps) {
+                    const cards = resourceCache.maps.map(map => {
+                        const xmlDoc = resourceCache.xmlData.get(map.path);
+                        const mapData = {
+                            name: xmlDoc.getElementsByTagName("name")[0].textContent,
+                            author: xmlDoc.getElementsByTagName("author")[0].textContent,
+                            description: xmlDoc.getElementsByTagName("description")[0].textContent,
+                            size: xmlDoc.getElementsByTagName("size")[0].textContent,
+                            gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
+                            path: map.path,
+                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`
+                        };
+                        return createMapCard(mapData);
+                    });
+                    
+                    cards.forEach(card => mapsGrid.appendChild(card));
+                } else {
+                    // 如果数据未预加载完成，使用传统方式加载
+                    const maps = await fetchMaps();
+                    const cards = [];
+                    
+                    for (const map of maps) {
+                        const xmlUrl = `${map.path}/info.xml`;
+                        const mapData = await parseMapXML(xmlUrl);
+                        if (mapData) {
+                            const resourcePath = `${map.path}/resource.zip`;
+                            const fileSize = await getFileSize(resourcePath);
+                            
+                            const card = createMapCard({
+                                ...mapData,
+                                path: map.path,
+                                downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
+                                fileSize: fileSize
+                            });
+                            cards.push(card);
+                        }
                     }
+                    
+                    cards.forEach(card => mapsGrid.appendChild(card));
                 }
-
-                // 批量添加卡片到DOM
-                cards.forEach(card => mapsGrid.appendChild(card));
-
-                // 设置懒加载
+                
                 setupLazyLoading();
-                preloadNextPageImages();
             } catch (error) {
                 console.error('初始化页面失败:', error);
             }
@@ -501,10 +419,137 @@
             versionFilter.addEventListener('change', filterMaps);
         }
 
+        // 图片懒加载
+        function setupLazyLoading() {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src');
+                        const backupSrc = img.getAttribute('data-backup-src');
+                        
+                        if (src) {
+                            // 尝试加载主 CDN 图片
+                            img.src = src;
+                            img.onerror = () => {
+                                // 如果主 CDN 加载失败，尝试加载备用 CDN
+                                if (backupSrc) {
+                                    console.log('主 CDN 加载失败，尝试备用 CDN');
+                                    img.src = backupSrc;
+                                }
+                            };
+                            
+                            img.onload = () => {
+                                img.classList.add('loaded');
+                                const placeholder = img.previousElementSibling;
+                                if (placeholder && placeholder.classList.contains('loading-placeholder')) {
+                                    placeholder.remove();
+                                }
+                            };
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // 预加载下一页的图片
+        function preloadNextPageImages() {
+            const cards = document.querySelectorAll('.map-card');
+            const lastCard = cards[cards.length - 1];
+            if (lastCard) {
+                const lastCardObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        // 当最后一个卡片进入视图时，预加载下一页的图片
+                        const nextImages = document.querySelectorAll('img[data-src]:not([src])');
+                        nextImages.forEach(img => {
+                            const src = img.getAttribute('data-src');
+                            if (src) {
+                                const preloadLink = document.createElement('link');
+                                preloadLink.rel = 'preload';
+                                preloadLink.as = 'image';
+                                preloadLink.href = src;
+                                document.head.appendChild(preloadLink);
+                            }
+                        });
+                        lastCardObserver.disconnect();
+                    }
+                });
+                lastCardObserver.observe(lastCard);
+            }
+        }
+
+        // 从索引文件获取地图数据
+        async function fetchMaps() {
+            try {
+                const response = await fetchFromCDN('DATA/maps/index.json');
+                const data = await response.json();
+                console.log('获取到的地图数据:', data);
+                return data;
+            } catch (error) {
+                console.error('获取地图数据失败:', error);
+                return [];
+            }
+        }
+
+        // 解析XML文件
+        async function parseMapXML(url) {
+            try {
+                const response = await fetchFromCDN(url);
+                const content = await response.text();
+                console.log('获取到的XML内容:', content);
+                
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(content, "text/xml");
+                return {
+                    name: xmlDoc.getElementsByTagName("name")[0].textContent,
+                    author: xmlDoc.getElementsByTagName("author")[0].textContent,
+                    description: xmlDoc.getElementsByTagName("description")[0].textContent,
+                    size: xmlDoc.getElementsByTagName("size")[0].textContent,
+                    gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
+                    imageFile: xmlDoc.getElementsByTagName("imageFile")[0].textContent,
+                    resourceFile: xmlDoc.getElementsByTagName("resourceFile")[0].textContent
+                };
+            } catch (error) {
+                console.error('解析XML失败:', error);
+                return null;
+            }
+        }
+
+        // 获取文件大小
+        async function getFileSize(path) {
+            try {
+                const response = await fetchFromCDN(path);
+                if (!response.ok) {
+                    throw new Error(`获取文件大小失败: ${response.statusText}`);
+                }
+                const contentLength = response.headers.get('content-length');
+                if (contentLength) {
+                    const sizeInBytes = parseInt(contentLength);
+                    if (sizeInBytes < 1024) {
+                        return sizeInBytes + ' B';
+                    } else if (sizeInBytes < 1024 * 1024) {
+                        return (sizeInBytes / 1024).toFixed(1) + ' KB';
+                    } else {
+                        return (sizeInBytes / (1024 * 1024)).toFixed(1) + ' MB';
+                    }
+                }
+                return '未知大小';
+            } catch (error) {
+                console.error('获取文件大小失败:', error);
+                return '未知大小';
+            }
+        }
+
+        // 立即开始预加载
+        preloadAllMaps();
+
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', () => {
-            // 立即开始预加载
-            preloadAllMaps();
             initializePage();
             setupFilters();
         });
