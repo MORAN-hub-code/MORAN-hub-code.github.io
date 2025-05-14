@@ -270,9 +270,23 @@
         async function fetchMods() {
             try {
                 const response = await fetchFromCDN('DATA/mods/index.json');
+                if (!response.ok) {
+                    throw new Error('获取模组数据失败');
+                }
                 const data = await response.json();
                 console.log('获取到的模组数据:', data);
-                return data;
+                
+                // 确保数据格式正确
+                return data.map(mod => ({
+                    name: mod.name || '未命名模组',
+                    author: mod.author || '未知作者',
+                    description: mod.description || '暂无描述',
+                    type: mod.type || '未知类型',
+                    gameVersion: mod.gameVersion || '未知版本',
+                    isModify: mod.isModify || 'false',
+                    path: mod.path,
+                    resourceSize: mod.resourceSize || 0
+                }));
             } catch (error) {
                 console.error('获取模组数据失败:', error);
                 return [];
@@ -313,6 +327,9 @@
             const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${mod.path}/preview.jpg`;
             const cachedImg = resourceCache.imageCache.get(imgUrl);
             
+            // 格式化文件大小
+            const fileSize = mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小';
+            
             card.innerHTML = `
                 <div class="modified-tag ${mod.isModify === 'true' ? 'show' : ''}">魔改</div>
                 ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
@@ -323,7 +340,7 @@
                         <p>作者: ${mod.author}</p>
                         <p>类型: ${mod.type}</p>
                         <p>适用版本: ${mod.gameVersion}</p>
-                        <p>文件大小: ${formatFileSize(mod.resourceSize)}</p>
+                        <p>文件大小: ${fileSize}</p>
                         <p>${mod.description}</p>
                     </div>
                     <button onclick="downloadMod('${mod.name}', '${CDN_DOMAIN}/${mod.path}/resource.zip')" class="download-btn">下载</button>
@@ -470,21 +487,32 @@
         async function initializePage() {
             try {
                 const modsGrid = document.getElementById('modsGrid');
+                modsGrid.innerHTML = '<div style="text-align: center; padding: 2rem;">加载中...</div>';
                 
-                // 如果数据已预加载完成，直接使用缓存
-                if (resourceCache.mods) {
-                    const cards = resourceCache.mods.map(mod => createModCard(mod));
-                    cards.forEach(card => modsGrid.appendChild(card));
-                } else {
-                    // 如果数据未预加载完成，使用传统方式加载
-                    const mods = await fetchMods();
-                    const cards = mods.map(mod => createModCard(mod));
-                    cards.forEach(card => modsGrid.appendChild(card));
+                // 获取模组数据
+                const mods = await fetchMods();
+                
+                if (mods.length === 0) {
+                    modsGrid.innerHTML = '<div style="text-align: center; padding: 2rem;">暂无模组数据</div>';
+                    return;
                 }
                 
+                // 清空加载提示
+                modsGrid.innerHTML = '';
+                
+                // 创建并添加卡片
+                const cards = mods.map(mod => createModCard(mod));
+                cards.forEach(card => modsGrid.appendChild(card));
+                
+                // 设置懒加载
                 setupLazyLoading();
+                
+                // 预加载下一页图片
+                preloadNextPageImages();
             } catch (error) {
                 console.error('初始化页面失败:', error);
+                const modsGrid = document.getElementById('modsGrid');
+                modsGrid.innerHTML = '<div style="text-align: center; padding: 2rem; color: red;">加载失败，请刷新页面重试</div>';
             }
         }
 
