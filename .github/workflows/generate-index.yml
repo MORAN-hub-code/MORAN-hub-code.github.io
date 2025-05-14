@@ -99,18 +99,16 @@ jobs:
                   };
                   
                   // 添加预览图信息
-                  const imageFile = xmlData.imageFile?.[0];
-                  if (imageFile) {
-                    const imagePath = path.join(fullDirPath, imageFile);
+                  if (xmlData.imageFile?.[0]) {
+                    const imagePath = path.join(fullDirPath, xmlData.imageFile[0]);
                     if (fs.existsSync(imagePath)) {
                       item.imageSize = fs.statSync(imagePath).size;
                     }
                   }
                   
                   // 添加资源文件信息
-                  const resourceFile = xmlData.resourceFile?.[0];
-                  if (resourceFile) {
-                    const resourcePath = path.join(fullDirPath, resourceFile);
+                  if (xmlData.resourceFile?.[0]) {
+                    const resourcePath = path.join(fullDirPath, xmlData.resourceFile[0]);
                     if (fs.existsSync(resourcePath)) {
                       item.resourceSize = fs.statSync(resourcePath).size;
                     }
@@ -119,15 +117,15 @@ jobs:
                   // 根据目录类型添加特定字段
                   if (baseDir.includes('/mods/')) {
                     // 添加模组特有字段
-                    if (xmlData.type) {
+                    if (xmlData.type?.[0]) {
                       item.type = xmlData.type[0];
                     }
-                    if (xmlData.isModify) {
+                    if (xmlData.isModify?.[0]) {
                       item.isModify = xmlData.isModify[0] === 'true';
                     }
                   } else if (baseDir.includes('/maps/')) {
                     // 添加地图特有字段
-                    if (xmlData.size) {
+                    if (xmlData.size?.[0]) {
                       item.size = xmlData.size[0];
                     }
                   }
