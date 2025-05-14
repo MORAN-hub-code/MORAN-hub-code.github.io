@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>测试map</name>
+    <author>测试map</author>
+    <description>测试map</description>
+    <gameVersion>0.22.9</gameVersion>
+    <size>大</size>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>60333</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2960602</resourceSize>
+</resource>
