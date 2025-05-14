@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>玄门天机录</name>
+    <author>凸( →_→ )凸</author>
+    <description>玄门天机录2.0.1，巫术秘典官方修仙版，凸( →_→ )凸改作</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>16412</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>12300737</resourceSize>
+</resource>
