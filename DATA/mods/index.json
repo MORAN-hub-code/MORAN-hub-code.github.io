@@ -13,6 +13,19 @@
     "resourceSize": 2352367
   },
   {
+    "name": "巫术秘典",
+    "path": "DATA/mods/巫术秘典",
+    "author": "十月公子",
+    "description": "巫术秘典2.0.1\n由十月公子制作",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 4425,
+    "resourceFile": "resource.zip",
+    "resourceSize": 13457337
+  },
+  {
     "name": "玄门天机录",
     "path": "DATA/mods/玄门天机录",
     "author": "凸( →_→ )凸",
