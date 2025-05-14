@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>巫术秘典</name>
+    <author>十月公子</author>
+    <description>巫术秘典2.0.1
+由十月公子制作</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>4425</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>13457337</resourceSize>
+</resource>
