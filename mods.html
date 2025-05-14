@@ -313,20 +313,33 @@
             const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${mod.path}/preview.jpg`;
             const cachedImg = resourceCache.imageCache.get(imgUrl);
             
+            // 确保所有字段都有默认值
+            const modData = {
+                name: mod.name || '未命名模组',
+                author: mod.author || '未知作者',
+                description: mod.description || '暂无描述',
+                type: mod.type || '未知类型',
+                gameVersion: mod.gameVersion || '未知版本',
+                isModify: mod.isModify || 'false',
+                path: mod.path,
+                downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`,
+                fileSize: mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小'
+            };
+            
             card.innerHTML = `
-                <div class="modified-tag ${mod.isModify === 'true' ? 'show' : ''}">魔改</div>
+                <div class="modified-tag ${modData.isModify === 'true' ? 'show' : ''}">魔改</div>
                 ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
-                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${mod.name}" ${cachedImg ? 'class="loaded"' : ''}>
+                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${modData.name}" ${cachedImg ? 'class="loaded"' : ''}>
                 <div class="mod-card-content">
-                    <h3>${mod.name}</h3>
+                    <h3>${modData.name}</h3>
                     <div class="mod-info">
-                        <p>作者: ${mod.author}</p>
-                        <p>类型: ${mod.type}</p>
-                        <p>适用版本: ${mod.gameVersion}</p>
-                        ${mod.fileSize !== '未知大小' ? `<p>文件大小: ${mod.fileSize}</p>` : ''}
-                        <p>${mod.description}</p>
+                        <p>作者: ${modData.author}</p>
+                        <p>类型: ${modData.type}</p>
+                        <p>适用版本: ${modData.gameVersion}</p>
+                        <p>文件大小: ${modData.fileSize}</p>
+                        <p>${modData.description}</p>
                     </div>
-                    <button onclick="downloadMod('${mod.name}', '${mod.downloadUrl}')" class="download-btn">下载</button>
+                    <button onclick="downloadMod('${modData.name}', '${modData.downloadUrl}')" class="download-btn">下载</button>
                 </div>
             `;
             return card;
@@ -473,39 +486,12 @@
                 
                 // 如果数据已预加载完成，直接使用缓存
                 if (resourceCache.mods) {
-                    const cards = resourceCache.mods.map(mod => {
-                        const card = createModCard({
-                            name: mod.name,
-                            author: mod.author,
-                            description: mod.description,
-                            type: mod.type,
-                            gameVersion: mod.gameVersion,
-                            isModify: mod.isModify,
-                            path: mod.path,
-                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`,
-                            fileSize: mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小'
-                        });
-                        return card;
-                    });
-                    
+                    const cards = resourceCache.mods.map(mod => createModCard(mod));
                     cards.forEach(card => modsGrid.appendChild(card));
                 } else {
                     // 如果数据未预加载完成，使用传统方式加载
                     const mods = await fetchMods();
-                    const cards = mods.map(mod => {
-                        return createModCard({
-                            name: mod.name,
-                            author: mod.author,
-                            description: mod.description,
-                            type: mod.type,
-                            gameVersion: mod.gameVersion,
-                            isModify: mod.isModify,
-                            path: mod.path,
-                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`,
-                            fileSize: mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小'
-                        });
-                    });
-                    
+                    const cards = mods.map(mod => createModCard(mod));
                     cards.forEach(card => modsGrid.appendChild(card));
                 }
                 

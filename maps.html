@@ -290,19 +290,31 @@
             const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${map.path}/preview.jpg`;
             const cachedImg = resourceCache.imageCache.get(imgUrl);
             
+            // 确保所有字段都有默认值
+            const mapData = {
+                name: map.name || '未命名地图',
+                author: map.author || '未知作者',
+                description: map.description || '暂无描述',
+                size: map.size || '未知大小',
+                gameVersion: map.gameVersion || '未知版本',
+                path: map.path,
+                downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`,
+                fileSize: map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小'
+            };
+            
             card.innerHTML = `
                 ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
-                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${map.name}" ${cachedImg ? 'class="loaded"' : ''}>
+                <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${mapData.name}" ${cachedImg ? 'class="loaded"' : ''}>
                 <div class="map-card-content">
-                    <h3>${map.name}</h3>
+                    <h3>${mapData.name}</h3>
                     <div class="map-info">
-                        <p>作者: ${map.author}</p>
-                        <p>地图大小: ${map.size}</p>
-                        <p>适用版本: ${map.gameVersion}</p>
-                        ${map.fileSize !== '未知大小' ? `<p>文件大小: ${map.fileSize}</p>` : ''}
-                        <p>${map.description}</p>
+                        <p>作者: ${mapData.author}</p>
+                        <p>地图大小: ${mapData.size}</p>
+                        <p>适用版本: ${mapData.gameVersion}</p>
+                        <p>文件大小: ${mapData.fileSize}</p>
+                        <p>${mapData.description}</p>
                     </div>
-                    <button onclick="downloadMap('${map.name}', '${map.downloadUrl}')" class="download-btn">下载</button>
+                    <button onclick="downloadMap('${mapData.name}', '${mapData.downloadUrl}')" class="download-btn">下载</button>
                 </div>
             `;
             return card;
@@ -315,37 +327,12 @@
                 
                 // 如果数据已预加载完成，直接使用缓存
                 if (resourceCache.maps) {
-                    const cards = resourceCache.maps.map(map => {
-                        const card = createMapCard({
-                            name: map.name,
-                            author: map.author,
-                            description: map.description,
-                            size: map.size,
-                            gameVersion: map.gameVersion,
-                            path: map.path,
-                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`,
-                            fileSize: map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小'
-                        });
-                        return card;
-                    });
-                    
+                    const cards = resourceCache.maps.map(map => createMapCard(map));
                     cards.forEach(card => mapsGrid.appendChild(card));
                 } else {
                     // 如果数据未预加载完成，使用传统方式加载
                     const maps = await fetchMaps();
-                    const cards = maps.map(map => {
-                        return createMapCard({
-                            name: map.name,
-                            author: map.author,
-                            description: map.description,
-                            size: map.size,
-                            gameVersion: map.gameVersion,
-                            path: map.path,
-                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`,
-                            fileSize: map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小'
-                        });
-                    });
-                    
+                    const cards = maps.map(map => createMapCard(map));
                     cards.forEach(card => mapsGrid.appendChild(card));
                 }
                 
