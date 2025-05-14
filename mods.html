@@ -224,9 +224,10 @@
 
         // 从多个 CDN 加载资源
         async function fetchFromCDN(path) {
+            const timestamp = new Date().getTime();
             const urls = [
-                `${CDN_DOMAIN}/${path}`,
-                `${BACKUP_CDN_DOMAIN}/${path}`
+                `${CDN_DOMAIN}/${path}?t=${timestamp}`,
+                `${BACKUP_CDN_DOMAIN}/${path}?t=${timestamp}`
             ];
             
             for (const url of urls) {

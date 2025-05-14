@@ -141,4 +141,9 @@ jobs:
           else
             git commit -m "Update index files with XML data"
             git push
+            
+            # 清除 jsDelivr 缓存
+            echo "清除 jsDelivr 缓存..."
+            curl -X POST "https://purge.jsdelivr.net/gh/MORAN-hub-code/MORAN-hub-code.github.io@main/DATA/mods/index.json"
+            curl -X POST "https://purge.jsdelivr.net/gh/MORAN-hub-code/MORAN-hub-code.github.io@main/DATA/maps/index.json"
           fi 
