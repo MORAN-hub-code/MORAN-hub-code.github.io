@@ -189,8 +189,8 @@
 
     <script>
         // CDN 配置
-        const CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 主 CDN 域名
-        const BACKUP_CDN_DOMAIN = 'https://xingkongshe.top';  // 备用 CDN 域名
+        const CDN_DOMAIN = 'https://xingkongshe.top';  // 主 CDN 域名
+        const BACKUP_CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 备用 CDN 域名，仅用于下载
         
         // 全局缓存
         const resourceCache = {
@@ -203,8 +203,7 @@
         async function fetchFromCDN(path) {
             const timestamp = new Date().getTime();
             const urls = [
-                `${CDN_DOMAIN}/${path}?t=${timestamp}`,
-                `${BACKUP_CDN_DOMAIN}/${path}?t=${timestamp}`
+                `${CDN_DOMAIN}/${path}?t=${timestamp}`
             ];
             
             for (const url of urls) {
@@ -218,7 +217,7 @@
                     console.warn(`从 ${url} 加载失败:`, error);
                 }
             }
-            throw new Error('所有 CDN 加载失败');
+            throw new Error('CDN 加载失败');
         }
 
         // 预加载图片
@@ -234,11 +233,7 @@
                     resolve(img);
                 };
                 img.onerror = () => {
-                    if (backupUrl) {
-                        img.src = backupUrl;
-                    } else {
-                        reject(new Error('图片加载失败'));
-                    }
+                    reject(new Error('图片加载失败'));
                 };
                 img.src = url;
             });
