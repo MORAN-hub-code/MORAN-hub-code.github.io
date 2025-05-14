@@ -99,33 +99,6 @@ jobs:
                   item.description = xmlData.description?.[0] || '';
                   item.gameVersion = xmlData.gameVersion?.[0] || '';
                   
-                  // 根据目录类型添加特定字段
-                  if (baseDir.includes('/mods/')) {
-                    item.type = xmlData.type?.[0] || '';
-                    item.isModify = xmlData.isModify?.[0] || 'false';
-                    
-                    // 获取 mod 文件大小
-                    const resourceFile = xmlData.resourceFile?.[0];
-                    if (resourceFile) {
-                      const resourcePath = path.join(fullDirPath, resourceFile);
-                      if (fs.existsSync(resourcePath)) {
-                        item.resourceSize = fs.statSync(resourcePath).size;
-                      }
-                    }
-                  } else if (baseDir.includes('/maps/')) {
-                    // 获取地图大小
-                    item.size = xmlData.size?.[0] || '';
-                    
-                    // 获取地图文件大小
-                    const resourceFile = xmlData.resourceFile?.[0];
-                    if (resourceFile) {
-                      const resourcePath = path.join(fullDirPath, resourceFile);
-                      if (fs.existsSync(resourcePath)) {
-                        item.resourceSize = fs.statSync(resourcePath).size;
-                      }
-                    }
-                  }
-                  
                   // 添加预览图信息
                   const imageFile = xmlData.imageFile?.[0];
                   if (imageFile) {
@@ -133,6 +106,23 @@ jobs:
                     if (fs.existsSync(imagePath)) {
                       item.imageSize = fs.statSync(imagePath).size;
                     }
+                  }
+                  
+                  // 添加资源文件信息
+                  const resourceFile = xmlData.resourceFile?.[0];
+                  if (resourceFile) {
+                    const resourcePath = path.join(fullDirPath, resourceFile);
+                    if (fs.existsSync(resourcePath)) {
+                      item.resourceSize = fs.statSync(resourcePath).size;
+                    }
+                  }
+                  
+                  // 根据目录类型添加特定字段
+                  if (baseDir.includes('/mods/')) {
+                    item.type = xmlData.type?.[0] || '';
+                    item.isModify = xmlData.isModify?.[0] || 'false';
+                  } else if (baseDir.includes('/maps/')) {
+                    item.size = xmlData.size?.[0] || '';
                   }
                   
                   // 打印生成的 item 以便调试
