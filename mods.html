@@ -351,7 +351,7 @@
                         <p>文件大小: ${fileSize}</p>
                         <p>${mod.description}</p>
                     </div>
-                    <button onclick="downloadMod('${mod.name}', '${mod.path}')" class="download-btn">下载</button>
+                    <a href="${BACKUP_CDN_DOMAIN}/${mod.path}/resource.zip" download="${mod.name}.zip" class="download-btn">下载</a>
                 </div>
             `;
             return card;
@@ -521,42 +521,6 @@
                 console.error('初始化页面失败:', error);
                 const modsGrid = document.getElementById('modsGrid');
                 modsGrid.innerHTML = '<div style="text-align: center; padding: 2rem; color: red;">加载失败，请刷新页面重试</div>';
-            }
-        }
-
-        // 下载模组
-        async function downloadMod(name, path) {
-            try {
-                console.log('开始下载:', path);
-                // 使用备用 CDN 域名
-                const backupPath = path.replace(CDN_DOMAIN, BACKUP_CDN_DOMAIN);
-                console.log('使用备用 CDN:', backupPath);
-                
-                // 发起下载请求
-                const response = await fetch(backupPath);
-                if (!response.ok) {
-                    throw new Error(`下载失败: ${response.statusText}`);
-                }
-                
-                // 获取文件内容
-                const blob = await response.blob();
-                
-                // 创建下载链接
-                const downloadUrl = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = downloadUrl;
-                link.download = name + '.zip';
-                
-                // 触发下载
-                document.body.appendChild(link);
-                link.click();
-                
-                // 清理
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(downloadUrl);
-            } catch (error) {
-                console.error('下载失败:', error);
-                alert('下载失败，请稍后重试');
             }
         }
 
