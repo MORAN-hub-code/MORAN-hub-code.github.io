@@ -119,9 +119,11 @@ jobs:
                   
                   // 根据目录类型添加特定字段
                   if (baseDir.includes('/mods/')) {
+                    // 添加模组特有字段
                     item.type = xmlData.type?.[0] || '';
                     item.isModify = xmlData.isModify?.[0] || 'false';
                   } else if (baseDir.includes('/maps/')) {
+                    // 添加地图特有字段
                     item.size = xmlData.size?.[0] || '';
                   }
                   
