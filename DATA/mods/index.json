@@ -4,6 +4,12 @@
     "path": "DATA/mods/测试",
     "author": "1111",
     "description": "212313",
-    "gameVersion": "0.50.4"
+    "gameVersion": "0.50.4",
+    "type": "实用工具",
+    "isModify": "true",
+    "imageFile": "caowei.jpg",
+    "imageSize": "60333",
+    "resourceFile": "caowei.zip",
+    "resourceSize": "60035"
   }
 ]
