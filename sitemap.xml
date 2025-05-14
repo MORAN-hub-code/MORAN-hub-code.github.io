@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
+<<<<<<< HEAD
+      <loc>https://xingkongshe.top/</loc>
+      <lastmod>2025-05-12</lastmod>
+=======
       <loc>https://www.325477.xyz/</loc>
       <lastmod>2025-05-14</lastmod>
+>>>>>>> 38134ea7b44b321eb2abedb065c87f2be946c924
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
+<<<<<<< HEAD
+      <loc>https://xingkongshe.top/maps</loc>
+      <lastmod>2025-05-12</lastmod>
+=======
       <loc>https://www.325477.xyz/maps</loc>
       <lastmod>2025-05-14</lastmod>
+>>>>>>> 38134ea7b44b321eb2abedb065c87f2be946c924
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
+<<<<<<< HEAD
+      <loc>https://xingkongshe.top/about</loc>
+      <lastmod>2025-05-12</lastmod>
+=======
       <loc>https://www.325477.xyz/about</loc>
       <lastmod>2025-05-14</lastmod>
+>>>>>>> 38134ea7b44b321eb2abedb065c87f2be946c924
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
+<<<<<<< HEAD
+      <loc>https://xingkongshe.top/mods</loc>
+      <lastmod>2025-05-12</lastmod>
+=======
       <loc>https://www.325477.xyz/mods</loc>
       <lastmod>2025-05-14</lastmod>
+>>>>>>> 38134ea7b44b321eb2abedb065c87f2be946c924
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
