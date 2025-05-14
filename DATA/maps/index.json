@@ -1,22 +1,11 @@
 [
   {
-    "path": "DATA/maps/111111测试",
-    "name": "111111测试",
-    "author": "1111",
-    "description": "吃吃吃吃吃吃吃",
-    "gameVersion": "0.22.1",
-    "size": "大",
-    "imageSize": 60333,
-    "resourceSize": 60035
-  },
-  {
-    "path": "DATA/maps/测试map",
     "name": "测试map",
-    "author": "1111",
-    "description": "test",
-    "gameVersion": "0.22.1",
-    "size": "大",
+    "path": "DATA/maps/测试map",
+    "author": "测试map",
+    "description": "测试map",
+    "gameVersion": "0.22.9",
     "imageSize": 60333,
-    "resourceSize": 60035
+    "resourceSize": 2960602
   }
 ]
