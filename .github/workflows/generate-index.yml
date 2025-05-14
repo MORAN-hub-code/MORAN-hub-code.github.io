@@ -86,12 +86,15 @@ jobs:
                     return null;
                   }
                   
+                  // 打印 XML 数据以便调试
+                  console.log(\`XML data for \${dirName}:\`, JSON.stringify(xmlData, null, 2));
+                  
                   const item = {
                     name: dirName,
                     path: fullDirPath.replace(/\\\\/g, '/')
                   };
                   
-                  // 添加XML中的信息
+                  // 添加基本 XML 信息
                   item.author = xmlData.author?.[0] || '';
                   item.description = xmlData.description?.[0] || '';
                   item.gameVersion = xmlData.gameVersion?.[0] || '';
@@ -100,14 +103,31 @@ jobs:
                   if (baseDir.includes('/mods/')) {
                     item.type = xmlData.type?.[0] || '';
                     item.isModify = xmlData.isModify?.[0] || 'false';
+                    
+                    // 获取 mod 文件大小
+                    const resourceFile = xmlData.resourceFile?.[0];
+                    if (resourceFile) {
+                      const resourcePath = path.join(fullDirPath, resourceFile);
+                      if (fs.existsSync(resourcePath)) {
+                        item.resourceSize = fs.statSync(resourcePath).size;
+                      }
+                    }
                   } else if (baseDir.includes('/maps/')) {
+                    // 获取地图大小
                     item.size = xmlData.size?.[0] || '';
+                    
+                    // 获取地图文件大小
+                    const resourceFile = xmlData.resourceFile?.[0];
+                    if (resourceFile) {
+                      const resourcePath = path.join(fullDirPath, resourceFile);
+                      if (fs.existsSync(resourcePath)) {
+                        item.resourceSize = fs.statSync(resourcePath).size;
+                      }
+                    }
                   }
                   
-                  // 添加文件大小信息
+                  // 添加预览图信息
                   const imageFile = xmlData.imageFile?.[0];
-                  const resourceFile = xmlData.resourceFile?.[0];
-                  
                   if (imageFile) {
                     const imagePath = path.join(fullDirPath, imageFile);
                     if (fs.existsSync(imagePath)) {
@@ -115,12 +135,8 @@ jobs:
                     }
                   }
                   
-                  if (resourceFile) {
-                    const resourcePath = path.join(fullDirPath, resourceFile);
-                    if (fs.existsSync(resourcePath)) {
-                      item.resourceSize = fs.statSync(resourcePath).size;
-                    }
-                  }
+                  // 打印生成的 item 以便调试
+                  console.log(\`Generated item for \${dirName}:\`, JSON.stringify(item, null, 2));
                   
                   return item;
                 })
