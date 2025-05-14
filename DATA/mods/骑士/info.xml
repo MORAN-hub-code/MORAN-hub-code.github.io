@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士</name>
+    <author>十月公子</author>
+    <description>骑士0.1.3</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>3844</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>350572</resourceSize>
+</resource>
