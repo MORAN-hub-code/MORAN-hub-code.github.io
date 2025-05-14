@@ -266,6 +266,19 @@
             });
         }
 
+        // 从索引文件获取模组数据
+        async function fetchMods() {
+            try {
+                const response = await fetchFromCDN('DATA/mods/index.json');
+                const data = await response.json();
+                console.log('获取到的模组数据:', data);
+                return data;
+            } catch (error) {
+                console.error('获取模组数据失败:', error);
+                return [];
+            }
+        }
+
         // 预加载所有模组数据
         async function preloadAllMods() {
             try {
@@ -275,18 +288,9 @@
                 resourceCache.mods = mods;
                 console.log('开始预加载所有模组数据');
                 
-                // 并行预加载所有模组的XML和图片
+                // 并行预加载所有图片
                 const preloadPromises = mods.map(async (mod) => {
-                    const xmlUrl = `${mod.path}/info.xml`;
                     const imgPath = `${mod.path}/preview.jpg`;
-                    
-                    // 预加载XML
-                    const xmlResponse = await fetchFromCDN(xmlUrl);
-                    const xmlContent = await xmlResponse.text();
-                    const xmlDoc = new DOMParser().parseFromString(xmlContent, "text/xml");
-                    resourceCache.xmlData.set(mod.path, xmlDoc);
-                    
-                    // 预加载图片
                     const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
                     const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
                     await preloadImage(imgUrl, backupImgUrl);
@@ -392,19 +396,6 @@
             }
         }
 
-        // 从索引文件获取模组数据
-        async function fetchMods() {
-            try {
-                const response = await fetchFromCDN('DATA/mods/index.json');
-                const data = await response.json();
-                console.log('获取到的模组数据:', data);
-                return data;
-            } catch (error) {
-                console.error('获取模组数据失败:', error);
-                return [];
-            }
-        }
-
         // 解析XML文件
         async function parseModXML(url) {
             try {
@@ -483,42 +474,37 @@
                 // 如果数据已预加载完成，直接使用缓存
                 if (resourceCache.mods) {
                     const cards = resourceCache.mods.map(mod => {
-                        const xmlDoc = resourceCache.xmlData.get(mod.path);
-                        const modData = {
-                            name: xmlDoc.getElementsByTagName("name")[0].textContent,
-                            author: xmlDoc.getElementsByTagName("author")[0].textContent,
-                            description: xmlDoc.getElementsByTagName("description")[0].textContent,
-                            type: xmlDoc.getElementsByTagName("type")[0].textContent,
-                            gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
-                            isModify: xmlDoc.getElementsByTagName("isModify")[0].textContent,
+                        const card = createModCard({
+                            name: mod.name,
+                            author: mod.author,
+                            description: mod.description,
+                            type: mod.type,
+                            gameVersion: mod.gameVersion,
+                            isModify: mod.isModify,
                             path: mod.path,
-                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`
-                        };
-                        return createModCard(modData);
+                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`,
+                            fileSize: mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小'
+                        });
+                        return card;
                     });
                     
                     cards.forEach(card => modsGrid.appendChild(card));
                 } else {
                     // 如果数据未预加载完成，使用传统方式加载
                     const mods = await fetchMods();
-                    const cards = [];
-                    
-                    for (const mod of mods) {
-                        const xmlUrl = `${mod.path}/info.xml`;
-                        const modData = await parseModXML(xmlUrl);
-                        if (modData) {
-                            const resourcePath = `${mod.path}/resource.zip`;
-                            const fileSize = await getFileSize(resourcePath);
-                            
-                            const card = createModCard({
-                                ...modData,
-                                path: mod.path,
-                                downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
-                                fileSize: fileSize
-                            });
-                            cards.push(card);
-                        }
-                    }
+                    const cards = mods.map(mod => {
+                        return createModCard({
+                            name: mod.name,
+                            author: mod.author,
+                            description: mod.description,
+                            type: mod.type,
+                            gameVersion: mod.gameVersion,
+                            isModify: mod.isModify,
+                            path: mod.path,
+                            downloadUrl: `${CDN_DOMAIN}/${mod.path}/resource.zip`,
+                            fileSize: mod.resourceSize ? formatFileSize(mod.resourceSize) : '未知大小'
+                        });
+                    });
                     
                     cards.forEach(card => modsGrid.appendChild(card));
                 }
@@ -596,6 +582,17 @@
             typeFilter.addEventListener('change', filterMods);
             versionFilter.addEventListener('change', filterMods);
             modifyFilter.addEventListener('change', filterMods);
+        }
+
+        // 格式化文件大小
+        function formatFileSize(sizeInBytes) {
+            if (sizeInBytes < 1024) {
+                return sizeInBytes + ' B';
+            } else if (sizeInBytes < 1024 * 1024) {
+                return (sizeInBytes / 1024).toFixed(1) + ' KB';
+            } else {
+                return (sizeInBytes / (1024 * 1024)).toFixed(1) + ' MB';
+            }
         }
 
         // 立即开始预加载

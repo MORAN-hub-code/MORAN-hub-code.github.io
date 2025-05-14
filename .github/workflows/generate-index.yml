@@ -22,25 +22,84 @@ jobs:
         with:
           node-version: '18'
           
+      - name: Install dependencies
+        run: npm install xml2js
+          
       - name: Generate index files
         run: |
           node -e "
           const fs = require('fs');
           const path = require('path');
+          const xml2js = require('xml2js');
           
-          function generateIndex(dirPath) {
+          async function parseXML(xmlPath) {
+            try {
+              const xmlContent = fs.readFileSync(xmlPath, 'utf8');
+              const parser = new xml2js.Parser();
+              const result = await parser.parseStringPromise(xmlContent);
+              return result.info;
+            } catch (error) {
+              console.error(\`Error parsing XML file \${xmlPath}:\`, error);
+              return null;
+            }
+          }
+          
+          async function generateIndex(dirPath) {
             if (!fs.existsSync(dirPath)) {
               console.log(\`Directory \${dirPath} does not exist\`);
               return;
             }
             
             try {
-              const items = fs.readdirSync(dirPath)
-                .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory())
-                .map(dir => ({
-                  name: dir,
-                  path: path.join(dirPath, dir).replace(/\\\\/g, '/')
-                }));
+              const items = await Promise.all(
+                fs.readdirSync(dirPath)
+                  .filter(file => fs.statSync(path.join(dirPath, file)).isDirectory())
+                  .map(async dir => {
+                    const dirPath = path.join(dirPath, dir);
+                    const xmlPath = path.join(dirPath, 'info.xml');
+                    const xmlData = fs.existsSync(xmlPath) ? await parseXML(xmlPath) : null;
+                    
+                    const item = {
+                      name: dir,
+                      path: path.join(dirPath, dir).replace(/\\\\/g, '/')
+                    };
+                    
+                    if (xmlData) {
+                      // 添加XML中的信息
+                      item.author = xmlData.author?.[0] || '';
+                      item.description = xmlData.description?.[0] || '';
+                      item.gameVersion = xmlData.gameVersion?.[0] || '';
+                      
+                      // 根据目录类型添加特定字段
+                      if (dirPath.includes('/mods/')) {
+                        item.type = xmlData.type?.[0] || '';
+                        item.isModify = xmlData.isModify?.[0] || 'false';
+                      } else if (dirPath.includes('/maps/')) {
+                        item.size = xmlData.size?.[0] || '';
+                      }
+                      
+                      // 添加文件大小信息
+                      const imageFile = xmlData.imageFile?.[0];
+                      const resourceFile = xmlData.resourceFile?.[0];
+                      
+                      if (imageFile) {
+                        const imagePath = path.join(dirPath, imageFile);
+                        if (fs.existsSync(imagePath)) {
+                          item.imageSize = fs.statSync(imagePath).size;
+                        }
+                      }
+                      
+                      if (resourceFile) {
+                        const resourcePath = path.join(dirPath, resourceFile);
+                        if (fs.existsSync(resourcePath)) {
+                          item.resourceSize = fs.statSync(resourcePath).size;
+                        }
+                      }
+                    }
+                    
+                    return item;
+                  })
+              );
               
               const indexPath = path.join(dirPath, 'index.json');
               fs.writeFileSync(indexPath, JSON.stringify(items, null, 2));
@@ -51,8 +110,15 @@ jobs:
           }
           
           // 生成索引文件
-          generateIndex('DATA/mods');
-          generateIndex('DATA/maps');
+          Promise.all([
+            generateIndex('DATA/mods'),
+            generateIndex('DATA/maps')
+          ]).then(() => {
+            console.log('Index generation completed');
+          }).catch(error => {
+            console.error('Error during index generation:', error);
+            process.exit(1);
+          });
           "
           
       - name: Commit and push if changed
@@ -73,6 +139,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update index files"
+            git commit -m "Update index files with XML data"
             git push
           fi 

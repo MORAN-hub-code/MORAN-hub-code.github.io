@@ -243,6 +243,19 @@
             });
         }
 
+        // 从索引文件获取地图数据
+        async function fetchMaps() {
+            try {
+                const response = await fetchFromCDN('DATA/maps/index.json');
+                const data = await response.json();
+                console.log('获取到的地图数据:', data);
+                return data;
+            } catch (error) {
+                console.error('获取地图数据失败:', error);
+                return [];
+            }
+        }
+
         // 预加载所有地图数据
         async function preloadAllMaps() {
             try {
@@ -252,18 +265,9 @@
                 resourceCache.maps = maps;
                 console.log('开始预加载所有地图数据');
                 
-                // 并行预加载所有地图的XML和图片
+                // 并行预加载所有图片
                 const preloadPromises = maps.map(async (map) => {
-                    const xmlUrl = `${map.path}/info.xml`;
                     const imgPath = `${map.path}/preview.jpg`;
-                    
-                    // 预加载XML
-                    const xmlResponse = await fetchFromCDN(xmlUrl);
-                    const xmlContent = await xmlResponse.text();
-                    const xmlDoc = new DOMParser().parseFromString(xmlContent, "text/xml");
-                    resourceCache.xmlData.set(map.path, xmlDoc);
-                    
-                    // 预加载图片
                     const imgUrl = `${CDN_DOMAIN}/${imgPath}`;
                     const backupImgUrl = `${BACKUP_CDN_DOMAIN}/${imgPath}`;
                     await preloadImage(imgUrl, backupImgUrl);
@@ -312,41 +316,35 @@
                 // 如果数据已预加载完成，直接使用缓存
                 if (resourceCache.maps) {
                     const cards = resourceCache.maps.map(map => {
-                        const xmlDoc = resourceCache.xmlData.get(map.path);
-                        const mapData = {
-                            name: xmlDoc.getElementsByTagName("name")[0].textContent,
-                            author: xmlDoc.getElementsByTagName("author")[0].textContent,
-                            description: xmlDoc.getElementsByTagName("description")[0].textContent,
-                            size: xmlDoc.getElementsByTagName("size")[0].textContent,
-                            gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
+                        const card = createMapCard({
+                            name: map.name,
+                            author: map.author,
+                            description: map.description,
+                            size: map.size,
+                            gameVersion: map.gameVersion,
                             path: map.path,
-                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`
-                        };
-                        return createMapCard(mapData);
+                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`,
+                            fileSize: map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小'
+                        });
+                        return card;
                     });
                     
                     cards.forEach(card => mapsGrid.appendChild(card));
                 } else {
                     // 如果数据未预加载完成，使用传统方式加载
                     const maps = await fetchMaps();
-                    const cards = [];
-                    
-                    for (const map of maps) {
-                        const xmlUrl = `${map.path}/info.xml`;
-                        const mapData = await parseMapXML(xmlUrl);
-                        if (mapData) {
-                            const resourcePath = `${map.path}/resource.zip`;
-                            const fileSize = await getFileSize(resourcePath);
-                            
-                            const card = createMapCard({
-                                ...mapData,
-                                path: map.path,
-                                downloadUrl: `${CDN_DOMAIN}/${resourcePath}`,
-                                fileSize: fileSize
-                            });
-                            cards.push(card);
-                        }
-                    }
+                    const cards = maps.map(map => {
+                        return createMapCard({
+                            name: map.name,
+                            author: map.author,
+                            description: map.description,
+                            size: map.size,
+                            gameVersion: map.gameVersion,
+                            path: map.path,
+                            downloadUrl: `${CDN_DOMAIN}/${map.path}/resource.zip`,
+                            fileSize: map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小'
+                        });
+                    });
                     
                     cards.forEach(card => mapsGrid.appendChild(card));
                 }
@@ -483,65 +481,14 @@
             }
         }
 
-        // 从索引文件获取地图数据
-        async function fetchMaps() {
-            try {
-                const response = await fetchFromCDN('DATA/maps/index.json');
-                const data = await response.json();
-                console.log('获取到的地图数据:', data);
-                return data;
-            } catch (error) {
-                console.error('获取地图数据失败:', error);
-                return [];
-            }
-        }
-
-        // 解析XML文件
-        async function parseMapXML(url) {
-            try {
-                const response = await fetchFromCDN(url);
-                const content = await response.text();
-                console.log('获取到的XML内容:', content);
-                
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(content, "text/xml");
-                return {
-                    name: xmlDoc.getElementsByTagName("name")[0].textContent,
-                    author: xmlDoc.getElementsByTagName("author")[0].textContent,
-                    description: xmlDoc.getElementsByTagName("description")[0].textContent,
-                    size: xmlDoc.getElementsByTagName("size")[0].textContent,
-                    gameVersion: xmlDoc.getElementsByTagName("gameVersion")[0].textContent,
-                    imageFile: xmlDoc.getElementsByTagName("imageFile")[0].textContent,
-                    resourceFile: xmlDoc.getElementsByTagName("resourceFile")[0].textContent
-                };
-            } catch (error) {
-                console.error('解析XML失败:', error);
-                return null;
-            }
-        }
-
-        // 获取文件大小
-        async function getFileSize(path) {
-            try {
-                const response = await fetchFromCDN(path);
-                if (!response.ok) {
-                    throw new Error(`获取文件大小失败: ${response.statusText}`);
-                }
-                const contentLength = response.headers.get('content-length');
-                if (contentLength) {
-                    const sizeInBytes = parseInt(contentLength);
-                    if (sizeInBytes < 1024) {
-                        return sizeInBytes + ' B';
-                    } else if (sizeInBytes < 1024 * 1024) {
-                        return (sizeInBytes / 1024).toFixed(1) + ' KB';
-                    } else {
-                        return (sizeInBytes / (1024 * 1024)).toFixed(1) + ' MB';
-                    }
-                }
-                return '未知大小';
-            } catch (error) {
-                console.error('获取文件大小失败:', error);
-                return '未知大小';
+        // 格式化文件大小
+        function formatFileSize(sizeInBytes) {
+            if (sizeInBytes < 1024) {
+                return sizeInBytes + ' B';
+            } else if (sizeInBytes < 1024 * 1024) {
+                return (sizeInBytes / 1024).toFixed(1) + ' KB';
+            } else {
+                return (sizeInBytes / (1024 * 1024)).toFixed(1) + ' MB';
             }
         }
 

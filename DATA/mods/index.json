@@ -1,10 +1,24 @@
 [
   {
+    "path": "DATA/mods/111111",
     "name": "111111",
-    "path": "DATA/mods/111111"
+    "author": "2222",
+    "description": "1312414",
+    "type": "扩展玩法",
+    "gameVersion": "0.50.4",
+    "isModify": "false",
+    "imageSize": 60333,
+    "resourceSize": 60035
   },
   {
+    "path": "DATA/mods/测试",
     "name": "测试",
-    "path": "DATA/mods/测试"
+    "author": "1111",
+    "description": "test",
+    "type": "扩展玩法",
+    "gameVersion": "0.50.4",
+    "isModify": "false",
+    "imageSize": 60333,
+    "resourceSize": 60035
   }
 ]
