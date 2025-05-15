@@ -156,6 +156,19 @@
     "resourceSize": 4503
   },
   {
+    "name": "趣味性特质",
+    "path": "DATA/mods/趣味性特质",
+    "author": "十月公子",
+    "description": "有趣的模组，无法自然生成",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 92889,
+    "resourceFile": "resource.zip",
+    "resourceSize": 800450
+  },
+  {
     "name": "趣味性特质-进化序列自然生成",
     "path": "DATA/mods/趣味性特质-进化序列自然生成",
     "author": "修远",
