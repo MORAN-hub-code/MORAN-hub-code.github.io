@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>随机特质-神秘特质</name>
+    <author>爱某</author>
+    <description>（就当是为了你的小人，努力的装模组增加特质吧！）
+正如模组的名字一般，每过一段时间小人的特质可以进行随机与获取,虽然这听起来很棒但获取的特质是完全随机的这意味着包括病毒与命定之死.
+我给模组设置了三个档位，一年获得五个特质，一年获得一个特质，几年有概率获得一个特质。
+特质互相排斥的模组可以延缓抽到负面特质的时间，拥有越多的特质越强但离死亡越近。
+那么开启这疯狂的世界吧！</description>
+    <gameVersion>0.22.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>492321</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2291421</resourceSize>
+</resource>
