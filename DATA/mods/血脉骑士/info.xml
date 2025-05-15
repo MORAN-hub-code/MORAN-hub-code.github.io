@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>血脉骑士</name>
+    <author>onlooker看客</author>
+    <description>（测试版，存在不少bug，游戏中特质描述不完全，骑士功法还未实装无法自然获得）
+顶级高武
+可兼容其他骑士
+对标巫术（真伤可杀始祖，混元）
+增加九个境界
+境界：晨星，黎明，拂晓，烈阳，黄昏，繁星，血脉，传说，神性，
+神性有九转境界。
+晨星获得所有战斗技巧，
+烈阳获得一种战技（法术），
+黄昏获得一种传承武器，后代有概率获得，
+血脉获得一种血脉传承，后代有概率获得，
+传说公告世界，获得传说中的长弓
+神性骑士公告世界，获得九神性之一，神性修炼法，神性气息可遗传。
+提升神性境界需要神性重新积攒5000生命之力获得下一个神性。
+（癫佬骑士会屠杀世界，建议使用嗜血观众制造机特质）
+</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>114157</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>18472675</resourceSize>
+</resource>
