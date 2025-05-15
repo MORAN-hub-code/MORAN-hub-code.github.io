@@ -169,6 +169,19 @@
     "resourceSize": 4503
   },
   {
+    "name": "西式中文名",
+    "path": "DATA/mods/西式中文名",
+    "author": "玄关",
+    "description": "修改国家，生物，武器名称",
+    "gameVersion": "0.5+",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 1703,
+    "resourceFile": "resource.zip",
+    "resourceSize": 215805
+  },
+  {
     "name": "趣味性特质",
     "path": "DATA/mods/趣味性特质",
     "author": "十月公子",
