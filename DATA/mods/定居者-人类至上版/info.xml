@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>定居者-人类至上版</name>
+    <author>爱某</author>
+    <description>启用灾难后，人类种族将以100-2000个为一组刷新到世界中，直到各自种族的数量达到5000个。他们刷新时年龄为1岁。
+注意：有些种族可能会刷新到太小而无法建立定居点的岛屿上，并且不会创建新的王国。</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>260054</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>249704</resourceSize>
+</resource>
