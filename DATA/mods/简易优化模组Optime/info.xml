@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>简易优化模组Optime</name>
+    <author>ApexLite</author>
+    <description>优化功能区块懒加载：禁止反复加载可视区域的区块，减少加载负担。
+真正的暂停：游戏暂停时将弹射物等一起暂停。
+禁用分析：离开游戏时不自动发送分析给开发者。
+显示帧率：在屏幕左上方角显示一个帧率计数。
+游戏帧数上限：用于调整最大帧数上限。
+隐藏欢迎窗口：隐藏每次进入游戏都会弹出的窗口。
+开发模式：在右上角显示上帝模式按钮。
+禁用地图统计：如其名，但仅在开发模式生效下启用。</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>1176</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>11554</resourceSize>
+</resource>
