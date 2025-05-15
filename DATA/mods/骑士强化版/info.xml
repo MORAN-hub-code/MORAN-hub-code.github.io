@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士强化版</name>
+    <author>修远</author>
+    <description>中武骑士
+修炼速度不变，数值大大增加，恢复力增加</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>19628</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>278618</resourceSize>
+</resource>
