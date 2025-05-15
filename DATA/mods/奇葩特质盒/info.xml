@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>奇葩特质盒</name>
+    <author>爱某</author>
+    <description>（将一个代码错误的模组重置得到的）
+增加数个特质，大多只增加数值，并且不会自然诞生
+增加水火土风4种元素魔法，恶魔与天使复合魔法
+</description>
+    <gameVersion>0.22.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>321919</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>5948592</resourceSize>
+</resource>
