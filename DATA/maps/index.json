@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "name": "测试map",
+    "path": "DATA/maps/测试map",
+    "author": "测试map",
+    "description": "测试map",
+    "gameVersion": "0.50.4",
+    "size": "小",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 60333,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2960602
+  }
+]
