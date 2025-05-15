@@ -104,6 +104,19 @@
     "resourceSize": 6978162
   },
   {
+    "name": "奇葩特质盒",
+    "path": "DATA/mods/奇葩特质盒",
+    "author": "爱某",
+    "description": "（将一个代码错误的模组重置得到的）\n增加数个特质，大多只增加数值，并且不会自然诞生\n增加水火土风4种元素魔法，恶魔与天使复合魔法\n",
+    "gameVersion": "0.22.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 321919,
+    "resourceFile": "resource.zip",
+    "resourceSize": 5948592
+  },
+  {
     "name": "定居者-人类至上版",
     "path": "DATA/mods/定居者-人类至上版",
     "author": "爱某",
