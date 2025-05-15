@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士-十三境界添加版</name>
+    <author>gn@br5526dr～g*.co.c#:) </author>
+    <description>高武骑士
+增加魔改了骑士十三个境界
+增加新的两个天赋
+拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）
+最后三个境界拥有大范围雷击法术</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>150800</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>421040</resourceSize>
+</resource>
