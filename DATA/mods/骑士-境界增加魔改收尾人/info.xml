@@ -8,7 +8,7 @@
 大大增加了境界的恢复力
 拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）
 最后三个境界拥有大范围雷击法术</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>true</isModify>
     <imageFile>preview.jpg</imageFile>

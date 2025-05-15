@@ -6,8 +6,8 @@
 必装模组之一，
 可以查看生物的等级，击杀数，年龄，生命，攻击力榜单。
 筛选生物种类，国家，特质，职业。
-收藏生物当前状态并复制（0.5版未实现）</description>
-    <gameVersion>0.5+</gameVersion>
+收藏生物当前状态并复制</description>
+    <gameVersion>0.22.x</gameVersion>
     <type>实用工具</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

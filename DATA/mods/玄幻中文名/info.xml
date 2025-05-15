@@ -3,7 +3,7 @@
     <name>玄幻中文名</name>
     <author>此生不再屈</author>
     <description>修改国家，生物，武器名称</description>
-    <gameVersion>0.5x</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>实用工具</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

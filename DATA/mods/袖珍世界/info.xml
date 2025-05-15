@@ -3,7 +3,7 @@
     <name>袖珍世界</name>
     <author>LightHardt</author>
     <description>世界生成强制1X1大小</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>实用工具</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

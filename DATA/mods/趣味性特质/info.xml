@@ -3,7 +3,7 @@
     <name>趣味性特质</name>
     <author>十月公子</author>
     <description>有趣的模组，无法自然生成</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

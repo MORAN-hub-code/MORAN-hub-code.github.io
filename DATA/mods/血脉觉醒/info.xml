@@ -12,7 +12,7 @@
 骑士/巫师世家:必然觉醒天赋
 血族:每次攻击都会吸敌人血
 狂战之族:每次战斗都会获得大量经验，血越少获得的经验也会随之加大</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

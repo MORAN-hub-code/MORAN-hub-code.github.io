@@ -4,7 +4,7 @@
     <author>修远</author>
     <description>进化序列可自然生成，进化序列可自然提升原版等级，原版等级到一定程度获得模组等级战斗技巧以及异能，进化天赋1-5，天赋越高升级越快
 </description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

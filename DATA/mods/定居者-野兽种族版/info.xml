@@ -4,7 +4,7 @@
     <author>不明</author>
     <description>启用灾难后，开智的野兽种族将以10-20个为一组刷新到世界中，直到各自种族的数量达到50个。他们刷新时年龄为1岁。
 注意：有些种族可能会刷新到太小而无法建立定居点的岛屿上，并且不会创建新的王国。</description>
-    <gameVersion>0.5x</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>false</isModify>
     <imageFile>preview.jpg</imageFile>

@@ -14,7 +14,7 @@
 修复了圣体道胎的坐忘长生bug，现在分别改成到达寿命上限的50%/30%时获得，天赋削弱寿命也改为百分比，
 悟性会影响成仙之后的修炼，悟性高有奖励，悟性低有惩罚（悲），
 （实际战力并没有削弱，好像反而变强了）</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>true</isModify>
     <imageFile>preview.jpg</imageFile>

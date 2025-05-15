@@ -9,7 +9,7 @@
 拨回时针：「拨动时针即可复活罪人」死亡后在首都重生为1岁 
 （删除以下）
 骑士世家、巫师世家、血族、狂战之族</description>
-    <gameVersion>0.5+</gameVersion>
+    <gameVersion>0.50.x</gameVersion>
     <type>扩展玩法</type>
     <isModify>true</isModify>
     <imageFile>preview.jpg</imageFile>
