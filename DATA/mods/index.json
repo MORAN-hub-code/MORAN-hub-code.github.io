@@ -39,6 +39,19 @@
     "resourceSize": 2203995
   },
   {
+    "name": "地图处理模组",
+    "path": "DATA/mods/地图处理模组",
+    "author": "贝伦帝国",
+    "description": "内含自定义地图大小，复制旧地图地形，用旧地图地形覆盖新地图，支持颠倒、镜像、中心、缩放覆盖，处理噪点等功能，解锁原版游戏所有内容",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 17357,
+    "resourceFile": "resource.zip",
+    "resourceSize": 5324
+  },
+  {
     "name": "天道权柄-GodTools",
     "path": "DATA/mods/天道权柄-GodTools",
     "author": "一米 末影大黑",
