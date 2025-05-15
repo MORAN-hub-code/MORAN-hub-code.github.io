@@ -76,5 +76,18 @@
     "imageSize": 3844,
     "resourceFile": "resource.zip",
     "resourceSize": 350572
+  },
+  {
+    "name": "骑士-十三境界添加版",
+    "path": "DATA/mods/骑士-十三境界添加版",
+    "author": "gn@br5526dr～g*.co.c#:) ",
+    "description": "高武骑士\n增加魔改了骑士十三个境界\n增加新的两个天赋\n拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）\n最后三个境界拥有大范围雷击法术",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 150800,
+    "resourceFile": "resource.zip",
+    "resourceSize": 421040
   }
 ]
