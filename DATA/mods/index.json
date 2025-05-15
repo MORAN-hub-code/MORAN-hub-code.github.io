@@ -208,6 +208,19 @@
     "resourceSize": 6717398
   },
   {
+    "name": "简单汉化修正",
+    "path": "DATA/mods/简单汉化修正",
+    "author": "汉化组的众人",
+    "description": "必装模组之一\n将原版游戏90%内容汉化",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 43809,
+    "resourceFile": "resource.zip",
+    "resourceSize": 247734
+  },
+  {
     "name": "简易优化模组Optime",
     "path": "DATA/mods/简易优化模组Optime",
     "author": "ApexLite",
