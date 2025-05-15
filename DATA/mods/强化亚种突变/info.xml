@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>强化亚种突变</name>
+    <author> 十月公子</author>
+    <description>亚种突变带来的外观突变拥有属性加成</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>13064</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>21675</resourceSize>
+</resource>
