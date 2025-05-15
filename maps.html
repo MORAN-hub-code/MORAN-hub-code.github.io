@@ -257,16 +257,20 @@
                 console.log('获取到的地图数据:', data);
                 
                 // 确保数据格式正确
-                return data.map(map => ({
-                    name: map.name || '未命名地图',
-                    author: map.author || '未知作者',
-                    description: map.description || '暂无描述',
-                    size: map.size || '未知大小',
-                    gameVersion: map.gameVersion || '未知版本',
-                    path: map.path,
-                    resourceSize: parseInt(map.resourceSize) || 0,
-                    imageSize: parseInt(map.imageSize) || 0
-                }));
+                return data.map(map => {
+                    console.log('处理地图数据:', map);
+                    return {
+                        name: map.name || '未命名地图',
+                        author: map.author || '未知作者',
+                        description: map.description || '暂无描述',
+                        size: map.size || '未知大小',
+                        gameVersion: map.gameVersion || '未知版本',
+                        type: map.type || '未分类',
+                        path: map.path,
+                        resourceSize: parseInt(map.resourceSize) || 0,
+                        imageSize: parseInt(map.imageSize) || 0
+                    };
+                });
             } catch (error) {
                 console.error('获取地图数据失败:', error);
                 return [];
@@ -320,6 +324,10 @@
             // 格式化文件大小
             const fileSize = map.resourceSize ? formatFileSize(map.resourceSize) : '未知大小';
             
+            // 确保类型信息正确显示
+            const mapType = map.type || '未分类';
+            console.log('地图类型:', mapType, '原始数据:', map);
+            
             card.innerHTML = `
                 ${cachedImg ? '' : '<div class="loading-placeholder"></div>'}
                 <img src="${cachedImg ? imgUrl : ''}" data-src="${imgUrl}" data-backup-src="${backupImgUrl}" alt="${map.name}" ${cachedImg ? 'class="loaded"' : ''}>
@@ -329,7 +337,7 @@
                         <p>作者: ${map.author}</p>
                         <p>地图大小: ${map.size}</p>
                         <p>适用版本: ${map.gameVersion}</p>
-                        <p>地图类型: ${map.type || '未分类'}</p>
+                        <p>地图类型: ${mapType}</p>
                         <p>文件大小: ${fileSize}</p>
                         <p>${map.description}</p>
                     </div>
