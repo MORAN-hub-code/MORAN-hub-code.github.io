@@ -390,6 +390,19 @@
     "resourceSize": 861816
   },
   {
+    "name": "随机特质-神秘特质",
+    "path": "DATA/mods/随机特质-神秘特质",
+    "author": "爱某",
+    "description": "（就当是为了你的小人，努力的装模组增加特质吧！）\n正如模组的名字一般，每过一段时间小人的特质可以进行随机与获取,虽然这听起来很棒但获取的特质是完全随机的这意味着包括病毒与命定之死.\n我给模组设置了三个档位，一年获得五个特质，一年获得一个特质，几年有概率获得一个特质。\n特质互相排斥的模组可以延缓抽到负面特质的时间，拥有越多的特质越强但离死亡越近。\n那么开启这疯狂的世界吧！",
+    "gameVersion": "0.22.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 492321,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2291421
+  },
+  {
     "name": "骑士",
     "path": "DATA/mods/骑士",
     "author": "十月公子",
