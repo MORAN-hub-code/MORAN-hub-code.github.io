@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武者-骑士改</name>
+    <author>十月公子</author>
+    <description>低武模组
+骑士魔改文案
+修改成武侠风格</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>124010</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>323003</resourceSize>
+</resource>
