@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>简单汉化修正</name>
+    <author>汉化组的众人</author>
+    <description>必装模组之一
+将原版游戏90%内容汉化</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>43809</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>247734</resourceSize>
+</resource>
