@@ -39,6 +39,19 @@
     "resourceSize": 12300737
   },
   {
+    "name": "袖珍世界",
+    "path": "DATA/mods/袖珍世界",
+    "author": "LightHardt",
+    "description": "世界生成强制1X1大小",
+    "gameVersion": "0.5+",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 616751,
+    "resourceFile": "resource.zip",
+    "resourceSize": 4503
+  },
+  {
     "name": "骑士",
     "path": "DATA/mods/骑士",
     "author": "十月公子",
