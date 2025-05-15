@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>原版调整</name>
+    <author>十月公子</author>
+    <description>原版调整:
+最大等级:100
+万古之血:1w寿
+诅咒之血:-66.6%寿
+笨拙:攻速、速度、暴击等-10%，外交与精准-1
+超级生命:1w血+100寿
+缓慢:速度-20%，攻速-3
+活力提升:+20%血
+脆弱生命:-20%血
+氏族特质三个档改为:18、64、200</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>22532</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1621907</resourceSize>
+</resource>
