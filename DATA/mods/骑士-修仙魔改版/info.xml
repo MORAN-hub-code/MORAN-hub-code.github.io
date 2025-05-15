@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士-修仙魔改版</name>
+    <author>修远 爱某</author>
+    <description>中武骑士 修炼难度中幅度增加，数值大大增加，恢复力增加</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>35070</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>350760</resourceSize>
+</resource>
