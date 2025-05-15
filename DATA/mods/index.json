@@ -78,6 +78,19 @@
     "resourceSize": 323003
   },
   {
+    "name": "玄幻中文名",
+    "path": "DATA/mods/玄幻中文名",
+    "author": "此生不再屈",
+    "description": "修改国家，生物，武器名称",
+    "gameVersion": "0.5x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 1703,
+    "resourceFile": "resource.zip",
+    "resourceSize": 192510
+  },
+  {
     "name": "玄门天机录",
     "path": "DATA/mods/玄门天机录",
     "author": "凸( →_→ )凸",
