@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士-dej魔改</name>
+    <author>修远</author>
+    <description>高武骑士
+十三境界添加版的魔改
+使用了部分dej模组的素材进行魔改
+增加魔改了骑士十三个境界
+增加魔改八个天赋
+最后三个境界拥有大范围雷击法术</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>35192</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>340833</resourceSize>
+</resource>
