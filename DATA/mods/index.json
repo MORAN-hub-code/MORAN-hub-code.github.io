@@ -89,5 +89,31 @@
     "imageSize": 150800,
     "resourceFile": "resource.zip",
     "resourceSize": 421040
+  },
+  {
+    "name": "骑士-境界增加魔改收尾人",
+    "path": "DATA/mods/骑士-境界增加魔改收尾人",
+    "author": "修远",
+    "description": "高武骑士\n魔改了十三境界添加版\n文案名称修改成收尾人等级\n大大增加了境界的恢复力\n拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）\n最后三个境界拥有大范围雷击法术",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 94704,
+    "resourceFile": "resource.zip",
+    "resourceSize": 436764
+  },
+  {
+    "name": "骑士-境界添加终极优化版",
+    "path": "DATA/mods/骑士-境界添加终极优化版",
+    "author": "不适槅门",
+    "description": "高武骑士\n十三境界添加版的魔改\n删除了最高境界\n修炼难度大大增加\n增加魔改了骑士十二个境界\n删除了新的两个天赋\n拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）\n最后两个境界拥有大范围雷击法术",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 8024,
+    "resourceFile": "resource.zip",
+    "resourceSize": 430324
   }
 ]
