@@ -156,6 +156,19 @@
     "resourceSize": 4503
   },
   {
+    "name": "趣味性特质-进化序列自然生成",
+    "path": "DATA/mods/趣味性特质-进化序列自然生成",
+    "author": "修远",
+    "description": "进化序列可自然生成，进化序列可自然提升原版等级，原版等级到一定程度获得模组等级战斗技巧以及异能，进化天赋1-5，天赋越高升级越快\n",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 97752,
+    "resourceFile": "resource.zip",
+    "resourceSize": 861816
+  },
+  {
     "name": "骑士",
     "path": "DATA/mods/骑士",
     "author": "十月公子",
