@@ -13,6 +13,19 @@
     "resourceSize": 2352367
   },
   {
+    "name": "上帝模式翻译",
+    "path": "DATA/mods/上帝模式翻译",
+    "author": "半梦半醒",
+    "description": "机翻了控制台（绿虫子）里的功能，翻译可能不准确，后续还会更新",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 22575,
+    "resourceFile": "resource.zip",
+    "resourceSize": 10030
+  },
+  {
     "name": "原版调整",
     "path": "DATA/mods/原版调整",
     "author": "十月公子",
