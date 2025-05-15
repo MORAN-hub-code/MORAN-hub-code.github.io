@@ -39,6 +39,19 @@
     "resourceSize": 6978162
   },
   {
+    "name": "定居者-四族版",
+    "path": "DATA/mods/定居者-四族版",
+    "author": "不明",
+    "description": "启用灾难后，人类，精灵，矮人，兽人将以10-20个为一组刷新到世界中，直到各自种族的数量达到50个。他们刷新时年龄为1岁。\n注意：有些种族可能会刷新到太小而无法建立定居点的岛屿上，并且不会创建新的王国。",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 260054,
+    "resourceFile": "resource.zip",
+    "resourceSize": 251146
+  },
+  {
     "name": "定居者-野兽种族版",
     "path": "DATA/mods/定居者-野兽种族版",
     "author": "不明",
