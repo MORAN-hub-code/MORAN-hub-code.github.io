@@ -13,6 +13,19 @@
     "resourceSize": 2352367
   },
   {
+    "name": "启源修仙-重制版",
+    "path": "DATA/mods/启源修仙-重制版",
+    "author": "启源制作组",
+    "description": "（模组为测试版，内容并不完善）\n完全有别与启源修仙的重制版\n增加练气，筑基，金丹，元婴境界\n增加法术抗性，非同级无法伤其分毫\n练气期开始，死亡后化为鬼魂继续存在，修为无法精进\n特定条件下小人会制作符箓\n筑基可腾云驾雾进行飞行，可将手中武器抛出进行御器攻击\n金丹有九转小境界，不同金丹有不同的神通，普通金丹无神通，金丹修行者被击杀掉落金丹\n元婴可拥有世界级法术，覆盖标准世界\n（元婴难出，信息不全）",
+    "gameVersion": "0.22",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 758647,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2203995
+  },
+  {
     "name": "巫术秘典",
     "path": "DATA/mods/巫术秘典",
     "author": "十月公子",
