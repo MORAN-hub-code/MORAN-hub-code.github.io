@@ -39,6 +39,19 @@
     "resourceSize": 13457337
   },
   {
+    "name": "武者-骑士改",
+    "path": "DATA/mods/武者-骑士改",
+    "author": "十月公子",
+    "description": "低武模组\n骑士魔改文案\n修改成武侠风格",
+    "gameVersion": "0.5+",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 124010,
+    "resourceFile": "resource.zip",
+    "resourceSize": 323003
+  },
+  {
     "name": "玄门天机录",
     "path": "DATA/mods/玄门天机录",
     "author": "凸( →_→ )凸",
