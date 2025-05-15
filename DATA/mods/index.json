@@ -390,6 +390,19 @@
     "resourceSize": 340833
   },
   {
+    "name": "骑士-修仙魔改版",
+    "path": "DATA/mods/骑士-修仙魔改版",
+    "author": "修远 爱某",
+    "description": "中武骑士 修炼难度中幅度增加，数值大大增加，恢复力增加",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 35070,
+    "resourceFile": "resource.zip",
+    "resourceSize": 350760
+  },
+  {
     "name": "骑士-十三境界添加版",
     "path": "DATA/mods/骑士-十三境界添加版",
     "author": "gn@br5526dr～g*.co.c#:) ",
