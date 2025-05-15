@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>地图处理模组</name>
+    <author>贝伦帝国</author>
+    <description>内含自定义地图大小，复制旧地图地形，用旧地图地形覆盖新地图，支持颠倒、镜像、中心、缩放覆盖，处理噪点等功能，解锁原版游戏所有内容</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>17357</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>5324</resourceSize>
+</resource>
