@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>血脉觉醒</name>
+    <author>十月公子</author>
+    <description>（注意部分内容在氏族栏目）
+增加几种氏族血脉，增加数值
+“需求”分组中添加了“加速进化”(通过加快叛乱让国家更快更替)
+增加"铸币者权柄"和"烬环之契"
+铸币者权柄：「金钱即呼吸」每秒1~10金币
+烬环之契：「灰烬中永续的命轮，烙刻血脉的三角圣约」死亡后在首都重生为1岁
+新增骑士世家、巫师世家、血族、狂战之族
+骑士/巫师世家:必然觉醒天赋
+血族:每次攻击都会吸敌人血
+狂战之族:每次战斗都会获得大量经验，血越少获得的经验也会随之加大</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>30116</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>879305</resourceSize>
+</resource>
