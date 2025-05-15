@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>趣味性特质</name>
+    <author>十月公子</author>
+    <description>有趣的模组，无法自然生成</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>92889</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>800450</resourceSize>
+</resource>
