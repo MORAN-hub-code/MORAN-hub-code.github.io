@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>现代盒子-ModernBox</name>
+    <author>Cody</author>
+    <description>因为0.5科技树改革文明开局就拥有现代科技
+满足人口可制造飞机，坦克等非生物单位，不同种族科技产物材质不同
+枪械与防具满足钢材与少量金币即可购买
+后续内容等待更新。。。</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>25850</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>6717398</resourceSize>
+</resource>
