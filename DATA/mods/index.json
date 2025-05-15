@@ -52,6 +52,19 @@
     "resourceSize": 13457337
   },
   {
+    "name": "更多存档模组MoreSaves",
+    "path": "DATA/mods/更多存档模组MoreSaves",
+    "author": "不明",
+    "description": "增加更多的存档",
+    "gameVersion": "0.5+",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 21865,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2897
+  },
+  {
     "name": "武者-骑士改",
     "path": "DATA/mods/武者-骑士改",
     "author": "十月公子",
