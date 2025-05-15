@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士-境界增加魔改收尾人</name>
+    <author>修远</author>
+    <description>高武骑士
+魔改了十三境界添加版
+文案名称修改成收尾人等级
+大大增加了境界的恢复力
+拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期）
+最后三个境界拥有大范围雷击法术</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>94704</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>436764</resourceSize>
+</resource>
