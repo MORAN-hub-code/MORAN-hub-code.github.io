@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>复仇者联盟</name>
+    <author>不明</author>
+    <description>增加了多个复仇者联盟中的角色以及特质，班纳在死亡后会变成绿巨人，随着科技发展可以这叫钢铁侠战甲以及美队的盾</description>
+    <gameVersion>0.22.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>708821</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>3234266</resourceSize>
+</resource>
