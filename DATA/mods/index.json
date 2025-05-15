@@ -195,6 +195,19 @@
     "resourceSize": 6717398
   },
   {
+    "name": "简易优化模组Optime",
+    "path": "DATA/mods/简易优化模组Optime",
+    "author": "ApexLite",
+    "description": "优化功能区块懒加载：禁止反复加载可视区域的区块，减少加载负担。\n真正的暂停：游戏暂停时将弹射物等一起暂停。\n禁用分析：离开游戏时不自动发送分析给开发者。\n显示帧率：在屏幕左上方角显示一个帧率计数。\n游戏帧数上限：用于调整最大帧数上限。\n隐藏欢迎窗口：隐藏每次进入游戏都会弹出的窗口。\n开发模式：在右上角显示上帝模式按钮。\n禁用地图统计：如其名，但仅在开发模式生效下启用。",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 1176,
+    "resourceFile": "resource.zip",
+    "resourceSize": 11554
+  },
+  {
     "name": "血脉觉醒",
     "path": "DATA/mods/血脉觉醒",
     "author": "十月公子",
