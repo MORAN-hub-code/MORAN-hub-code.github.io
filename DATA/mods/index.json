@@ -104,6 +104,19 @@
     "resourceSize": 13457337
   },
   {
+    "name": "强化亚种突变",
+    "path": "DATA/mods/强化亚种突变",
+    "author": " 十月公子",
+    "description": "亚种突变带来的外观突变拥有属性加成",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 13064,
+    "resourceFile": "resource.zip",
+    "resourceSize": 21675
+  },
+  {
     "name": "更多存档模组MoreSaves",
     "path": "DATA/mods/更多存档模组MoreSaves",
     "author": "不明",
