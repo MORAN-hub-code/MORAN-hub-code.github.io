@@ -39,6 +39,19 @@
     "resourceSize": 6978162
   },
   {
+    "name": "定居者-人类至上版",
+    "path": "DATA/mods/定居者-人类至上版",
+    "author": "爱某",
+    "description": "启用灾难后，人类种族将以100-2000个为一组刷新到世界中，直到各自种族的数量达到5000个。他们刷新时年龄为1岁。\n注意：有些种族可能会刷新到太小而无法建立定居点的岛屿上，并且不会创建新的王国。",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 260054,
+    "resourceFile": "resource.zip",
+    "resourceSize": 249704
+  },
+  {
     "name": "定居者-四族版",
     "path": "DATA/mods/定居者-四族版",
     "author": "不明",
