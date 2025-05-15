@@ -180,6 +180,13 @@
                     <option value="0.50">0.50.x</option>
                 </select>
             </div>
+            <div class="filter-group">
+                <select id="typeFilter">
+                    <option value="">所有类型</option>
+                    <option value="架空">架空</option>
+                    <option value="写实">写实</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -369,29 +376,34 @@
             const searchInput = document.getElementById('searchInput');
             const sizeFilter = document.getElementById('sizeFilter');
             const versionFilter = document.getElementById('versionFilter');
+            const typeFilter = document.getElementById('typeFilter');
 
             function filterMaps() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const selectedSize = sizeFilter.value;
                 const selectedVersion = versionFilter.value;
+                const selectedType = typeFilter.value;
 
                 const cards = document.querySelectorAll('.map-card');
                 cards.forEach(card => {
                     const name = card.querySelector('h3').textContent.toLowerCase();
                     const size = card.querySelector('.map-info p:nth-child(2)').textContent.split(': ')[1];
                     const version = card.querySelector('.map-info p:nth-child(3)').textContent.split(': ')[1];
+                    const type = card.querySelector('.map-info p:nth-child(4)').textContent.split(': ')[1];
 
                     const matchesSearch = name.includes(searchTerm);
                     const matchesSize = !selectedSize || size === selectedSize;
                     const matchesVersion = !selectedVersion || version.startsWith(selectedVersion);
+                    const matchesType = !selectedType || type === selectedType;
 
-                    card.style.display = matchesSearch && matchesSize && matchesVersion ? 'block' : 'none';
+                    card.style.display = matchesSearch && matchesSize && matchesVersion && matchesType ? 'block' : 'none';
                 });
             }
 
             searchInput.addEventListener('input', filterMaps);
             sizeFilter.addEventListener('change', filterMaps);
             versionFilter.addEventListener('change', filterMaps);
+            typeFilter.addEventListener('change', filterMaps);
         }
 
         // 图片懒加载

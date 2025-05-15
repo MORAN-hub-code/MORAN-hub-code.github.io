@@ -137,6 +137,10 @@ jobs:
                       item.size = xmlData.size[0];
                       console.log('Added size:', item.size);
                     }
+                    if (xmlData.type?.[0]) {
+                      item.type = xmlData.type[0];
+                      console.log('Added type:', item.type);
+                    }
                   }
                   
                   console.log('Generated item for ' + dirName + ':', JSON.stringify(item, null, 2));
