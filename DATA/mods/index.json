@@ -13,6 +13,19 @@
     "resourceSize": 2352367
   },
   {
+    "name": "原版调整",
+    "path": "DATA/mods/原版调整",
+    "author": "十月公子",
+    "description": "原版调整:\n最大等级:100\n万古之血:1w寿\n诅咒之血:-66.6%寿\n笨拙:攻速、速度、暴击等-10%，外交与精准-1\n超级生命:1w血+100寿\n缓慢:速度-20%，攻速-3\n活力提升:+20%血\n脆弱生命:-20%血\n氏族特质三个档改为:18、64、200",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 22532,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1621907
+  },
+  {
     "name": "启源修仙-重制版",
     "path": "DATA/mods/启源修仙-重制版",
     "author": "启源制作组",
