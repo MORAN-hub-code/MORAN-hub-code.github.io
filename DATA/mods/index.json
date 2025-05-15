@@ -336,5 +336,18 @@
     "imageSize": 8024,
     "resourceFile": "resource.zip",
     "resourceSize": 430324
+  },
+  {
+    "name": "骑士强化版",
+    "path": "DATA/mods/骑士强化版",
+    "author": "修远",
+    "description": "中武骑士\n修炼速度不变，数值大大增加，恢复力增加",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 19628,
+    "resourceFile": "resource.zip",
+    "resourceSize": 278618
   }
 ]
