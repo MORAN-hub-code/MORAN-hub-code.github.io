@@ -65,6 +65,19 @@
     "resourceSize": 5324
   },
   {
+    "name": "复仇者联盟",
+    "path": "DATA/mods/复仇者联盟",
+    "author": "不明",
+    "description": "增加了多个复仇者联盟中的角色以及特质，班纳在死亡后会变成绿巨人，随着科技发展可以这叫钢铁侠战甲以及美队的盾",
+    "gameVersion": "0.22.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 708821,
+    "resourceFile": "resource.zip",
+    "resourceSize": 3234266
+  },
+  {
     "name": "天灾扩大生成器",
     "path": "DATA/mods/天灾扩大生成器",
     "author": "AdmiralPills",
