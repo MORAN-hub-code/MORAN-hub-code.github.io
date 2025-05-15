@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>血脉觉醒-边狱巴士魔改</name>
+    <author>修远</author>
+    <description>（注意部分内容在氏族栏目） 氏族血脉魔改成大罪共鸣，增加数值 
+“需求”分组中添加了“加速进化”(增加数值，可遗传)
+五种等级的遗传血脉，会增加数值，可遗传
+删除"铸币者权柄"，"烬环之契" 魔改成"拨回时针"
+拨回时针：「拨动时针即可复活罪人」死亡后在首都重生为1岁 
+（删除以下）
+骑士世家、巫师世家、血族、狂战之族</description>
+    <gameVersion>0.5+</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>63635</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>856106</resourceSize>
+</resource>
