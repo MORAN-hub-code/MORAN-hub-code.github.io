@@ -65,6 +65,19 @@
     "resourceSize": 5324
   },
   {
+    "name": "天灾扩大生成器",
+    "path": "DATA/mods/天灾扩大生成器",
+    "author": "AdmiralPills",
+    "description": "（安装教程看模组内图片）\n这个模组允许肿瘤、生物质、超级南瓜和核心通过它们生成的生物创造更多自己的生成塔，从而使它们能够扩展到整个地图。\n肿瘤：由于高度易燃，平均扩张速度最快。\n生物质：节点往往更集中。\n南瓜：平均扩张速度与生物质相同。\n网络核心：平均扩张速度最慢，并且是唯一无法通过实体死亡进行扩张的生物。\n模组为天灾添加了24个特质，影响它们在地图上传播的速度，目前有6个级别：非常慢、慢、正常（无标签）、快、非常快和疯狂快。",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 264359,
+    "resourceFile": "resource.zip",
+    "resourceSize": 24875
+  },
+  {
     "name": "天道权柄-GodTools",
     "path": "DATA/mods/天道权柄-GodTools",
     "author": "一米 末影大黑",
