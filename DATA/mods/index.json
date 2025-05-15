@@ -299,6 +299,19 @@
     "resourceSize": 350572
   },
   {
+    "name": "骑士-dej魔改",
+    "path": "DATA/mods/骑士-dej魔改",
+    "author": "修远",
+    "description": "高武骑士\n十三境界添加版的魔改\n使用了部分dej模组的素材进行魔改\n增加魔改了骑士十三个境界\n增加魔改八个天赋\n最后三个境界拥有大范围雷击法术",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 35192,
+    "resourceFile": "resource.zip",
+    "resourceSize": 340833
+  },
+  {
     "name": "骑士-十三境界添加版",
     "path": "DATA/mods/骑士-十三境界添加版",
     "author": "gn@br5526dr～g*.co.c#:) ",
