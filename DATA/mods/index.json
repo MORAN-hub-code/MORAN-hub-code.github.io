@@ -104,19 +104,6 @@
     "resourceSize": 6772077
   },
   {
-    "name": "天道权柄-GodTools",
-    "path": "DATA/mods/天道权柄-GodTools",
-    "author": "一米 末影大黑",
-    "description": "大黑武道的赠品\n必装模组之一，\n可以查看生物的等级，击杀数，年龄，生命，攻击力榜单。\n筛选生物种类，国家，特质，职业。\n收藏生物当前状态并复制",
-    "gameVersion": "0.22.x",
-    "type": "实用工具",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 334698,
-    "resourceFile": "resource.zip",
-    "resourceSize": 6978162
-  },
-  {
     "name": "奇葩特质盒",
     "path": "DATA/mods/奇葩特质盒",
     "author": "爱某",
