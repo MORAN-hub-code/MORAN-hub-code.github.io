@@ -26,6 +26,19 @@
     "resourceSize": 21866
   },
   {
+    "name": "世界修炼体系",
+    "path": "DATA/mods/世界修炼体系",
+    "author": "Shan-gri-la",
+    "description": "（未汉化）遗憾的是，没有标签，只有特质，作者遇到了一些个人问题还没有制作境界升级，现在只能作为血脉遗传",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 51278,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2345616
+  },
+  {
     "name": "原版调整",
     "path": "DATA/mods/原版调整",
     "author": "十月公子",
