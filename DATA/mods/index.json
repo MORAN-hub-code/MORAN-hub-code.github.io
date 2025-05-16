@@ -143,6 +143,19 @@
     "resourceSize": 5948592
   },
   {
+    "name": "奥术特质与战斗技巧",
+    "path": "DATA/mods/奥术特质与战斗技巧",
+    "author": "修远",
+    "description": "一些无法自然诞生的特质，只增加数值，加入亚种增加代入感",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 53428,
+    "resourceFile": "resource.zip",
+    "resourceSize": 76282
+  },
+  {
     "name": "定居者-人类至上版",
     "path": "DATA/mods/定居者-人类至上版",
     "author": "爱某",
