@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>奥术特质与战斗技巧</name>
+    <author>修远</author>
+    <description>一些无法自然诞生的特质，只增加数值，加入亚种增加代入感</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>53428</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>76282</resourceSize>
+</resource>
