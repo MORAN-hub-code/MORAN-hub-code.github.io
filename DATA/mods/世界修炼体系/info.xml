@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>世界修炼体系</name>
+    <author>Shan-gri-la</author>
+    <description>（未汉化）遗憾的是，没有标签，只有特质，作者遇到了一些个人问题还没有制作境界升级，现在只能作为血脉遗传</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>51278</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2345616</resourceSize>
+</resource>
