@@ -1,5 +1,18 @@
 [
   {
+    "name": "一线天169x1",
+    "path": "DATA/maps/一线天169x1",
+    "author": "不明",
+    "description": "为了更多的资源只能将眼前的敌人消灭吗，有点意思，但创造这个世界的上帝认真的？",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 47973,
+    "resourceFile": "resource.zip",
+    "resourceSize": 237066
+  },
+  {
     "name": "七塔31x15",
     "path": "DATA/maps/七塔31x15",
     "author": "不明",
