@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>原始漩涡30x30</name>
+    <author>Mr.Slime</author>
+    <description>为何叫它原始漩涡？或许当它凝聚起世上的所有物质便会成为奇点也说不定……</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>大</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>874807</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1152455</resourceSize>
+</resource>
