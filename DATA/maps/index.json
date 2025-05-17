@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "name": "新三界15x10",
+    "path": "DATA/maps/新三界15x10",
+    "author": "盲目吃鱼之神",
+    "description": "盲目吃鱼之神最新力作",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 128765,
+    "resourceFile": "resource.zip",
+    "resourceSize": 204101
+  }
+]
