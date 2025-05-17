@@ -11,5 +11,18 @@
     "imageSize": 128765,
     "resourceFile": "resource.zip",
     "resourceSize": 204101
+  },
+  {
+    "name": "陨落的泰坦24x36",
+    "path": "DATA/maps/陨落的泰坦24x36",
+    "author": "Mr. Calamitous",
+    "description": "高于天地数倍的神明陨落，化为了这片大地",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 1140355,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1617807
   }
 ]
