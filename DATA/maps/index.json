@@ -1,5 +1,18 @@
 [
   {
+    "name": "七塔31x15",
+    "path": "DATA/maps/七塔31x15",
+    "author": "不明",
+    "description": "七座高塔屹立于群山之中，至于是谁建造的或许只有上帝知道……",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 2095773,
+    "resourceFile": "resource.zip",
+    "resourceSize": 15064933
+  },
+  {
     "name": "十二星界12x12",
     "path": "DATA/maps/十二星界12x12",
     "author": "不明",
