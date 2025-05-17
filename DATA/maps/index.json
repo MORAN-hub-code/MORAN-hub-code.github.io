@@ -1,5 +1,18 @@
 [
   {
+    "name": "十二星界12x12",
+    "path": "DATA/maps/十二星界12x12",
+    "author": "不明",
+    "description": "十二颗不同生态的行星所组成的星系",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 192240,
+    "resourceFile": "resource.zip",
+    "resourceSize": 324035
+  },
+  {
     "name": "巨龙垂暮-大梵之殇30x20",
     "path": "DATA/maps/巨龙垂暮-大梵之殇30x20",
     "author": "蔚天",
