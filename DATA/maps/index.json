@@ -52,6 +52,19 @@
     "resourceSize": 1152455
   },
   {
+    "name": "峡谷地形海怪大战10x10",
+    "path": "DATA/maps/峡谷地形海怪大战10x10",
+    "author": "盲目吃鱼之神",
+    "description": "本土小人与海怪的战斗，值得一看",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 712642,
+    "resourceFile": "resource.zip",
+    "resourceSize": 541302
+  },
+  {
     "name": "巨龙垂暮-大梵之殇30x20",
     "path": "DATA/maps/巨龙垂暮-大梵之殇30x20",
     "author": "蔚天",
