@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>峡谷地形海怪大战10x10</name>
+    <author>盲目吃鱼之神</author>
+    <description>本土小人与海怪的战斗，值得一看</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>中</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>712642</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>541302</resourceSize>
+</resource>
