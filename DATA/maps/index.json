@@ -117,6 +117,19 @@
     "resourceSize": 1007131
   },
   {
+    "name": "离心实验岛18x10",
+    "path": "DATA/maps/离心实验岛18x10",
+    "author": "AvoidingBoredom",
+    "description": "上帝耗巨资打造的实验场",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 215659,
+    "resourceFile": "resource.zip",
+    "resourceSize": 278935
+  },
+  {
     "name": "罕纳斯星球24x14",
     "path": "DATA/maps/罕纳斯星球24x14",
     "author": "Instructed",
