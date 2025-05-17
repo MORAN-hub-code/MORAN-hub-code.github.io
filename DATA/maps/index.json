@@ -52,6 +52,19 @@
     "resourceSize": 204101
   },
   {
+    "name": "星域31x31",
+    "path": "DATA/maps/星域31x31",
+    "author": "不明",
+    "description": "星域，星界，不管怎样称呼它们都是生物们赖以生存的世界，想要去往其他的世界只能祈求神明的帮助",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 747530,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1007131
+  },
+  {
     "name": "陨落的泰坦24x36",
     "path": "DATA/maps/陨落的泰坦24x36",
     "author": "Mr. Calamitous",
