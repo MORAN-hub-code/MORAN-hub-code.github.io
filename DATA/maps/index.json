@@ -26,6 +26,19 @@
     "resourceSize": 324035
   },
   {
+    "name": "原始漩涡30x30",
+    "path": "DATA/maps/原始漩涡30x30",
+    "author": "Mr.Slime",
+    "description": "为何叫它原始漩涡？或许当它凝聚起世上的所有物质便会成为奇点也说不定……",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 874807,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1152455
+  },
+  {
     "name": "巨龙垂暮-大梵之殇30x20",
     "path": "DATA/maps/巨龙垂暮-大梵之殇30x20",
     "author": "蔚天",
