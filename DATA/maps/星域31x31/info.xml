@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>星域31x31</name>
+    <author>不明</author>
+    <description>星域，星界，不管怎样称呼它们都是生物们赖以生存的世界，想要去往其他的世界只能祈求神明的帮助</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>大</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>747530</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1007131</resourceSize>
+</resource>
