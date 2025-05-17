@@ -91,6 +91,19 @@
     "resourceSize": 1007131
   },
   {
+    "name": "罕纳斯星球24x14",
+    "path": "DATA/maps/罕纳斯星球24x14",
+    "author": "Instructed",
+    "description": "一颗标准的魔幻星球，在我们到来前的108年似乎发生过什么",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 340377,
+    "resourceFile": "resource.zip",
+    "resourceSize": 561029
+  },
+  {
     "name": "陨落的泰坦24x36",
     "path": "DATA/maps/陨落的泰坦24x36",
     "author": "Mr. Calamitous",
