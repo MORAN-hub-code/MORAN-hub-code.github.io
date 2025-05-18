@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>上帝模式翻译</name>
+    <author>半梦半醒</author>
+    <description>汉化了控制台内容</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>86537</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>22765</resourceSize>
+</resource>
