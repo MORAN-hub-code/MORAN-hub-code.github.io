@@ -123,6 +123,24 @@
     .resource-card h3 {
       margin-top: 0;
     }
+
+    .qq-group-link {
+      cursor: pointer;
+      color: #58a6ff;
+      text-decoration: underline;
+    }
+
+    .qq-group-image {
+      max-width: 300px;
+      margin: 1rem auto;
+      display: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .qq-group-image.show {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -138,7 +156,8 @@
   <header>
     <h1>欢迎来到星空社</h1>
     <p>WorldBox 游戏资源分享平台</p>
-    <p>欢迎加入我们的QQ群: 941774543</p>
+    <p>欢迎加入我们的QQ群: <span class="qq-group-link" onclick="toggleQqGroupImage()">941774543</span></p>
+    <img id="qqGroupImage" class="qq-group-image" src="https://xingkongshe.top/Image/qun.jpg" alt="QQ群二维码">
   </header>
 
   <main>
@@ -177,6 +196,12 @@
     const CDN_DOMAIN = 'https://cdn.mengze.vip/gh/MORAN-hub-code/MORAN-hub-code.github.io@main';  // 主 CDN 域名
     const BACKUP_CDN_DOMAIN = 'https://xingkongshe.top';  // 备用 CDN 域名
     
+    // 切换QQ群图片显示
+    function toggleQqGroupImage() {
+      const image = document.getElementById('qqGroupImage');
+      image.classList.toggle('show');
+    }
+
     // 从多个 CDN 加载资源
     async function fetchFromCDN(path) {
       const urls = [
