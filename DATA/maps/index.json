@@ -104,6 +104,19 @@
     "resourceSize": 204101
   },
   {
+    "name": "方碑遍布之地16x16",
+    "path": "DATA/maps/方碑遍布之地16x16",
+    "author": "Gregorianek",
+    "description": "方碑遍布之地",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 538046,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1384683
+  },
+  {
     "name": "星域31x31",
     "path": "DATA/maps/星域31x31",
     "author": "不明",
