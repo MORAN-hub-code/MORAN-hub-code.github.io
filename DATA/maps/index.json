@@ -65,6 +65,19 @@
     "resourceSize": 1152455
   },
   {
+    "name": "天堂乐章",
+    "path": "DATA/maps/天堂乐章",
+    "author": "不明",
+    "description": "天堂乐章",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 724261,
+    "resourceFile": "resource.zip",
+    "resourceSize": 480199
+  },
+  {
     "name": "峡谷地形海怪大战10x10",
     "path": "DATA/maps/峡谷地形海怪大战10x10",
     "author": "盲目吃鱼之神",
