@@ -91,6 +91,19 @@
     "resourceSize": 480199
   },
   {
+    "name": "如同神锻",
+    "path": "DATA/maps/如同神锻",
+    "author": "不明",
+    "description": "如同神锻",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 427405,
+    "resourceFile": "resource.zip",
+    "resourceSize": 302374
+  },
+  {
     "name": "峡谷地形海怪大战10x10",
     "path": "DATA/maps/峡谷地形海怪大战10x10",
     "author": "盲目吃鱼之神",
