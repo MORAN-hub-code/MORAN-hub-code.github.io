@@ -156,6 +156,19 @@
     "resourceSize": 1007131
   },
   {
+    "name": "海洋迷宫",
+    "path": "DATA/maps/海洋迷宫",
+    "author": "不明",
+    "description": "海洋迷宫",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 615757,
+    "resourceFile": "resource.zip",
+    "resourceSize": 418924
+  },
+  {
     "name": "疯矮人的秘宝",
     "path": "DATA/maps/疯矮人的秘宝",
     "author": "不明",
