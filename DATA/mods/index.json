@@ -312,6 +312,19 @@
     "resourceSize": 6717398
   },
   {
+    "name": "白蚁特质",
+    "path": "DATA/mods/白蚁特质",
+    "author": "TermiteMan",
+    "description": "增加了25种特质和5种纪元，目前为测试版许多东西还未完成，目前只完成了有害特质的部分，未来会完成更多的纪元，法术，趣味特质和精神状态",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 298164,
+    "resourceFile": "resource.zip",
+    "resourceSize": 7903648
+  },
+  {
     "name": "禁用权能特效",
     "path": "DATA/mods/禁用权能特效",
     "author": "半梦半醒",
