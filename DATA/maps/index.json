@@ -26,6 +26,19 @@
     "resourceSize": 15064933
   },
   {
+    "name": "万象仪",
+    "path": "DATA/maps/万象仪",
+    "author": "不明",
+    "description": "万象仪",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 758515,
+    "resourceFile": "resource.zip",
+    "resourceSize": 521575
+  },
+  {
     "name": "丛林之心",
     "path": "DATA/maps/丛林之心",
     "author": "不明",
