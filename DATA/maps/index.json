@@ -208,6 +208,19 @@
     "resourceSize": 278935
   },
   {
+    "name": "米诺陶诺斯迷宫",
+    "path": "DATA/maps/米诺陶诺斯迷宫",
+    "author": "不明",
+    "description": "米诺陶诺斯迷宫",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 536156,
+    "resourceFile": "resource.zip",
+    "resourceSize": 394500
+  },
+  {
     "name": "精灵圣果",
     "path": "DATA/maps/精灵圣果",
     "author": "不明",
