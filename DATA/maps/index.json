@@ -323,5 +323,18 @@
     "imageSize": 1140355,
     "resourceFile": "resource.zip",
     "resourceSize": 1617807
+  },
+  {
+    "name": "魔咒之核",
+    "path": "DATA/maps/魔咒之核",
+    "author": "不明",
+    "description": "魔咒之核",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 416948,
+    "resourceFile": "resource.zip",
+    "resourceSize": 275409
   }
 ]
