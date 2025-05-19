@@ -130,6 +130,19 @@
     "resourceSize": 1007131
   },
   {
+    "name": "疯矮人的秘宝",
+    "path": "DATA/maps/疯矮人的秘宝",
+    "author": "不明",
+    "description": "疯矮人的秘宝",
+    "gameVersion": "0.50.x",
+    "size": "小",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 819974,
+    "resourceFile": "resource.zip",
+    "resourceSize": 628694
+  },
+  {
     "name": "离心实验岛18x10",
     "path": "DATA/maps/离心实验岛18x10",
     "author": "AvoidingBoredom",
