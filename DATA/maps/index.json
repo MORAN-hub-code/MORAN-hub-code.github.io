@@ -26,6 +26,19 @@
     "resourceSize": 15064933
   },
   {
+    "name": "丛林之心",
+    "path": "DATA/maps/丛林之心",
+    "author": "不明",
+    "description": "丛林之心",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 584557,
+    "resourceFile": "resource.zip",
+    "resourceSize": 423424
+  },
+  {
     "name": "冲突航向9x9",
     "path": "DATA/maps/冲突航向9x9",
     "author": "AvoidingBoredom",
