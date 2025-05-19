@@ -169,6 +169,19 @@
     "resourceSize": 278935
   },
   {
+    "name": "精灵圣果",
+    "path": "DATA/maps/精灵圣果",
+    "author": "不明",
+    "description": "精灵圣果",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 796495,
+    "resourceFile": "resource.zip",
+    "resourceSize": 720533
+  },
+  {
     "name": "红龙的宝藏9x9",
     "path": "DATA/maps/红龙的宝藏9x9",
     "author": "不明",
