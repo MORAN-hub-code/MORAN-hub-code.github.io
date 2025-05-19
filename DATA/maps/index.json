@@ -156,6 +156,19 @@
     "resourceSize": 465118
   },
   {
+    "name": "幻城",
+    "path": "DATA/maps/幻城",
+    "author": "不明",
+    "description": "幻城",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 478243,
+    "resourceFile": "resource.zip",
+    "resourceSize": 307916
+  },
+  {
     "name": "新三界15x10",
     "path": "DATA/maps/新三界15x10",
     "author": "盲目吃鱼之神",
