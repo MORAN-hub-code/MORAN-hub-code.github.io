@@ -338,6 +338,19 @@
     "resourceSize": 319685
   },
   {
+    "name": "贤者之石",
+    "path": "DATA/maps/贤者之石",
+    "author": "不明",
+    "description": "贤者之石",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 623825,
+    "resourceFile": "resource.zip",
+    "resourceSize": 400963
+  },
+  {
     "name": "陨落的泰坦24x36",
     "path": "DATA/maps/陨落的泰坦24x36",
     "author": "Mr. Calamitous",
