@@ -195,6 +195,19 @@
     "resourceSize": 418924
   },
   {
+    "name": "熔岩魔心",
+    "path": "DATA/maps/熔岩魔心",
+    "author": "不明",
+    "description": "熔岩魔心",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 387102,
+    "resourceFile": "resource.zip",
+    "resourceSize": 251970
+  },
+  {
     "name": "画卷之峡",
     "path": "DATA/maps/画卷之峡",
     "author": "不明",
