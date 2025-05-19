@@ -156,6 +156,19 @@
     "resourceSize": 561029
   },
   {
+    "name": "耶稣",
+    "path": "DATA/maps/耶稣",
+    "author": "不明",
+    "description": "耶稣像",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 559985,
+    "resourceFile": "resource.zip",
+    "resourceSize": 319685
+  },
+  {
     "name": "陨落的泰坦24x36",
     "path": "DATA/maps/陨落的泰坦24x36",
     "author": "Mr. Calamitous",
