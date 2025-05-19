@@ -91,6 +91,19 @@
     "resourceSize": 6997870
   },
   {
+    "name": "巫师的混沌水晶球",
+    "path": "DATA/maps/巫师的混沌水晶球",
+    "author": "不明",
+    "description": "巫师的混沌水晶球",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 625976,
+    "resourceFile": "resource.zip",
+    "resourceSize": 465118
+  },
+  {
     "name": "新三界15x10",
     "path": "DATA/maps/新三界15x10",
     "author": "盲目吃鱼之神",
