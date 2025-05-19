@@ -143,6 +143,19 @@
     "resourceSize": 278935
   },
   {
+    "name": "红龙的宝藏9x9",
+    "path": "DATA/maps/红龙的宝藏9x9",
+    "author": "不明",
+    "description": "红龙的宝藏",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 678476,
+    "resourceFile": "resource.zip",
+    "resourceSize": 478993
+  },
+  {
     "name": "罕纳斯星球24x14",
     "path": "DATA/maps/罕纳斯星球24x14",
     "author": "Instructed",
