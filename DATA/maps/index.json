@@ -169,6 +169,19 @@
     "resourceSize": 418924
   },
   {
+    "name": "画卷之峡",
+    "path": "DATA/maps/画卷之峡",
+    "author": "不明",
+    "description": "画卷之峡",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 822415,
+    "resourceFile": "resource.zip",
+    "resourceSize": 765576
+  },
+  {
     "name": "疯矮人的秘宝",
     "path": "DATA/maps/疯矮人的秘宝",
     "author": "不明",
