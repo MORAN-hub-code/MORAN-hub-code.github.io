@@ -299,6 +299,19 @@
     "resourceSize": 12404098
   },
   {
+    "name": "现代盒子-ModernBox",
+    "path": "DATA/mods/现代盒子-ModernBox",
+    "author": "Tuxxego",
+    "description": "不同种族科技产物材质不同（老四族，恶魔，外星人），枪械与防具满足钢材与少量金币即可购买，更新后会使用核导弹进行核战争。大多数种族的时代：中世纪、文艺复兴和现代，每个时代都有车辆和建筑物。更多海军车辆（现在你有航母和驱逐舰去入侵城市，而炮艇保卫家园）机动式导弹发射器和潜艇使用多弹头分导式导弹从远距离发射，从安全的本土轰炸敌方城市。城市时代取决于中央建筑的升级，小心，核战争可能会让文明回到石器时代！UI 和标签缺失，即将在另一个更新中推出！",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 22836,
+    "resourceFile": "resource.zip",
+    "resourceSize": 23952090
+  },
+  {
     "name": "白蚁特质",
     "path": "DATA/mods/白蚁特质",
     "author": "TermiteMan",
