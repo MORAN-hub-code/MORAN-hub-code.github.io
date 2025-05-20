@@ -299,19 +299,6 @@
     "resourceSize": 12404098
   },
   {
-    "name": "现代盒子-ModernBox",
-    "path": "DATA/mods/现代盒子-ModernBox",
-    "author": "Cody",
-    "description": "因为0.5科技树改革文明开局就拥有现代科技\n满足人口可制造飞机，坦克等非生物单位，不同种族科技产物材质不同\n枪械与防具满足钢材与少量金币即可购买\n后续内容等待更新。。。",
-    "gameVersion": "0.50.x",
-    "type": "扩展玩法",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 25850,
-    "resourceFile": "resource.zip",
-    "resourceSize": 6717398
-  },
-  {
     "name": "白蚁特质",
     "path": "DATA/mods/白蚁特质",
     "author": "TermiteMan",
