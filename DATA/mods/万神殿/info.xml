@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>万神殿</name>
+    <author>MasonScarbro & Melvin Shwuaner</author>
+    <description>（模组还未正式发布）模组中增加了十几种神位，相比0.22版本增加了更多的特效以及技能，是目前特效最华丽的模组，神与人生下的孩子为半神继承父母部分属性，神与神生下的孩子为伪神继承部分权柄与属性，神会被猎神者追杀，猎神之镰会对神明造成5倍伤害，杀死神明后会获得弑神者特质获得神明部分的能力与属性，打开带有标点的紫色小人按钮神明会自然诞生，点击下方的紫色小人按钮会随机选择生物成为神明，点击猎神者按钮猎神者将无视地形跨过山海追杀神明（不同的神有不同的能力这边不详细介绍，请玩家直行探索）</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>637009</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>3589192</resourceSize>
+</resource>
