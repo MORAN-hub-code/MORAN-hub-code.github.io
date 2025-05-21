@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>旧存档雪山替换</name>
+    <author>素和晟睿寒海</author>
+    <description>将0.14及以前版本地图中的雪山替换为0.50新添加的雪尖峰。由于0.21后将雪独立在地块之外，这里的雪尖峰默认无雪，但会慢慢的自动积雪且不会消失</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>18414</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>3848</resourceSize>
+</resource>
