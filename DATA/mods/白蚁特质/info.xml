@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>白蚁特质</name>
+    <author>TermiteMan</author>
+    <description>增加了多种特质和5种纪元，目前为测试版许多东西还未完成，完成了有害特质的部分，更新了七种病毒，未来会完成更多的纪元，法术，趣味特质和精神状态</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>298164</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>9128992</resourceSize>
+</resource>
