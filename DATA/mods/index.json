@@ -247,6 +247,19 @@
     "resourceSize": 2050
   },
   {
+    "name": "更多权力模组-PowerBox",
+    "path": "DATA/mods/更多权力模组-PowerBox",
+    "author": "Keymasterer, don_nikon",
+    "description": "①辅助功能：“结盟”、“建立友谊”\n②扩展功能：查看文明单位(在各个文明的面板右侧)、编辑城市物资(在各个城市面板的右侧)、创建新城、创建新文明、编辑单位氏族、编辑单位文明、扩展/缩减城市区块、扩展/缩减文明区块、建筑升级/降级、指派国王/领主、创建氏族\n③其他新东西：3个新生物(马克西姆、马斯特夫、汉堡蜘蛛)、可以放置单位(肿瘤怪、肿瘤小怪、孢子人、孢子小怪、运输船、商船、渔船)、愈疗之云(降下血雨)、汉堡蜘蛛云(降下汉堡蜘蛛)、查找所有生物(暂无搜索功能)\n⚠注意：模组文明城市氏族相关功能使用上可能存在bug无法使用，目前并不稳定尽量不使用",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 119518,
+    "resourceFile": "resource.zip",
+    "resourceSize": 366964
+  },
+  {
     "name": "武者-骑士改",
     "path": "DATA/mods/武者-骑士改",
     "author": "十月公子",
