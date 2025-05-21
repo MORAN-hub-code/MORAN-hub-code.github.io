@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>高武骑士传承法添加版-十传承法</name>
+    <author>不适槅门</author>
+    <description>十三境界添加版的魔改 删除了最高境界 修炼难度大大增加 增加魔改了骑士十二个境界 删除了新的两个天赋 拥有对标巫师的战斗力（因为机制无法击败高级巫师，合体期） 最后三个境界拥有大范围雷击法术，增加了总共十三个传承法突破烈日骑士随机获得，增幅都很少（并非），主要还是重在“传承”，给家族后辈一定的前期优势和延长寿命（人均上位大骑士），毕竟优化后的高武骑士突破率大大降低，命不长哪怕天赋很好也可能没法进入高境界</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>504032</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>543495</resourceSize>
+</resource>
