@@ -169,6 +169,19 @@
     "resourceSize": 307916
   },
   {
+    "name": "战斗罗盘五-环形堡垒8x8",
+    "path": "DATA/maps/战斗罗盘五-环形堡垒8x8",
+    "author": "WTC阿",
+    "description": "环形堡垒",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 543174,
+    "resourceFile": "resource.zip",
+    "resourceSize": 216296
+  },
+  {
     "name": "新三界15x10",
     "path": "DATA/maps/新三界15x10",
     "author": "盲目吃鱼之神",
