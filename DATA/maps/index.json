@@ -351,6 +351,19 @@
     "resourceSize": 319685
   },
   {
+    "name": "荒野",
+    "path": "DATA/maps/荒野",
+    "author": "不明",
+    "description": "一望无际，毫无生机",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 69090,
+    "resourceFile": "resource.zip",
+    "resourceSize": 117568
+  },
+  {
     "name": "贤者之石",
     "path": "DATA/maps/贤者之石",
     "author": "不明",
