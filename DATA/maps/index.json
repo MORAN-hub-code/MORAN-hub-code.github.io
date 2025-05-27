@@ -260,6 +260,19 @@
     "resourceSize": 418924
   },
   {
+    "name": "深渊世界",
+    "path": "DATA/maps/深渊世界",
+    "author": "Kantez",
+    "description": "你会走多深？玩得开心！坎特兹。",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 426283,
+    "resourceFile": "resource.zip",
+    "resourceSize": 187581
+  },
+  {
     "name": "熔岩魔心",
     "path": "DATA/maps/熔岩魔心",
     "author": "不明",
