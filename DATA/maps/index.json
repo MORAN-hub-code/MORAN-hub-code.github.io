@@ -169,6 +169,19 @@
     "resourceSize": 307916
   },
   {
+    "name": "战壕",
+    "path": "DATA/maps/战壕",
+    "author": "不明",
+    "description": "两军对阵",
+    "gameVersion": "0.50.x",
+    "size": "小",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 19057,
+    "resourceFile": "resource.zip",
+    "resourceSize": 53755
+  },
+  {
     "name": "战斗罗盘五-环形堡垒8x8",
     "path": "DATA/maps/战斗罗盘五-环形堡垒8x8",
     "author": "WTC阿",
