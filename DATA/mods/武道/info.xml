@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武道</name>
+    <author>一米&末影大黑</author>
+    <description>制作者一米添加了单独的武道修炼体系，在生物面板将鼠标悬停至生物上可见(同时可见天赋以及加成)，共6个境界，凡人(未算在内)、入品、后天(武道特质+1)、先天(武道特质+1)、至臻(武道特质+2)、超凡入圣(武道特质+2)、武道镇神(武道特质+4~5)。
+添加了一些肉鸽元素的特质，此版本共65个特质</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>12572</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1340629</resourceSize>
+</resource>
