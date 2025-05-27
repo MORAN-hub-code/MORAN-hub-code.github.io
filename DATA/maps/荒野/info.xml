@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>荒野</name>
+    <author>不明</author>
+    <description>一望无际，毫无生机</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>中</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>69090</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>117568</resourceSize>
+</resource>
