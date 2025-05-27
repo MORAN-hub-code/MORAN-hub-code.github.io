@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>社区城市</name>
+    <author>不明</author>
+    <description>精致的世界，可以逛一逛</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>小</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>600738</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>100454</resourceSize>
+</resource>
