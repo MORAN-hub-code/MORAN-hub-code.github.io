@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武道</name>
+    <author>一米&amp;末影大黑</author>
+    <description>制作者一米添加了单独的武道修炼体系，在生物面板将鼠标悬停至生物上可见。添加了一些肉鸽元素的特质，此版本共65个特质</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>12601</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1082745</resourceSize>
+</resource>
