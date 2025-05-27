@@ -325,6 +325,19 @@
     "resourceSize": 11563
   },
   {
+    "name": "社区城市",
+    "path": "DATA/maps/社区城市",
+    "author": "不明",
+    "description": "精致的世界，可以逛一逛",
+    "gameVersion": "0.50.x",
+    "size": "小",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 600738,
+    "resourceFile": "resource.zip",
+    "resourceSize": 100454
+  },
+  {
     "name": "离心实验岛18x10",
     "path": "DATA/maps/离心实验岛18x10",
     "author": "AvoidingBoredom",
