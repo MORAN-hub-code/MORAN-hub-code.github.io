@@ -312,6 +312,19 @@
     "resourceSize": 628694
   },
   {
+    "name": "矿物迷宫",
+    "path": "DATA/maps/矿物迷宫",
+    "author": "不明",
+    "description": "矿物迷宫",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 50422,
+    "resourceFile": "resource.zip",
+    "resourceSize": 11563
+  },
+  {
     "name": "离心实验岛18x10",
     "path": "DATA/maps/离心实验岛18x10",
     "author": "AvoidingBoredom",
