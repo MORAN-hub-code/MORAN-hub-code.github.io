@@ -338,6 +338,19 @@
     "resourceSize": 561029
   },
   {
+    "name": "羽蛇神",
+    "path": "DATA/maps/羽蛇神",
+    "author": "不明",
+    "description": "庞大的巨蛇化为世界",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 33308,
+    "resourceFile": "resource.zip",
+    "resourceSize": 71716
+  },
+  {
     "name": "耶稣",
     "path": "DATA/maps/耶稣",
     "author": "不明",
