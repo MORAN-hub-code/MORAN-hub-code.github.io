@@ -65,6 +65,19 @@
     "resourceSize": 102877
   },
   {
+    "name": "动物园",
+    "path": "DATA/maps/动物园",
+    "author": "不明",
+    "description": "偶遇动物出逃，拼尽全力无法战胜",
+    "gameVersion": "0.50.x",
+    "size": "小",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 107728,
+    "resourceFile": "resource.zip",
+    "resourceSize": 32553
+  },
+  {
     "name": "十二星界12x12",
     "path": "DATA/maps/十二星界12x12",
     "author": "不明",
