@@ -247,6 +247,19 @@
     "resourceSize": 1007131
   },
   {
+    "name": "洛阳城12x12",
+    "path": "DATA/maps/洛阳城12x12",
+    "author": "Hu_ger",
+    "description": "很好的城市规划，使我地图旋转",
+    "gameVersion": "0.50.x",
+    "size": "大",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 360736,
+    "resourceFile": "resource.zip",
+    "resourceSize": 3408786
+  },
+  {
     "name": "海洋迷宫",
     "path": "DATA/maps/海洋迷宫",
     "author": "不明",
