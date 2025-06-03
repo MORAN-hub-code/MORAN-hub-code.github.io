@@ -208,6 +208,19 @@
     "resourceSize": 216296
   },
   {
+    "name": "文明与掠夺7x7",
+    "path": "DATA/maps/文明与掠夺7x7",
+    "author": "Q荣庆Q",
+    "description": "文明与掠夺",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 230479,
+    "resourceFile": "resource.zip",
+    "resourceSize": 467549
+  },
+  {
     "name": "新三界15x10",
     "path": "DATA/maps/新三界15x10",
     "author": "盲目吃鱼之神",
