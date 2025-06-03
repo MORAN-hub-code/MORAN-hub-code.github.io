@@ -1,5 +1,18 @@
 [
   {
+    "name": "一家人就要整整齐齐7",
+    "path": "DATA/maps/一家人就要整整齐齐7",
+    "author": "明天",
+    "description": "一家人就要整整齐齐",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 134064,
+    "resourceFile": "resource.zip",
+    "resourceSize": 308946
+  },
+  {
     "name": "一线天169x1",
     "path": "DATA/maps/一线天169x1",
     "author": "不明",
