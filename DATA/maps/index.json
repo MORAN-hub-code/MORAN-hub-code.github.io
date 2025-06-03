@@ -351,6 +351,19 @@
     "resourceSize": 100454
   },
   {
+    "name": "神魔大战7x7",
+    "path": "DATA/maps/神魔大战7x7",
+    "author": "Q荣庆Q",
+    "description": "神魔大战",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 188037,
+    "resourceFile": "resource.zip",
+    "resourceSize": 578586
+  },
+  {
     "name": "离心实验岛18x10",
     "path": "DATA/maps/离心实验岛18x10",
     "author": "AvoidingBoredom",
