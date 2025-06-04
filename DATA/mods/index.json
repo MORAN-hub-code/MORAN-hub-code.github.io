@@ -325,6 +325,19 @@
     "resourceSize": 1082745
   },
   {
+    "name": "武道-十境界太一魔改",
+    "path": "DATA/mods/武道-十境界太一魔改",
+    "author": "太一",
+    "description": "基于0.5大黑武道魔改，增加修改十个境界。\n境界：凡人，后天，先天，至臻，武道宗师，超凡入圣，三花聚顶，五气朝元，返璞归真，以力证道。\n天赋限制在500左右，想要快速提升境界需要击杀掠夺。\n武道宗师后每一个境界给予一个武道天赋",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 185791,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1383791
+  },
+  {
     "name": "玄幻中文名",
     "path": "DATA/mods/玄幻中文名",
     "author": "凸( →_→ )凸",
