@@ -52,6 +52,19 @@
     "resourceSize": 2345616
   },
   {
+    "name": "人人都有枪",
+    "path": "DATA/mods/人人都有枪",
+    "author": "jullio",
+    "description": "模组使霰弹枪成为游戏中的优先武器，所有文明都可以制造它，小人会比其他任何武器更喜欢它，但不是100%，文明中仍然会有一些其他武器。对霰弹枪进行了一些更改（现在是步枪，一次只发射 1 发射弹，基础伤害增加到 15，射程显着增加，制作配方改为 3 枚硬币、1 枚普通金属和 1 枚木材）\n外星爆能枪现在是手炮（射弹改为炮弹，制作配方改为 80 金、1 枚普通金属和 1 枚宝石，爆能枪制作特性并不经常出现，但如果你手动添加它，它们就会生产它们）",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 83125,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1611568
+  },
+  {
     "name": "十二境武者",
     "path": "DATA/mods/十二境武者",
     "author": "不适槅门",
