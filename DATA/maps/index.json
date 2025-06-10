@@ -234,6 +234,19 @@
     "resourceSize": 467549
   },
   {
+    "name": "文明竞技场",
+    "path": "DATA/maps/文明竞技场",
+    "author": "不明",
+    "description": "文明竞技场",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 142180,
+    "resourceFile": "resource.zip",
+    "resourceSize": 237969
+  },
+  {
     "name": "新三界15x10",
     "path": "DATA/maps/新三界15x10",
     "author": "盲目吃鱼之神",
@@ -349,6 +362,19 @@
     "imageSize": 819974,
     "resourceFile": "resource.zip",
     "resourceSize": 628694
+  },
+  {
+    "name": "监狱A区12号",
+    "path": "DATA/maps/监狱A区12号",
+    "author": "不明",
+    "description": "你能做到帮助小人逃脱监狱吗\n监狱区/办公室/警卫室/警卫塔/服务器室/骚乱控制机器人",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 114329,
+    "resourceFile": "resource.zip",
+    "resourceSize": 37578
   },
   {
     "name": "矿物迷宫",
