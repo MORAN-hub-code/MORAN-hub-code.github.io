@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>自由之墙</name>
+    <author>不明</author>
+    <description>自由之墙</description>
+    <gameVersion>0.50.x</gameVersion>
+    <size>中</size>
+    <type>架空</type>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>271427</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>539060</resourceSize>
+</resource>
