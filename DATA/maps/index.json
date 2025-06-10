@@ -481,6 +481,19 @@
     "resourceSize": 319685
   },
   {
+    "name": "自由之墙",
+    "path": "DATA/maps/自由之墙",
+    "author": "不明",
+    "description": "自由之墙",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 271427,
+    "resourceFile": "resource.zip",
+    "resourceSize": 539060
+  },
+  {
     "name": "荒野",
     "path": "DATA/maps/荒野",
     "author": "不明",
