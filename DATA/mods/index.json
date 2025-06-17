@@ -364,6 +364,19 @@
     "resourceSize": 1383791
   },
   {
+    "name": "游戏增加120帧",
+    "path": "DATA/mods/游戏增加120帧",
+    "author": "不明",
+    "description": "将游戏的最大fps从60增加到120，这不是常规的fps上升，会提高一些游戏进程的速度\n，如果您只有60hz显示器，这个mod不会对视觉效果产生任何影响",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 92694,
+    "resourceFile": "resource.zip",
+    "resourceSize": 4716
+  },
+  {
     "name": "玄幻中文名",
     "path": "DATA/mods/玄幻中文名",
     "author": "凸( →_→ )凸",
