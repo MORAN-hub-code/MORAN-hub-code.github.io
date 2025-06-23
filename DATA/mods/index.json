@@ -65,6 +65,19 @@
     "resourceSize": 2345616
   },
   {
+    "name": "世界复原力",
+    "path": "DATA/mods/世界复原力",
+    "author": "Pholith",
+    "description": "已适配正式版\n①极大提升了群系生长的速度，这下即使是千疮百孔的世界也能恢复如初:D\n②使海洋可以缓慢侵蚀沙地、三种海洋可以缓慢转换，这在一定程度上模拟了海陆变迁(•⌄•๑)૭\n③海洋→沙地→草原→森林，反过来也是可以的",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 87123,
+    "resourceFile": "resource.zip",
+    "resourceSize": 184767
+  },
+  {
     "name": "人人都有枪",
     "path": "DATA/mods/人人都有枪",
     "author": "jullio",
