@@ -484,14 +484,14 @@
     "name": "禁用权能特效",
     "path": "DATA/mods/禁用权能特效",
     "author": "半梦半醒",
-    "description": "减少光污染从你我做起",
+    "description": "已适配正式版，减少光污染从你我做起",
     "gameVersion": "0.50.x",
     "type": "实用工具",
     "isModify": "false",
     "imageFile": "preview.jpg",
     "imageSize": 11813,
     "resourceFile": "resource.zip",
-    "resourceSize": 8495
+    "resourceSize": 8505
   },
   {
     "name": "简单汉化修正",
