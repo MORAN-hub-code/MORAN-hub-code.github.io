@@ -237,14 +237,14 @@
     "name": "寒海的全解锁模组",
     "path": "DATA/mods/寒海的全解锁模组",
     "author": "寒海",
-    "description": "解锁原版所有游戏内容",
+    "description": "必装模组之一，已适配正式版，解锁原版所有游戏内容，如果无效f9+f10重新解锁",
     "gameVersion": "0.50.x",
     "type": "实用工具",
     "isModify": "false",
     "imageFile": "preview.jpg",
     "imageSize": 234936,
     "resourceFile": "resource.zip",
-    "resourceSize": 312776
+    "resourceSize": 312589
   },
   {
     "name": "属性拓展",
