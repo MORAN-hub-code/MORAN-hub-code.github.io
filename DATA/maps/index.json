@@ -429,6 +429,19 @@
     "resourceSize": 278935
   },
   {
+    "name": "穿梭五星15x9",
+    "path": "DATA/maps/穿梭五星15x9",
+    "author": "Constructor",
+    "description": "穿梭五星",
+    "gameVersion": "0.50.x",
+    "size": "中",
+    "type": "架空",
+    "imageFile": "preview.jpg",
+    "imageSize": 104155,
+    "resourceFile": "resource.zip",
+    "resourceSize": 153007
+  },
+  {
     "name": "米诺陶诺斯迷宫",
     "path": "DATA/maps/米诺陶诺斯迷宫",
     "author": "不明",
