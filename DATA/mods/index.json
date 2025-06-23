@@ -739,5 +739,18 @@
     "imageSize": 504032,
     "resourceFile": "resource.zip",
     "resourceSize": 328721
+  },
+  {
+    "name": "黑神话-精魄",
+    "path": "DATA/mods/黑神话-精魄",
+    "author": "盲目吃鱼之神",
+    "description": "已适配正式版，在生物特质中添加了黑神话相关的精魄，会将当前生物更换为精魄的外貌，目前12个，\n齐天大圣、二郎显圣真君、天命人、牯护院、广智、幽魂、灵虚子、广谋、白衣秀士、金池长老、黑风大王、黑熊精",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 17778,
+    "resourceFile": "resource.zip",
+    "resourceSize": 527949
   }
 ]
