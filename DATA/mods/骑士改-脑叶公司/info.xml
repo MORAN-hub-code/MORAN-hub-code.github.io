@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士改-脑叶公司</name>
+    <author>修远</author>
+    <description>已适配正式版，&quot;LOB&quot;:员工经验值，根据天赋或者修炼提升 ②体系(在生物/亚种诞生特质面板中均可见)： 境界：Ⅰ级员工、Ⅱ级员工、Ⅲ级员工、Ⅳ级员工、Ⅴ级员工，EX级员工(会获得防冻和抗火)境界获得对应等级的四美德 ，天赋：下、中、上、完美 。文职：不可修炼遗传后代(可用亚种诞生编辑器设置至全亚种) 
+扭曲：达到比例年龄不可修炼，开始降低&quot;LOB&quot;掉落员工等级，但获得对于员工等级的异想体等级增加战力，异想体等级：Z，T，H，W，A。
+异想体体质：无法被杀死，会不断复活，不会自然诞生</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>35859</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>367055</resourceSize>
+</resource>
