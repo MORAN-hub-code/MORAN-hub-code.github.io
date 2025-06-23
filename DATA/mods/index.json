@@ -338,6 +338,19 @@
     "resourceSize": 1204544
   },
   {
+    "name": "有趣的一些皮肤",
+    "path": "DATA/mods/有趣的一些皮肤",
+    "author": "十月公子",
+    "description": "已适配正式版，增加了不影响数值战力只影响外观的皮肤，例如蔡X坤，popo猫，史莱姆之类的",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 20088,
+    "resourceFile": "resource.zip",
+    "resourceSize": 302094
+  },
+  {
     "name": "极道武者",
     "path": "DATA/mods/极道武者",
     "author": "不适槅门",
