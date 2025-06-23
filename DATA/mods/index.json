@@ -429,6 +429,19 @@
     "resourceSize": 12404098
   },
   {
+    "name": "现代盒子-ModernBox",
+    "path": "DATA/mods/现代盒子-ModernBox",
+    "author": "Tuxxego",
+    "description": "已适配正式版，增加了哥斯拉相关的十只怪物以及大威力核弹，可自由放置载具。",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 53798,
+    "resourceFile": "resource.zip",
+    "resourceSize": 29553828
+  },
+  {
     "name": "白蚁特质",
     "path": "DATA/mods/白蚁特质",
     "author": "TermiteMan",
