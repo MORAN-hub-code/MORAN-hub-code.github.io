@@ -601,14 +601,14 @@
     "name": "趣味性特质",
     "path": "DATA/mods/趣味性特质",
     "author": "十月公子",
-    "description": "有趣的模组，无法自然生成",
+    "description": "已适配正式版，需要属性拓展前置，有趣的模组，有不少辅助好用的特质，无法自然生成",
     "gameVersion": "0.50.x",
     "type": "扩展玩法",
     "isModify": "false",
     "imageFile": "preview.jpg",
-    "imageSize": 92889,
+    "imageSize": 100649,
     "resourceFile": "resource.zip",
-    "resourceSize": 800450
+    "resourceSize": 802241
   },
   {
     "name": "趣味性特质-进化序列自然生成",
