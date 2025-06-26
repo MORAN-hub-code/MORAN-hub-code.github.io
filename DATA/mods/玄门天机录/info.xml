@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>玄门天机录</name>
+    <author>凸( →_→ )凸</author>
+    <description>适配正式版，玄门天机录2.0.2，巫术秘典官方修仙版，凸( →_→ )凸改作的改作。 增加了自行增加灵气与仙力量</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>16412</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>11828113</resourceSize>
+</resource>
