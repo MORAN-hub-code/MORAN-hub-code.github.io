@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士</name>
+    <author>十月公子</author>
+    <description>已适配正式版， ①属性介绍(添加在生物面板中)： &quot;生命之力&quot;:骑士经验值，根据天赋或者修炼提升 ②体系(在生物/亚种诞生特质面板中均可见)： 骑士道体系：骑士学徒、预备骑士、初级骑士、中级骑士、高级骑士、大骑士(会获得防冻和抗火) 骑士天赋体系：下•生命种子、中•生命种子、上•生命种子、传说•生命种子 生命禁脉：不可修炼骑士道(可用亚种诞生编辑器设置至全亚种) 气血衰减：达到比例年龄生命之力不再增加，开始降低生命之力掉落境界 无极：不会获得气血衰减一直修炼下去，更新大骑士收藏</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>3844</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>333918</resourceSize>
+</resource>
