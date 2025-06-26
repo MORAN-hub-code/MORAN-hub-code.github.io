@@ -367,14 +367,14 @@
     "name": "武者-骑士改",
     "path": "DATA/mods/武者-骑士改",
     "author": "十月公子",
-    "description": "低武模组\n骑士魔改文案\n修改成武侠风格",
+    "description": "已适配正式版，低武模组 骑士魔改文案 修改成武侠风格",
     "gameVersion": "0.50.x",
     "type": "扩展玩法",
-    "isModify": "true",
+    "isModify": "false",
     "imageFile": "preview.jpg",
     "imageSize": 124010,
     "resourceFile": "resource.zip",
-    "resourceSize": 323003
+    "resourceSize": 326517
   },
   {
     "name": "武道",
