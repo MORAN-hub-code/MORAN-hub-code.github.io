@@ -481,6 +481,19 @@
     "resourceSize": 192510
   },
   {
+    "name": "玄门天机录",
+    "path": "DATA/mods/玄门天机录",
+    "author": "凸( →_→ )凸",
+    "description": "适配正式版，玄门天机录2.0.2，巫术秘典官方修仙版，凸( →_→ )凸改作的改作。 增加了自行增加灵气与仙力量",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 16412,
+    "resourceFile": "resource.zip",
+    "resourceSize": 11828113
+  },
+  {
     "name": "玄门天机录-可增加灵气仙力",
     "path": "DATA/mods/玄门天机录-可增加灵气仙力",
     "author": "看客",
