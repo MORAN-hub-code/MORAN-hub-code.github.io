@@ -338,6 +338,19 @@
     "resourceSize": 21675
   },
   {
+    "name": "战勋",
+    "path": "DATA/mods/战勋",
+    "author": "看客",
+    "description": "越杀我越强，我是大西王（根据击杀数提升战力，每升一级攻击目标加一，百人斩后百分比加成）",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 6464,
+    "resourceFile": "resource.zip",
+    "resourceSize": 183810
+  },
+  {
     "name": "旧存档雪山替换",
     "path": "DATA/mods/旧存档雪山替换",
     "author": "素和晟睿寒海",
