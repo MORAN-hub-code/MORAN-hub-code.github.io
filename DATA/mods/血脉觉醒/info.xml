@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>血脉觉醒</name>
+    <author>十月公子</author>
+    <description>已适配正式版，需要属性拓展前置 ①氏族特质: “血脉觉醒”分组中添加14个特质，属性各有侧重，其中“烬环之契”可以让氏族成员死亡后在首都重生＜为1岁、“血族”可以赋予吸血能力、“归寂之裔”可以抹除对方随机一个生物特质 ，连动巫术骑士，氏族成员一定获得修炼天赋 ②生物特质：“需求”分组中添加了“加速进化”(通过加快叛乱让国家更快更替)</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>31680</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>872408</resourceSize>
+</resource>
