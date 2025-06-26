@@ -65,6 +65,19 @@
     "resourceSize": 184767
   },
   {
+    "name": "东方中文名糅杂版",
+    "path": "DATA/mods/东方中文名糅杂版",
+    "author": "凸( →_→ )凸",
+    "description": "修改国家，生物，武器名称",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 1703,
+    "resourceFile": "resource.zip",
+    "resourceSize": 208462
+  },
+  {
     "name": "人人都有枪",
     "path": "DATA/mods/人人都有枪",
     "author": "jullio",
