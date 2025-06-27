@@ -312,6 +312,19 @@
     "resourceSize": 13510792
   },
   {
+    "name": "帝国盒子",
+    "path": "DATA/mods/帝国盒子",
+    "author": "长明火",
+    "description": "这是一个为游戏添加更多功能的Mob ，例如建立帝国，分封事件，王国头衔系统（如果王国控制了足够多的城市，它将把名字改为该头衔。）",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 26462,
+    "resourceFile": "resource.zip",
+    "resourceSize": 3880668
+  },
+  {
     "name": "强化亚种突变",
     "path": "DATA/mods/强化亚种突变",
     "author": " 十月公子",
