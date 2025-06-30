@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>黑神话-R公司魔改</name>
+    <author>修远</author>
+    <description>黑神话皮肤，脑叶公司中的R公司皮肤</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>18758</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>260091</resourceSize>
+</resource>
