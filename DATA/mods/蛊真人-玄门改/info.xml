@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>蛊真人-玄门改</name>
+    <author>看客</author>
+    <description>玄门的魔改，增加了30个境界，1-10转分三小境界，比玄门数值更高破坏力更强</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>503569</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>14555411</resourceSize>
+</resource>
