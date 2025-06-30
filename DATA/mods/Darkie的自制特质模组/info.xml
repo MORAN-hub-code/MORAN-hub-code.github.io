@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>Darkie的自制特质模组</name>
+    <author>Darkie</author>
+    <description>增加时间掌控者和雷电异能特质，现在可在模组管理处调整特质的生成概率，部分特质会导致游戏卡顿建议全部调成0%</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>106650</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2061470</resourceSize>
+</resource>
