@@ -871,6 +871,19 @@
     "resourceSize": 328721
   },
   {
+    "name": "黑神话-R公司魔改",
+    "path": "DATA/mods/黑神话-R公司魔改",
+    "author": "修远",
+    "description": "黑神话皮肤，脑叶公司中的R公司皮肤",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 18758,
+    "resourceFile": "resource.zip",
+    "resourceSize": 260091
+  },
+  {
     "name": "黑神话-精魄",
     "path": "DATA/mods/黑神话-精魄",
     "author": "盲目吃鱼之神",
