@@ -416,6 +416,19 @@
     "resourceSize": 650374
   },
   {
+    "name": "武极寰宇录-诡秘之主前缀魔改",
+    "path": "DATA/mods/武极寰宇录-诡秘之主前缀魔改",
+    "author": "不适槅门",
+    "description": "文案修改诡秘之主风格",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 625899,
+    "resourceFile": "resource.zip",
+    "resourceSize": 670753
+  },
+  {
     "name": "武者-骑士改",
     "path": "DATA/mods/武者-骑士改",
     "author": "十月公子",
