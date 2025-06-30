@@ -611,6 +611,19 @@
     "resourceSize": 11554
   },
   {
+    "name": "蛊真人-玄门改",
+    "path": "DATA/mods/蛊真人-玄门改",
+    "author": "看客",
+    "description": "玄门的魔改，增加了30个境界，1-10转分三小境界，比玄门数值更高破坏力更强",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 503569,
+    "resourceFile": "resource.zip",
+    "resourceSize": 14555411
+  },
+  {
     "name": "血脉觉醒",
     "path": "DATA/mods/血脉觉醒",
     "author": "十月公子",
