@@ -882,5 +882,18 @@
     "imageSize": 17778,
     "resourceFile": "resource.zip",
     "resourceSize": 527949
+  },
+  {
+    "name": "黑神话-黑兽魔改",
+    "path": "DATA/mods/黑神话-黑兽魔改",
+    "author": "修远",
+    "description": "黑神话皮肤的魔改，边狱巴士的十二生肖黑兽，不是那个黑兽（你懂的）",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 21741,
+    "resourceFile": "resource.zip",
+    "resourceSize": 258974
   }
 ]
