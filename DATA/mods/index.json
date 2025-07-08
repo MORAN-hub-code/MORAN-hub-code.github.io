@@ -429,6 +429,19 @@
     "resourceSize": 1204544
   },
   {
+    "name": "有效属性上限",
+    "path": "DATA/mods/有效属性上限",
+    "author": "看客",
+    "description": "必装模组之一，锁定属性上限21亿，游玩多个高武不会出现数据异常导致高手暴毙",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 19278,
+    "resourceFile": "resource.zip",
+    "resourceSize": 32276
+  },
+  {
     "name": "有趣的一些皮肤",
     "path": "DATA/mods/有趣的一些皮肤",
     "author": "十月公子",
