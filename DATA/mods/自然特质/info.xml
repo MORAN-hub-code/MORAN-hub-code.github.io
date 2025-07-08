@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>自然特质</name>
+    <author>Politano23</author>
+    <description>①添加了200个特质，共分优良、不良、精品、精神疾病、身型5个特质组
+②一些特质还附带了添加状态的功能
+
+</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>214480</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1016004</resourceSize>
+</resource>
