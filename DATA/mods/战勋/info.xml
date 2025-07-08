@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>战勋</name>
+    <author>看客</author>
+    <description>越杀我越强，我是大西王（根据击杀数提升战力，每升一级攻击目标加一，五百人斩后百分比加成）</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>6464</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>188658</resourceSize>
+</resource>
