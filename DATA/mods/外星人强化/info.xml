@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>外星人强化</name>
+    <author>不明</author>
+    <description>UFO进行了增强，UFO 也不会攻击外星城市，有时他们可能会这样做，但这是我能做的最好的了，外星文明塔现在发射激光而不是箭，外星人也有坚强的意志特质，我的意思是，他们是外星人，他们的思想应该比其他人都优越！（同样，如果没有坚强的意志，他们的文明就会互相射击而死） [“疯狂仪式”]现在这个法术覆盖率达到了 95%，每个人都失去了理智，外星人在开始宗教信仰时也会默认获得这个，反物质轰炸机特质：外星手榴弹，还不能自然获得</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>56961</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>9190</resourceSize>
+</resource>
