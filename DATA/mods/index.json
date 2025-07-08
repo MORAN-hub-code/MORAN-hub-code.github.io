@@ -705,14 +705,14 @@
     "name": "西幻中文名",
     "path": "DATA/mods/西幻中文名",
     "author": "玄关",
-    "description": "修改国家，生物，武器名称",
+    "description": "修改国家，生物，武器名称，可区分四族",
     "gameVersion": "0.50.x",
     "type": "实用工具",
     "isModify": "false",
     "imageFile": "preview.jpg",
     "imageSize": 4897,
     "resourceFile": "resource.zip",
-    "resourceSize": 215805
+    "resourceSize": 195226
   },
   {
     "name": "西式中文名",
