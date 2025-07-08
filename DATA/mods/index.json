@@ -52,6 +52,19 @@
     "resourceSize": 22765
   },
   {
+    "name": "不可接触解锁",
+    "path": "DATA/mods/不可接触解锁",
+    "author": "不明",
+    "description": "原版不可接触特质可进行放置",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 24227,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2960
+  },
+  {
     "name": "世界修炼体系",
     "path": "DATA/mods/世界修炼体系",
     "author": "Shan-gri-la",
