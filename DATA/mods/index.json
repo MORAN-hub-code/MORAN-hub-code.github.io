@@ -13,6 +13,19 @@
     "resourceSize": 2352367
   },
   {
+    "name": "Avb勋章特质",
+    "path": "DATA/mods/Avb勋章特质",
+    "author": "Avb",
+    "description": "Avb的勋章特质会为单位添加特质，当单位达到一定数量的击杀数时，这些特质会随之增加。每当单位达到一定数量的击杀数并获得新的勋章特质时提升单位的属性。文明生物将获得勋章特质（智力加防御），而非文明生物将获得勋带（攻击加防御）勋章境界：骨头（需要击杀 1 人）木材 (5)石头 (10)铜 (15)铜牌（20）银（25）铁 (30)钢 (35)秘银 (40)精金 (50)宝石 (100)冰（150）火焰 (300)水晶（500）鲜血（750）虚空（1000），可搭配战勋使用。",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 9580,
+    "resourceFile": "resource.zip",
+    "resourceSize": 790928
+  },
+  {
     "name": "Darkie的自制特质模组",
     "path": "DATA/mods/Darkie的自制特质模组",
     "author": "Darkie",
