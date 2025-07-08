@@ -637,6 +637,19 @@
     "resourceSize": 11554
   },
   {
+    "name": "自然特质",
+    "path": "DATA/mods/自然特质",
+    "author": "Politano23",
+    "description": "①添加了200个特质，共分优良、不良、精品、精神疾病、身型5个特质组\n②一些特质还附带了添加状态的功能\n\n",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 214480,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1016004
+  },
+  {
     "name": "蛊真人-玄门改",
     "path": "DATA/mods/蛊真人-玄门改",
     "author": "看客",
