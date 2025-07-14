@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>黑神话_骑兵魔改</name>
+    <author>修远</author>
+    <description>黑神话皮肤，增加骑兵皮肤，蚂蚁骑兵与空星漫漫模组相关骑兵</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>9875</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>257412</resourceSize>
+</resource>
