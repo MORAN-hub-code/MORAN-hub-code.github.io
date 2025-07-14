@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>迷你游戏盒</name>
+    <author>Ahoyos</author>
+    <description>目前可在世界盒子中游玩贪吃蛇与躲陨石两款游戏，其余游戏未完成</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>216122</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>3388393</resourceSize>
+</resource>
