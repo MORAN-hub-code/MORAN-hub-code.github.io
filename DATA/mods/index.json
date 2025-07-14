@@ -1012,5 +1012,18 @@
     "imageSize": 21741,
     "resourceFile": "resource.zip",
     "resourceSize": 258974
+  },
+  {
+    "name": "黑神话_骑兵魔改",
+    "path": "DATA/mods/黑神话_骑兵魔改",
+    "author": "修远",
+    "description": "黑神话皮肤，增加骑兵皮肤，蚂蚁骑兵与空星漫漫模组相关骑兵",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 9875,
+    "resourceFile": "resource.zip",
+    "resourceSize": 257412
   }
 ]
