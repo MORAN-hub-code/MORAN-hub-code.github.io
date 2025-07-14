@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>战勋</name>
+    <author>看客</author>
+    <description>越杀我越强，我是大西王（根据击杀数提升战力，每升一级攻击目标加一，五百人斩后百分比加成），让军队模式回归0.22，参军者可远程进行常规生活，因此人口将爆发式繁衍，获得一击杀后获得抗火参军将不会受到伤痕类特质，增加猎王者特质击杀十个国王后获得，每120秒传送至敌方国王身边进行刺杀</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>6464</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1218097</resourceSize>
+</resource>
