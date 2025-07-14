@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>高武骑士传承法添加版-十传承法</name>
+    <author>不适槅门</author>
+    <description>已适配正式版，极道武者的魔改，文案修改成骑士风格，现正式名为圣骑士神话</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>644389</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>730776</resourceSize>
+</resource>
