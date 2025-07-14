@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>异世界抗战</name>
+    <author>Ahoyos</author>
+    <description>（已更新正式版，非原作者）加入了魔力界模组未完成的内容，删除了异世界抗战中的智慧种族，增加了更多的事件生物，如外星人与神话生物</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>43469</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>7559180</resourceSize>
+</resource>
