@@ -377,6 +377,19 @@
     "resourceSize": 3388393
   },
   {
+    "name": "异世界抗战",
+    "path": "DATA/mods/异世界抗战",
+    "author": "Ahoyos",
+    "description": "（已更新正式版，非原作者）加入了魔力界模组未完成的内容，删除了异世界抗战中的智慧种族，增加了更多的事件生物，如外星人与神话生物",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 43469,
+    "resourceFile": "resource.zip",
+    "resourceSize": 7559180
+  },
+  {
     "name": "强化亚种突变",
     "path": "DATA/mods/强化亚种突变",
     "author": " 十月公子",
