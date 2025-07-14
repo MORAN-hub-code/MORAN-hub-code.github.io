@@ -819,6 +819,19 @@
     "resourceSize": 861816
   },
   {
+    "name": "迷你游戏盒",
+    "path": "DATA/mods/迷你游戏盒",
+    "author": "Ahoyos",
+    "description": "目前可在世界盒子中游玩贪吃蛇与躲陨石两款游戏，其余游戏未完成",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 216122,
+    "resourceFile": "resource.zip",
+    "resourceSize": 3388393
+  },
+  {
     "name": "随机特质-神秘特质",
     "path": "DATA/mods/随机特质-神秘特质",
     "author": "爱某",
