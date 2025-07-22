@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>厌恶圣光</name>
+    <author>Androlg</author>
+    <description>在亚种特质组“混乱”中添加了厌恶圣光特质，单位在照射圣光遭受伤害（如恶魔，亡灵一样）</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>61698</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2023333</resourceSize>
+</resource>
