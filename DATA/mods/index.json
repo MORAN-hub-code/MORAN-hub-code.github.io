@@ -156,6 +156,19 @@
     "resourceSize": 584344
   },
   {
+    "name": "厌恶圣光",
+    "path": "DATA/mods/厌恶圣光",
+    "author": "Androlg",
+    "description": "在亚种特质组“混乱”中添加了厌恶圣光特质，单位在照射圣光遭受伤害（如恶魔，亡灵一样）",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 61698,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2023333
+  },
+  {
     "name": "原版调整",
     "path": "DATA/mods/原版调整",
     "author": "十月公子",
@@ -856,6 +869,19 @@
     "imageSize": 492321,
     "resourceFile": "resource.zip",
     "resourceSize": 2291421
+  },
+  {
+    "name": "非舒适群系",
+    "path": "DATA/mods/非舒适群系",
+    "author": "Androlg",
+    "description": "在亚种特质组“适应”中添加了难耐群系特质，单位无法在难耐群系建国",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 77173,
+    "resourceFile": "resource.zip",
+    "resourceSize": 181060
   },
   {
     "name": "骑士",
