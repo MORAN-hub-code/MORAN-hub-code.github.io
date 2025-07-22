@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>统治者盒子</name>
+    <author>markami#5286</author>
+    <description>该模组会让玩家成为国家的决策者，对着国家按K打开信息菜单，通过政策维持人民幸福度（人民幸福度低城市有概率叛变），并通过收税带来的黄金强化国内居民与军队（如强行征兵，提倡生孕，义务教育，魔法训练，元素免疫）可选择与其他国家进行外交操作，整体为低武偏原版模组</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>588361</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>142165</resourceSize>
+</resource>
