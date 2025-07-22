@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>火影忍者dej魔改版</name>
+    <author>修远</author>
+    <description>火影盒子的魔改版，适能者等级F杀2个升E，E杀8个升D，D杀10个升C，C杀50大于5级升B，B杀80大于5级升A，A杀100大于5级升S，S杀150大于9级升SS，SS杀200大于9级升SSS。动物血脉（无自然诞生可遗传）在百年内可进行进化，拥有对应动物血脉等级与传奇特质。法术只增加数值可遗传</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>71394</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>243276</resourceSize>
+</resource>
