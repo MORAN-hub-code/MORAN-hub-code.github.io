@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>非舒适群系</name>
+    <author>Androlg</author>
+    <description>在亚种特质组“适应”中添加了难耐群系特质，单位无法在难耐群系建国</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>77173</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>181060</resourceSize>
+</resource>
