@@ -559,19 +559,6 @@
     "resourceSize": 326517
   },
   {
-    "name": "武道",
-    "path": "DATA/mods/武道",
-    "author": "一米&末影大黑",
-    "description": "制作者一米添加了单独的武道修炼体系，在生物面板将鼠标悬停至生物上可见。添加了一些肉鸽元素的特质，此版本共65个特质",
-    "gameVersion": "0.50.x",
-    "type": "扩展玩法",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 12601,
-    "resourceFile": "resource.zip",
-    "resourceSize": 1082745
-  },
-  {
     "name": "武道-十境界太一魔改",
     "path": "DATA/mods/武道-十境界太一魔改",
     "author": "太一",
