@@ -416,6 +416,19 @@
     "resourceSize": 13510792
   },
   {
+    "name": "帝国盒子",
+    "path": "DATA/mods/帝国盒子",
+    "author": "长明火",
+    "description": "更新了更多的内容。现在算得上低配版春秋，不过比春秋更好用去除臃肿的内容保留了族谱这种实用的功能",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 28678,
+    "resourceFile": "resource.zip",
+    "resourceSize": 6415732
+  },
+  {
     "name": "异世界抗战",
     "path": "DATA/mods/异世界抗战",
     "author": "Ahoyos",
