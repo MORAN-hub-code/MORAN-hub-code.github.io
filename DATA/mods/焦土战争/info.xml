@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>焦土战争</name>
+    <author>Narmjep</author>
+    <description>①火箭：发射出去的箭有10%概率引燃地块
+②士兵强化：成为士兵时有30%概率获得纵火狂，有10%概率获得爆破狂</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>174027</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>8022</resourceSize>
+</resource>
