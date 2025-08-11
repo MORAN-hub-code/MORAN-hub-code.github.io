@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>战勋-最佳公民魔改</name>
+    <author>修远</author>
+    <description>战勋的魔改，增加了17个公民特质（8级公民，九级议员）
+仅有“宝石之国”（原嗜血观众制造机）后代才能自动晋升
+7级公民及以上不如同级军衔，但是会提供堪比乃至超越原嗜血观众制造机的生育能力加成
+公民10级开始，每原版等级5级晋升一次</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>386013</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>70825</resourceSize>
+</resource>
