@@ -637,6 +637,19 @@
     "resourceSize": 1907795
   },
   {
+    "name": "焦土战争",
+    "path": "DATA/mods/焦土战争",
+    "author": "Narmjep",
+    "description": "①火箭：发射出去的箭有10%概率引燃地块\n②士兵强化：成为士兵时有30%概率获得纵火狂，有10%概率获得爆破狂",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 174027,
+    "resourceFile": "resource.zip",
+    "resourceSize": 8022
+  },
+  {
     "name": "玄幻中文名",
     "path": "DATA/mods/玄幻中文名",
     "author": "凸( →_→ )凸",
