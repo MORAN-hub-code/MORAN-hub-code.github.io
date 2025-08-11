@@ -780,19 +780,6 @@
     "resourceSize": 14555411
   },
   {
-    "name": "血脉觉醒",
-    "path": "DATA/mods/血脉觉醒",
-    "author": "十月公子",
-    "description": "更新可自然生成，在氏族查看，与骑士巫术有联动氏族特质",
-    "gameVersion": "0.50.x",
-    "type": "扩展玩法",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 201893,
-    "resourceFile": "resource.zip",
-    "resourceSize": 874473
-  },
-  {
     "name": "血脉觉醒-边狱巴士魔改",
     "path": "DATA/mods/血脉觉醒-边狱巴士魔改",
     "author": "修远",
