@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武道</name>
+    <author>一米&末影大黑</author>
+    <description>更新正式版，目前存在一些bug但可正常运行</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>346979</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1191441</resourceSize>
+</resource>
