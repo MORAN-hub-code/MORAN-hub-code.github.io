@@ -676,6 +676,19 @@
     "resourceSize": 1907795
   },
   {
+    "name": "火影盒子-儒道春秋魔改",
+    "path": "DATA/mods/火影盒子-儒道春秋魔改",
+    "author": "修远",
+    "description": "火影盒子的魔改但无相关内容，增加了5条儒道体系，通过杀戮提升等级（别问问就是技术力不足），无法自然诞生但可通过亚种天生获得学位，当到达第四阶学位可获得法术，酸雨、火雨、传送。但最高等级也不抗火可能玩火自焚",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 67521,
+    "resourceFile": "resource.zip",
+    "resourceSize": 195139
+  },
+  {
     "name": "焦土战争",
     "path": "DATA/mods/焦土战争",
     "author": "Narmjep",
