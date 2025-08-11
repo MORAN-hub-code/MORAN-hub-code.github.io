@@ -936,6 +936,19 @@
     "resourceSize": 215805
   },
   {
+    "name": "西部行动",
+    "path": "DATA/mods/西部行动",
+    "author": "3m1rh4n",
+    "description": "陆军行动的前传，被删减至只剩枪械和大炮，只需资源就能制造",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 21554,
+    "resourceFile": "resource.zip",
+    "resourceSize": 2206102
+  },
+  {
     "name": "趣味性特质",
     "path": "DATA/mods/趣味性特质",
     "author": "十月公子",
