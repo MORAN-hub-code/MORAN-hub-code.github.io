@@ -26,19 +26,6 @@
     "resourceSize": 51817
   },
   {
-    "name": "Avb的超级特质包",
-    "path": "DATA/mods/Avb的超级特质包",
-    "author": "AvoidingBoredom",
-    "description": "添加了120+特质，主要以特殊效果为主，大体上分 超级、糟糕、血液、变身 四类，还有部分特质位于原版特质类中",
-    "gameVersion": "0.50.x",
-    "type": "扩展玩法",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 25272,
-    "resourceFile": "resource.zip",
-    "resourceSize": 176534
-  },
-  {
     "name": "Darkie的自制特质模组",
     "path": "DATA/mods/Darkie的自制特质模组",
     "author": "Darkie",
