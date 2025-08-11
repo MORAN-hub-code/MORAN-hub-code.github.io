@@ -429,6 +429,19 @@
     "resourceSize": 21675
   },
   {
+    "name": "我们不需要联盟",
+    "path": "DATA/mods/我们不需要联盟",
+    "author": "不明",
+    "description": "小人排斥建立联盟，除非大一统级国家不然很难建立",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 10457,
+    "resourceFile": "resource.zip",
+    "resourceSize": 1534051
+  },
+  {
     "name": "战勋",
     "path": "DATA/mods/战勋",
     "author": "看客",
