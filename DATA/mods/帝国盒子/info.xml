@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>帝国盒子</name>
+    <author>长明火</author>
+    <description>更新了更多的内容。现在算得上低配版春秋，不过比春秋更好用去除臃肿的内容保留了族谱这种实用的功能</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>28678</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>6415732</resourceSize>
+</resource>
