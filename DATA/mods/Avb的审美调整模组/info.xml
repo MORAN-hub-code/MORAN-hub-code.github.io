@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>Avb的审美调整模组</name>
+    <author>Avb</author>
+    <description>①所有生物和特殊建筑添加了新的按钮边框，如：经典四族鎏金渐变边框、进化生物深红边框、法师秘银边框、格雷(Greg)金色边框、建筑银制边框、蟹斯拉红色边框且不再灰贴图、塑造地形的生物(打印蚁、其他蚁、蠕虫、沙漠蜘蛛)土黄色边框
+②更换大部分生物和其他一些贴图，如：海绵、镰刀、稿、斧头、铁锹、召唤仪式谋划、加入联盟谋划、雨云、硫酸雨云、岩浆雨云、原子弹
+模组选项可调整
+“普通动物调整”-更换普通动物的贴图，基本上只是改色，默认启用
+“进化动物调整”-更换进化动物的贴图，基本上只是改色
+
+打开模组列表，然后找到此模组，右上角的齿轮就是模组设置</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>15356</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>76294</resourceSize>
+</resource>
