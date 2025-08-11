@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>西部行动</name>
+    <author>3m1rh4n</author>
+    <description>陆军行动的前传，被删减至只剩枪械和大炮，只需资源就能制造</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>21554</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>2206102</resourceSize>
+</resource>
