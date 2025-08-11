@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>火影盒子-儒道春秋魔改</name>
+    <author>修远</author>
+    <description>火影盒子的魔改但无相关内容，增加了5条儒道体系，通过杀戮提升等级（别问问就是技术力不足），无法自然诞生但可通过亚种天生获得学位，当到达第四阶学位可获得法术，酸雨、火雨、传送。但最高等级也不抗火可能玩火自焚</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>67521</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>195139</resourceSize>
+</resource>
