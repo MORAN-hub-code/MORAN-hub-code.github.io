@@ -442,6 +442,19 @@
     "resourceSize": 649333
   },
   {
+    "name": "无联盟模式",
+    "path": "DATA/mods/无联盟模式",
+    "author": "不明",
+    "description": "小人不会创建联盟，（除非小人拥有9999原版等级，原版最高等级999）",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 19390,
+    "resourceFile": "resource.zip",
+    "resourceSize": 4172
+  },
+  {
     "name": "旧存档雪山替换",
     "path": "DATA/mods/旧存档雪山替换",
     "author": "素和晟睿寒海",
