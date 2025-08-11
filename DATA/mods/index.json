@@ -468,6 +468,19 @@
     "resourceSize": 655111
   },
   {
+    "name": "战勋-最佳公民魔改",
+    "path": "DATA/mods/战勋-最佳公民魔改",
+    "author": "修远",
+    "description": "战勋的魔改，增加了17个公民特质（8级公民，九级议员）\n仅有“宝石之国”（原嗜血观众制造机）后代才能自动晋升\n7级公民及以上不如同级军衔，但是会提供堪比乃至超越原嗜血观众制造机的生育能力加成\n公民10级开始，每原版等级5级晋升一次",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 386013,
+    "resourceFile": "resource.zip",
+    "resourceSize": 70825
+  },
+  {
     "name": "无联盟模式",
     "path": "DATA/mods/无联盟模式",
     "author": "不明",
