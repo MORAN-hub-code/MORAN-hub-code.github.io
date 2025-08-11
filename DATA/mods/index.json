@@ -988,6 +988,19 @@
     "resourceSize": 861816
   },
   {
+    "name": "转化武器保留",
+    "path": "DATA/mods/转化武器保留",
+    "author": "不明",
+    "description": "变成僵尸，孢子，肿瘤，骷髅后保留武器",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 16799,
+    "resourceFile": "resource.zip",
+    "resourceSize": 4751
+  },
+  {
     "name": "迷你游戏盒",
     "path": "DATA/mods/迷你游戏盒",
     "author": "Ahoyos",
