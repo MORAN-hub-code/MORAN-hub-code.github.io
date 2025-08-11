@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>无联盟模式</name>
+    <author>不明</author>
+    <description>小人不会创建联盟，（除非小人拥有9999原版等级，原版最高等级999）</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>19390</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>4172</resourceSize>
+</resource>
