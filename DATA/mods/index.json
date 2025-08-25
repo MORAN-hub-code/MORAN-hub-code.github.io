@@ -676,6 +676,19 @@
     "resourceSize": 1125654
   },
   {
+    "name": "沙盒工具箱",
+    "path": "DATA/mods/沙盒工具箱",
+    "author": "不明",
+    "description": "必装模组之一\n①单位归属：强制单位入城、强制单位语言、强制单位文明、强制单位宗教、任命国王、任命领主\n②禁用特质(自选)：禁用氏族特质、禁用语言特质、禁用文明特质、禁用宗教特质\n③其他：筛选磁铁、放置建筑、强制完成谋划、强制建城\n④模组设置：建筑物地块检查-禁用后，所有建筑物放置不再受地块影响\nDNA中的数值可自由改写\n(模组列表中找到此模组然后点击右侧齿轮可见模组设置)\n",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 110098,
+    "resourceFile": "resource.zip",
+    "resourceSize": 88263
+  },
+  {
     "name": "游戏增加120帧",
     "path": "DATA/mods/游戏增加120帧",
     "author": "不明",
