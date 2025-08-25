@@ -601,14 +601,14 @@
     "name": "武极寰宇录-诡秘之主前缀魔改",
     "path": "DATA/mods/武极寰宇录-诡秘之主前缀魔改",
     "author": "不适槅门",
-    "description": "文案修改诡秘之主风格",
+    "description": "极道武者魔改，更新内容与极道武者一致，修改部分文案描述，最高境界具备唯一性，达到最高境界会将同序列压制降低其修为",
     "gameVersion": "0.50.x",
     "type": "扩展玩法",
     "isModify": "true",
     "imageFile": "preview.jpg",
     "imageSize": 625899,
     "resourceFile": "resource.zip",
-    "resourceSize": 670753
+    "resourceSize": 1274097
   },
   {
     "name": "武者-骑士改",
