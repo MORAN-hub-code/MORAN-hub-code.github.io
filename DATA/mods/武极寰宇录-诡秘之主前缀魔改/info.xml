@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武极寰宇录-诡秘之主前缀魔改</name>
+    <author>不适槅门</author>
+    <description>极道武者魔改，更新内容与极道武者一致，修改部分文案描述，最高境界具备唯一性，达到最高境界会将同序列压制降低其修为</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>625899</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>844993</resourceSize>
+</resource>
