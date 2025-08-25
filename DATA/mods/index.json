@@ -146,14 +146,14 @@
     "name": "世界球体模型",
     "path": "DATA/mods/世界球体模型",
     "author": "不明",
-    "description": "将世界变成一个圆柱体，世界呈现伪3D，适合观赏不适合互动，部分电脑无法运行",
+    "description": "将世界盒子转为伪3D，有平面3D和滚筒3D两种模式，可切换为原版显示不影响游玩，大部分bug已经修补",
     "gameVersion": "0.50.x",
     "type": "扩展玩法",
     "isModify": "false",
     "imageFile": "preview.jpg",
     "imageSize": 222054,
     "resourceFile": "resource.zip",
-    "resourceSize": 1577984
+    "resourceSize": 1584927
   },
   {
     "name": "东方中文名糅杂版",
