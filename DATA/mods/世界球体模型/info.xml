@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>世界球体模型</name>
+    <author>不明</author>
+    <description>将世界盒子转为伪3D，有平面3D和滚筒3D两种模式，可切换为原版显示不影响游玩，大部分bug已经修补</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>222054</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1584927</resourceSize>
+</resource>
