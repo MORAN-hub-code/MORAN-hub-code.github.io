@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>战争艺术</name>
+    <author>修远 星曜&玄子</author>
+    <description>主要内容：
+将原版“指挥”、“外交”、“组织”分别提供“战争”、“和平”、“统治”特质序列对应，各序列最高6级，主要根据后天努力升级序列号</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>4263</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>43072</resourceSize>
+</resource>
