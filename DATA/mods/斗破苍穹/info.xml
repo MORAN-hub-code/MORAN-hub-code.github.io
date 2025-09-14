@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>斗破苍穹</name>
+    <author>星棋盘</author>
+    <description>更新0.50.6，境界分化与原著一样分为斗之气，斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊斗圣，斗帝。每个大境界分有九星，境界需要通过天赋积累，功法需小人通过悟性进行改良，点击境界人数可直接看到世界的总修炼人口，将鼠标移到小人头上可以看到其境界，小人窗口右侧可看到其功法，现在功法拥有更多技能，小人可以修炼多个功法</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>114723</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>13627454</resourceSize>
+</resource>
