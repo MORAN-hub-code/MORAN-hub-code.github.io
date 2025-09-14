@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>友善共处</name>
+    <author>不明</author>
+    <description>模组内容:
+①物种相和:通过禁止文明的“排外”特质,实现不同物
+种在城市中共存
+②模组基础功能:相当于实时启用/禁用模组设置中的
+其他配置，目前仅下面这两个功能
+反向嗜血:其他城市与首都物种不相同时，领主拥有
+血特质会增加忠诚度
+对外友善:文明中无“亲外”特质的国家默认行为和亲外
+国家一致(不会误伤普通市民)
+原“异族占领”模组。打开模组列表，然后找到此模组，
+右上角的齿轮就是模组设置</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>29859</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>8652</resourceSize>
+</resource>
