@@ -507,6 +507,19 @@
     "resourceSize": 1534051
   },
   {
+    "name": "战争盒子",
+    "path": "DATA/mods/战争盒子",
+    "author": "不明",
+    "description": "更新0.51，现代战争的低配平替，小人会消耗资源制造载具工厂与枪械，玩家可手动放置矿脉让矿物资源不断产出",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 94623,
+    "resourceFile": "resource.zip",
+    "resourceSize": 99652
+  },
+  {
     "name": "战勋",
     "path": "DATA/mods/战勋",
     "author": "看客",
