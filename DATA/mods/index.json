@@ -884,6 +884,19 @@
     "resourceSize": 10623369
   },
   {
+    "name": "矿石盒子",
+    "path": "DATA/mods/矿石盒子",
+    "author": "不明",
+    "description": "更新0.50.6，增加原版六种矿脉，矿脉不断产出矿物",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 296855,
+    "resourceFile": "resource.zip",
+    "resourceSize": 61520
+  },
+  {
     "name": "磁场武者",
     "path": "DATA/mods/磁场武者",
     "author": "玄关",
