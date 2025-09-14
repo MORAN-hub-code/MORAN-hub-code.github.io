@@ -975,6 +975,19 @@
     "resourceSize": 142165
   },
   {
+    "name": "肿瘤增强",
+    "path": "DATA/mods/肿瘤增强",
+    "author": "不明",
+    "description": "（本模组为内置模组，需根据路径修改游戏本体）更新0.51，增加肿瘤的感染力，肿瘤生物可释放更多生成塔",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 1537786,
+    "resourceFile": "resource.zip",
+    "resourceSize": 10231
+  },
+  {
     "name": "自然特质",
     "path": "DATA/mods/自然特质",
     "author": "Politano23",
