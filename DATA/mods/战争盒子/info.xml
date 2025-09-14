@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>战争盒子</name>
+    <author>不明</author>
+    <description>更新0.51，现代战争的低配平替，小人会消耗资源制造载具工厂与枪械，玩家可手动放置矿脉让矿物资源不断产出</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>94623</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>99652</resourceSize>
+</resource>
