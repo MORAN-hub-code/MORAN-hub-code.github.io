@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>武道特质26阶魔改版</name>
+    <author>NEKOSAIKOU</author>
+    <description>更新0.51，境界增加至26境 单位体型随境界增大 达到一定境界时单位普通攻击可造成aoe效果，范围与影响目标随境界增大。 “召唤物”特质新增"每秒扣除一定血量"效果，预防召唤物过多。 新增“武道本源”特质，效果为“按照击杀数和寿命增加相应攻击和生命”，数值加成较少，所有单位达到“入品”时获得该特质。 ”签到流“特质禁止 ”振奋盔甲“特质禁止（原版存在bug，弄不好） ”湖中神盾“特质增加可获取生命上限 部分其他特质修改数值 相对减少了被动特质获取数量，防止数值过快达到上限 天赋上限修改为10000，降低修炼速度（偶尔还是会出现远超10000天赋单位，就当是天才吧） 新增“血脉天赋“:当单位达到“超凡”（lv14）时，其所有后代获得500点额外天赋，当后代中有单位再次达到“超凡”（lv14）时，能继续累加500点额外天赋，以此类推，当父母均拥血脉天赋时，后代取高值（后续可能修改为父母随机一方) 境界：凡夫，开悟，入品，后天，先天，至臻，超凡，入圣，不朽，破界，武道镇神（入品到破界都有三个小境界）</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>175283</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1142139</resourceSize>
+</resource>
