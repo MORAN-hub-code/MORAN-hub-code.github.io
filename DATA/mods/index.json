@@ -1300,6 +1300,19 @@
     "resourceSize": 278618
   },
   {
+    "name": "骑士改-收尾人",
+    "path": "DATA/mods/骑士改-收尾人",
+    "author": "修远",
+    "description": "更新0.50.6，中武水准，与骑士升级模式和速度一致，文案和等级改为收尾人",
+    "gameVersion": "0.50.x",
+    "type": "扩展玩法",
+    "isModify": "true",
+    "imageFile": "preview.jpg",
+    "imageSize": 244380,
+    "resourceFile": "resource.zip",
+    "resourceSize": 32537
+  },
+  {
     "name": "骑士改-脑叶公司",
     "path": "DATA/mods/骑士改-脑叶公司",
     "author": "修远",
