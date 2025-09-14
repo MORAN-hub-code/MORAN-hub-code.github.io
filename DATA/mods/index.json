@@ -65,19 +65,6 @@
     "resourceSize": 2061470
   },
   {
-    "name": "Zen魔法特质",
-    "path": "DATA/mods/Zen魔法特质",
-    "author": "Zen",
-    "description": "更新正式版，会随机抽取先天法术，职业，神圣，附魔，邪咒等。通过战斗也可获得更多异能",
-    "gameVersion": "0.50.x",
-    "type": "扩展玩法",
-    "isModify": "false",
-    "imageFile": "preview.jpg",
-    "imageSize": 106041,
-    "resourceFile": "resource.zip",
-    "resourceSize": 1818382
-  },
-  {
     "name": "万神殿",
     "path": "DATA/mods/万神殿",
     "author": "MasonScarbro & Melvin Shwuaner",
