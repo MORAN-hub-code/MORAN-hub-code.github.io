@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>寒海辅助工具</name>
+    <author>寒海</author>
+    <description>①辅助工具:
+控制时间流速(+1、+10、x10等等，无限堆叠)
+批量添加/移除特质(支持以城市、国家、世界为基础)
+添加疯狂(支持以城市、国家、世界为基础)
+添加装备(支持以城市、国家、世界为基础)
+世界迭代次数(1帧中进行的世界更新，搭配高倍数)
+超级暂停(包含冻结所有特效、粒子、投射物)
+快捷键 F1+F2唤出上帝模式
+2)辅助设置:
+随机生成文明生物(具体配置在此开关的上方齿轮)
+快速成年(无孩童形态，出生即成年)
+城市/王国文化包护(防止领袖变更导致的文化变更)
+批量放置(搭配左侧红底齿轮中配置)
+修改自动保存间隔(搭配左侧红底齿轮中配置)
+更多地图大小(在红底齿轮中配置，在原版生成地图处生成)
+子弹碰撞、禁用子弹穿墙、去除无敌帧
+禁用联盟、牢不可破的联盟、强制自动保存</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>实用工具</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>25533</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1683661</resourceSize>
+</resource>
