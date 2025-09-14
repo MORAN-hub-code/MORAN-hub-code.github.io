@@ -221,6 +221,19 @@
     "resourceSize": 1622846
   },
   {
+    "name": "友善共处",
+    "path": "DATA/mods/友善共处",
+    "author": "不明",
+    "description": "模组内容:\n①物种相和:通过禁止文明的“排外”特质,实现不同物\n种在城市中共存\n②模组基础功能:相当于实时启用/禁用模组设置中的\n其他配置，目前仅下面这两个功能\n反向嗜血:其他城市与首都物种不相同时，领主拥有\n血特质会增加忠诚度\n对外友善:文明中无“亲外”特质的国家默认行为和亲外\n国家一致(不会误伤普通市民)\n原“异族占领”模组。打开模组列表，然后找到此模组，\n右上角的齿轮就是模组设置",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 29859,
+    "resourceFile": "resource.zip",
+    "resourceSize": 8652
+  },
+  {
     "name": "启源修仙-重制版",
     "path": "DATA/mods/启源修仙-重制版",
     "author": "启源制作组",
