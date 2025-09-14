@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>趣味性特质</name>
+    <author>十月公子</author>
+    <description>更新0.51，需要属性拓展前置mod，有趣的模组，有不少辅助好用的特质，无法自然生成</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>100649</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>811715</resourceSize>
+</resource>
