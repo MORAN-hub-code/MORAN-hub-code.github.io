@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>肿瘤增强</name>
+    <author>不明</author>
+    <description>（本模组为内置模组，需根据路径修改游戏本体）更新0.51，增加肿瘤的感染力，肿瘤生物可释放更多生成塔</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>1537786</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>10231</resourceSize>
+</resource>
