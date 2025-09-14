@@ -884,6 +884,19 @@
     "resourceSize": 667812
   },
   {
+    "name": "禁止蜜蜂恼人",
+    "path": "DATA/mods/禁止蜜蜂恼人",
+    "author": "不明",
+    "description": "必装模组之一，更新0.51\n①禁止蜜蜂进化文明:蜂巢生成蜜蜂会判断已有蜜蜂数量,但文\n明蜜蜂和蜜蜂不属于同一物种，所以会一直生成造成不平衡\n)禁止蜂巢自动生成:蜂巢不属于生物也不属于矿物所以原版无\n法禁用生成，最终必然蜜蜂泛滥",
+    "gameVersion": "0.50.x",
+    "type": "实用工具",
+    "isModify": "false",
+    "imageFile": "preview.jpg",
+    "imageSize": 6853,
+    "resourceFile": "resource.zip",
+    "resourceSize": 20514
+  },
+  {
     "name": "禁用权能特效",
     "path": "DATA/mods/禁用权能特效",
     "author": "半梦半醒",
