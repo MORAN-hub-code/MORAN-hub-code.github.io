@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>人人都有枪</name>
+    <author>jullio</author>
+    <description>（本模组为内置模组，需根据路径修改游戏本体） （C:\SteamLibrary\steamapps\common\WorldBox\ 。WorldBox_Data\Managed） 模组使霰弹枪成为游戏中的优先武器，所有文明都可以制造它，小人会比其他任何武器更喜欢它，但不是100%，文明中仍然会有一些其他武器。对霰弹枪进行了一些更改（现在是步枪，一次只发射 1 发射弹，基础伤害增加到 15，射程显着增加，制作配方改为 3 枚硬币、1 枚普通金属和 1 枚木材） 外星爆能枪现在是手炮（射弹改为炮弹，制作配方改为 80 金、1 枚普通金属和 1 枚宝石，爆能枪制作特性并不经常出现，但如果你手动添加它，它们就会生产它们）已适配正式版</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>false</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>83125</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>1361196</resourceSize>
+</resource>
