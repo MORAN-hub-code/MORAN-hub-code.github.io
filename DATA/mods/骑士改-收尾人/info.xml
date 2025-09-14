@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <name>骑士改-收尾人</name>
+    <author>修远</author>
+    <description>更新0.50.6，中武水准，与骑士升级模式和速度一致，文案和等级改为收尾人</description>
+    <gameVersion>0.50.x</gameVersion>
+    <type>扩展玩法</type>
+    <isModify>true</isModify>
+    <imageFile>preview.jpg</imageFile>
+    <imageSize>244380</imageSize>
+    <resourceFile>resource.zip</resourceFile>
+    <resourceSize>32537</resourceSize>
+</resource>
